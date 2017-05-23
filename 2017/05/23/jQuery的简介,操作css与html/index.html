@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代 Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部">
+<meta name="description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部加">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first">
+<meta property="og:title" content="jQuery的简介,操作css与html">
 <meta property="og:url" content="http://yoursite.com/2017/05/23/jQuery的简介,操作css与html/index.html">
 <meta property="og:site_name" content="IT点彼岸的博客">
-<meta property="og:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代 Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部">
-<meta property="og:updated_time" content="2017-05-23T14:06:37.939Z">
+<meta property="og:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部加">
+<meta property="og:updated_time" content="2017-05-23T14:10:13.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代 Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部">
+<meta name="twitter:title" content="jQuery的简介,操作css与html">
+<meta name="twitter:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代Window.onload 与 $(document).ready()的区别Window.onload执行时机:必须等待网页全部加">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>first | IT点彼岸的博客</title>
+<title>jQuery的简介,操作css与html | IT点彼岸的博客</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -136,13 +136,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -254,7 +254,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap"><article id="post-jQuery的简介,操作css与html" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      first
+      jQuery的简介,操作css与html
     </h1>
   
 
@@ -293,8 +293,7 @@
       
           
         <p>  主旨:write less , do more</p>
-<p>   特点:1.轻量级<br>        2.强大的处理器<br>        3.出色的Dom封装<br>        4.可靠的事件处理<br>        5.浏览器兼容性强<br>        6.链式操作方式<br>        7.隐式迭代</p>
-<p>Window.onload 与 $(document).ready()的区别<br>Window.onload<br>执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码<br>执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉<br>$(document).ready()<br>执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码<br>执行次数:可以执行多次,第N次都不会被上一次覆盖<br><a id="more"></a><br>$(function(){</p>
+<p>   特点:1.轻量级<br>        2.强大的处理器<br>        3.出色的Dom封装<br>        4.可靠的事件处理<br>        5.浏览器兼容性强<br>        6.链式操作方式<br>        7.隐式迭代<br><!--更多--><br>Window.onload 与 $(document).ready()的区别<br>Window.onload<br>执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码<br>执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉<br>$(document).ready()<br>执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码<br>执行次数:可以执行多次,第N次都不会被上一次覆盖<br><a id="more"></a><br>$(function(){</p>
 <p>});</p>
 <p>jQuery操作CSS:<br>  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作<br>额外补充:<br>选择一个类标签<br>      $(‘className’)<br>给一个标签添加事件<br>      $(‘className’).click(function(){</p>
 <pre><code>     });
@@ -339,7 +338,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+        <strong class="toc-title">文章目录</strong>
         
             
         
@@ -355,10 +354,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
     <script>
-        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
     </script>
 
 
@@ -377,7 +376,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"first　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"jQuery的简介,操作css与html　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -397,19 +396,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/05/23/first/" title="Next: first">
+            <a href="/2017/05/23/first/" title="下一篇: first">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery的简介,操作css与html/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/first/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/常用的不懂方法/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/新文档/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/自己构建博客/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/面向对象day1/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/面向对象day2/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery的选择器/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery网页的应用/">first</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/first/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/常用的不懂方法/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/新文档/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/自己构建博客/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/面向对象day1/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/面向对象day2/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery的选择器/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/jQuery网页的应用/">first</a></li></ul>
 
 
 
@@ -426,14 +425,14 @@
                 2016-2017 IT点彼岸
             </div>
             <div class="footer-right">
-                <a href="http://itidan.cn/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://itidan.cn/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -442,7 +441,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -475,9 +474,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
