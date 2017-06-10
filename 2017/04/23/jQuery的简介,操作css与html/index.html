@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代">
+<meta name="description" content="主旨:write less , do more 特点:1.轻量级  2.强大的处理器  3.出色的Dom封装  4.可靠的事件处理  5.浏览器兼容性强  6.链式操作方式  7.隐式迭代">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery的简介,操作css与html">
 <meta property="og:url" content="http://yoursite.com/2017/04/23/jQuery的简介,操作css与html/index.html">
 <meta property="og:site_name" content="IT点彼岸的博客">
-<meta property="og:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代">
-<meta property="og:updated_time" content="2017-06-10T05:45:30.079Z">
+<meta property="og:description" content="主旨:write less , do more 特点:1.轻量级  2.强大的处理器  3.出色的Dom封装  4.可靠的事件处理  5.浏览器兼容性强  6.链式操作方式  7.隐式迭代">
+<meta property="og:updated_time" content="2017-06-10T16:29:44.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery的简介,操作css与html">
-<meta name="twitter:description" content="主旨:write less , do more    特点:1.轻量级        2.强大的处理器        3.出色的Dom封装        4.可靠的事件处理        5.浏览器兼容性强        6.链式操作方式        7.隐式迭代">
+<meta name="twitter:description" content="主旨:write less , do more 特点:1.轻量级  2.强大的处理器  3.出色的Dom封装  4.可靠的事件处理  5.浏览器兼容性强  6.链式操作方式  7.隐式迭代">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -278,28 +278,113 @@
       
           
         <p>  主旨:write less , do more</p>
-<p>   特点:1.轻量级<br>        2.强大的处理器<br>        3.出色的Dom封装<br>        4.可靠的事件处理<br>        5.浏览器兼容性强<br>        6.链式操作方式<br>        7.隐式迭代<br><a id="more"></a><br>Window.onload 与 $(document).ready()的区别<br>Window.onload<br>执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码<br>执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉<br>$(document).ready()<br>执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码<br>执行次数:可以执行多次,第N次都不会被上一次覆盖<br>$(function(){</p>
-<p>});</p>
-<p>jQuery操作CSS:<br>  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作<br>额外补充:<br>选择一个类标签<br>      $(‘className’)<br>给一个标签添加事件<br>      $(‘className’).click(function(){</p>
-<pre><code>     });
-点击标签时候,执行匿名函数;
-</code></pre><p>  直接操作<br>    $(‘button’).click(function){<br>             $(‘div’).css(‘width’,’200px’);<br>             $(‘div’).css(‘height’,’200px’);<br>             $(‘div’).css(‘background’,’red’);</p>
-<pre><code>}
-</code></pre><p>   链式写法<br>      $(‘button’).click(<br>            function(){<br>             $(‘div’).css(‘width’,’200px’)<br>                      .css(‘height’,’200px’)<br>                      .css(‘background’,’red’)<br>           })<br>相同的对象,可以省略对象名称,直接在后面进行操作</p>
-<p>$(‘div’).css(“width”,200);<br>$(‘div’).css(“height”,200);<br>$(‘div’).css(“background”,”red”);<br>链式操作形式<br>    $(‘div’).css(‘width’,’200px’)<br>             .css(‘height’,’200px’)<br>             .css(‘background’,’red’)      </p>
-<p>键值对key:value写法<br>$(‘buttton’).click(function(){<br>    $(‘div’).css({<br>        width:200,<br>        height:200,<br>        background:’red’<br>     });<br>})<br>   添加类:<br>  addClass(class)给某个元素添加一个CSS类<br>      $(‘div’).addClass(‘myClass1’);</p>
-<p>   addClass(class1  class2 class3…)给某个元素添加多个css类,添加多个类时,类名使用空格隔开<br>        $(‘div’).addClass(‘myClass1 myClass2’)<br>注意点:添加的类名没有”点”</p>
-<pre><code>删除类
-</code></pre><p>removeClass(class)删除某个元素的一个CSS类<br>   $(‘div’).removeClass(‘myClass1’);</p>
-<p>removeClass(class1 class2 class3)删除某个元素的多个css类<br>   $(‘div’).removeClass(‘myClass1 myClass2 myClass3’)</p>
-<pre><code>切换类
-</code></pre><p>toggleClass(class)来回切换默认样式和指定样式<br>   $(‘div’).toggleClass(‘myClass1’);<br>同样也可以在多个类之前进行切换<br>    $(‘div’).toggleClass(‘myClass1 myClass2’)</p>
-<p>1.jQuery的CSS的获取与修改宽高<br>   不带值为获取,带值为修改.<br>   width()<br>   width(value)<br>   height()<br>   height(value)</p>
-<p>2.获取元素偏移<br> offset() 获取某个元素相对于视口的偏移位置<br> offset().left;<br> offset().top;</p>
-<p>  position()获取某个原色相对于父元素的偏移位置<br>  position().left<br>  position().top</p>
-<p>3.使用jQuery可以给一个标签内部添加以及获取标签</p>
-<p>  没有值代表获取,有值代表添加标签<br> html();<br> html(value);<br> 获取标签当中的内容<br> text();<br> text(value);</p>
+<pre><code>特点:1.轻量级
+ 2.强大的处理器
+ 3.出色的Dom封装
+ 4.可靠的事件处理
+ 5.浏览器兼容性强
+ 6.链式操作方式
+ 7.隐式迭代
+</code></pre><a id="more"></a>
+<pre><code>Window.onload 与 $(document).ready()的区别
+Window.onload
+执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码
+执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉
+$(document).ready()
+执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码
+执行次数:可以执行多次,第N次都不会被上一次覆盖
+$(function(){
 
+});
+
+jQuery操作CSS:
+  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作
+额外补充:
+选择一个类标签
+  $(&apos;className&apos;)
+给一个标签添加事件
+  $(&apos;className&apos;).click(function(){
+
+     });
+点击标签时候,执行匿名函数;
+</code></pre><p> 直接操作</p>
+<pre><code>$(&apos;button&apos;).click(function){
+         $(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;);
+         $(&apos;div&apos;).css(&apos;height&apos;,&apos;200px&apos;);
+         $(&apos;div&apos;).css(&apos;background&apos;,&apos;red&apos;);
+
+
+   }
+</code></pre><p>  链式写法</p>
+<pre><code>  $(&apos;button&apos;).click(
+        function(){
+         $(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;)
+                  .css(&apos;height&apos;,&apos;200px&apos;)
+                  .css(&apos;background&apos;,&apos;red&apos;)
+       })
+相同的对象,可以省略对象名称,直接在后面进行操作
+
+$(&apos;div&apos;).css(&quot;width&quot;,200);
+$(&apos;div&apos;).css(&quot;height&quot;,200);
+$(&apos;div&apos;).css(&quot;background&quot;,&quot;red&quot;);
+链式操作形式
+$(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;)
+         .css(&apos;height&apos;,&apos;200px&apos;)    
+         .css(&apos;background&apos;,&apos;red&apos;)      
+
+键值对key:value写法
+$(&apos;buttton&apos;).click(function(){
+$(&apos;div&apos;).css({
+    width:200,
+    height:200,
+    background:&apos;red&apos;
+});
+)    
+       添加类:
+  addClass(class)给某个元素添加一个CSS类
+  $(&apos;div&apos;).addClass(&apos;myClass1&apos;);
+
+   addClass(class1  class2 class3...)给某个元素添加多个css类,添加多个类时,类名使用空格隔开
+    $(&apos;div&apos;).addClass(&apos;myClass1 myClass2&apos;)
+注意点:添加的类名没有&quot;点&quot;
+</code></pre><p>  删除类</p>
+<pre><code>removeClass(class)删除某个元素的一个CSS类
+   $(&apos;div&apos;).removeClass(&apos;myClass1&apos;);
+removeClass(class1 class2 class3)删除某个元素的多个css类
+   $(&apos;div&apos;).removeClass(&apos;myClass1 myClass2 myClass3&apos;)
+</code></pre><p>  切换类</p>
+<pre><code>toggleClass(class)来回切换默认样式和指定样式
+   $(&apos;div&apos;).toggleClass(&apos;myClass1&apos;);
+同样也可以在多个类之前进行切换
+$(&apos;div&apos;).toggleClass(&apos;myClass1 myClass2&apos;)
+
+
+1.jQuery的CSS的获取与修改宽高
+   不带值为获取,带值为修改.
+   width()
+   width(value)
+   height()
+   height(value)
+
+2.获取元素偏移
+ offset() 获取某个元素相对于视口的偏移位置
+ offset().left;
+ offset().top;
+
+  position()获取某个原色相对于父元素的偏移位置
+  position().left
+  position().top
+
+3.使用jQuery可以给一个标签内部添加以及获取标签
+
+  没有值代表获取,有值代表添加标签
+ html();
+ html(value);
+ 获取标签当中的内容
+ text();
+
+text(value);
+</code></pre>
       
     </div>
     
@@ -310,16 +395,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/04/23/jQuery网页的应用/">
-                    first
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/04/23/常用的不懂方法/">
-                    first
+                <a href="/2017/04/22/jQuery的选择器/">
+                    jQuery选择器
                 </a>
             </div>
         
@@ -387,21 +466,19 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/04/23/jQuery网页的应用/" title="上一篇: first">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/04/23/常用的不懂方法/" title="下一篇: first">
+            <a href="/2017/04/22/jQuery的选择器/" title="下一篇: jQuery选择器">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/first/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery的选择器/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/新文档/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery网页的应用/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/常用的不懂方法/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/自己构建博客/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/面向对象day1/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/面向对象day2/">first</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/22/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/20/常用的不懂方法/">常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/18/面向对象day1/">面向对象1</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/19/面向对象day2/">面向对象2</a></li></ul>
 
 
 
@@ -415,23 +492,12 @@
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2016-2017 IT点彼岸
+                2015-2017 IT点彼岸
             </div>
             <div class="footer-right">
                 <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
-        
-            <div class="visit">
-                
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
         
     </div>
 </footer>
@@ -469,15 +535,15 @@
     
         var oOpenInNew = {
             
-            
-            
-            
-            
-            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
              archives: ".archive-article-title", 
              miniArchives: "a.post-list-link", 
-            
-            
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
              socail: ".social a" 
         }
         for (var x in oOpenInNew) {
