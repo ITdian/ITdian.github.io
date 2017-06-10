@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="## 一:JavaScript是由哪几部分组成: ##01 BOM    Browser Object Mode 浏览器对象模型 02 DOM    Document Object Mode 文档(HTML文档)对象模型 03 ECMAScript       规定了js的语法核心,关键字,类型,语言,结构 #二:js中的数据类型:基本数据类型 | 复杂数据类型#01基本(简单)数据类型    s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="first">
+<meta property="og:url" content="http://yoursite.com/2017/04/23/面向对象day1/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="## 一:JavaScript是由哪几部分组成: ##01 BOM    Browser Object Mode 浏览器对象模型 02 DOM    Document Object Mode 文档(HTML文档)对象模型 03 ECMAScript       规定了js的语法核心,关键字,类型,语言,结构 #二:js中的数据类型:基本数据类型 | 复杂数据类型#01基本(简单)数据类型    s">
+<meta property="og:updated_time" content="2017-06-10T05:48:19.765Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="first">
+<meta name="twitter:description" content="## 一:JavaScript是由哪几部分组成: ##01 BOM    Browser Object Mode 浏览器对象模型 02 DOM    Document Object Mode 文档(HTML文档)对象模型 03 ECMAScript       规定了js的语法核心,关键字,类型,语言,结构 #二:js中的数据类型:基本数据类型 | 复杂数据类型#01基本(简单)数据类型    s">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>first | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-面向对象day1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/23/面向对象day1/" class="article-date">
+      <time datetime="2017-04-23T14:06:10.000Z" itemprop="datePublished">2017-04-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      first
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="一-JavaScript是由哪几部分组成"><a href="#一-JavaScript是由哪几部分组成" class="headerlink" title="## 一:JavaScript是由哪几部分组成: ##"></a>## 一:JavaScript是由哪几部分组成: ##</h4><p>01 BOM<br>    Browser Object Mode 浏览器对象模型</p>
+<p>02 DOM<br>    Document Object Mode 文档(HTML文档)对象模型</p>
+<p>03 ECMAScript<br>       规定了js的语法核心,关键字,类型,语言,结构</p>
+<h4 id="二-js中的数据类型-基本数据类型-复杂数据类型"><a href="#二-js中的数据类型-基本数据类型-复杂数据类型" class="headerlink" title="#二:js中的数据类型:基本数据类型 | 复杂数据类型#"></a>#二:js中的数据类型:基本数据类型 | 复杂数据类型#</h4><p>01基本(简单)数据类型</p>
+<pre><code>   string  字符串
+number   数值(正数|小数)
+boolean  布尔类型的值  true | false
+null     空(对象)
+undefined  没有定义
+</code></pre><p>02复杂(复合)数据类型</p>
+<pre><code>Object 对象类型(js中所有的复杂数据类型都是基于object)
+  Array  数组类型
+Date     日期类型
+            x JSON  (不是数据类型--是数据结构)
+Function    函数类型
+RegRxp    正则表达式
+Number    
+Boolean
+</code></pre><p>03 如何判断数据的类型</p>
+<pre><code>typeof
+语法: typeof 数据(变量)
+结果:
+typeof 字符串 string
+typeof    数值        number
+typeof    true|false    boolean
+typeof    undefined    undefinede
+typeof 复杂数据类型    object 除了函数(function)之外
+</code></pre><p>注意点:</p>
+<pre><code>01    typrof 本身是操作符不是函数
+02 typeof 本身有返回值,这个返回值是string字符串类型的
+03 null和undefined的区别        undefined是声明了变量但是从来没有赋值
+变量的值永远不会为null,除非你手动的设置为null
+
+我们设置变量的值为null,是为了我们不用变量的时候,垃圾回收机制就会回收这个变量
+</code></pre><h4 id="三-赋值"><a href="#三-赋值" class="headerlink" title="三:赋值(=)"></a>三:赋值(=)</h4><pre><code>a=b;  把等号右边的变量(b)保存的内容复制一份给左边的变量
+等于符号(==)
+返回值:true|false
+判定:比较左右两边的值是否相等,如果相等返回的就是true.反之就是false
+全等符号(===)
+返回值:true|false
+判定:比较左右两边的值&amp;类型是否相等,如果值和类型都相等,那么结果就为true,反之就是false
+
+&lt;script&gt;
+var str1 = &quot;string1&quot;;                  //字符串类型
+var str2 = &quot;string1&quot;;
+var str3 = new String(&quot;string1&quot;);       //字符串对象
+var str4 = String(&quot;string1&quot;);
+var str5 = new Object(&quot;string1&quot;);
+
+console.log(str1 == str2);    //true
+console.log(str1 == str3);      //true
+console.log(str1 == str4);      //true
+console.log(str1 == str5);      //true
+console.log(&quot;_________________&quot;);
+console.log(str1 === str2);         //true
+console.log(str1 === str3);         //false
+console.log(&quot;_________________&quot;);
+console.log(str1 === str4);         //true
+console.log(str1 === str5);         //false
+
+console.log(str3 == str4);          //true
+console.log(str3 === str4);         //false
+
+console.log(str3 == str5);          // false
+console.log(str3 === str5);         //false 类型相同但是值（地址）不同
+&lt;/script&gt;
+</code></pre><h4 id="四-关系运算符"><a href="#四-关系运算符" class="headerlink" title="四:关系运算符:"></a>四:关系运算符:</h4><pre><code>大于(&gt;)
+小于(&lt;)
+小于等于(&lt;=)
+大于等于(&gt;=)
+不等于(!=)
+</code></pre><h4 id="五-逻辑运算符"><a href="#五-逻辑运算符" class="headerlink" title="五:逻辑运算符"></a>五:逻辑运算符</h4><pre><code>01 逻辑非(!)
+!表达式
+判定:取反操作
+返回值:布尔类型的值:true|false
+02 逻辑与(&amp;&amp;)
+表达式1 &amp;&amp; 表达式2
+返回值:其中的一个表达式
+判定:判定表达式1是否为真,如果为真,返回表达式2,否则返回表达式1
+03 逻辑或(||)
+表达式1 || 表达式2
+返回值:其中的一个表达式
+判定:判定表达式1是否为真,如果为真,返回表达式1,否则返回表达式2
+
+&lt;script&gt;
+console.log(1 || 0);              //1
+console.log(1 || 1);              //1
+console.log(1 || 2);              //1
+console.log(0 || 1);              //1
+console.log(0 || 0);               //0
+console.log(0 || 2);                //2
+console.log(2 || 1);                //2
+
+console.log(1 &amp;&amp; 1);                //1
+console.log(1 &amp;&amp; 2);                //2
+console.log(1 &amp;&amp; 0);                //0
+console.log(0 &amp;&amp; 1);                //0
+console.log(0 &amp;&amp; 2);                //0
+console.log(0 &amp;&amp; 0);                //0
+console.log(2 &amp;&amp; 1);                //1
+console.log(2 &amp;&amp; 0);                //0
+
+&lt;/script&gt;
+</code></pre><h4 id="六-在js中数据的存储有两种方式-值-引用"><a href="#六-在js中数据的存储有两种方式-值-引用" class="headerlink" title="六:在js中数据的存储有两种方式:值|引用"></a>六:在js中数据的存储有两种方式:值|引用</h4><pre><code>按照存储方式的不同,可以分成两种类型
+01 值类型
+string
+number
+boolean
+undefined
+null
+值类型的变量存储的内容是具体的数据,比如说&quot;string&quot;
+02 引用类型
+object类型的,包括Array Function Date RegExp String Number Boolean
+引用类型的对象存储的内容是引用(reference--地址),该地址指向内存中具体的数据,
+具体的数据单独存储在内存中
+&lt;script&gt;
+
+var str = &quot;string1&quot;;    //值类型
+var num = 10;           //值类型
+var boolT = true;       //值类型
+
+var car = {             //引用类型
+    type:&quot;奔驰&quot;,
+    color:&quot;黑色&quot;
+}
+
+//key - value
+var person = {          //引用类型
+    name:&quot;张三&quot;,
+    age:18,
+    car:car
+}
+
+
+console.log(person.name);     //张三
+console.log(person.car);      //Object
+(color: &quot;黑色&quot;type: &quot;奔驰&quot;__proto__: Object)
+&lt;/script&gt;
+</code></pre><h4 id="七-赋值（-）"><a href="#七-赋值（-）" class="headerlink" title="七:赋值（=）"></a>七:赋值（=）</h4><pre><code>a = b；  把等号右边的变量存储的内容复制一份给左边的变量
+
+值类型的赋值:
+
+把等号右边的变量存储的内容(具体的数据)复制一份给左边的变量
+注意点:修改了其中的一个变量,对另外一个变量没有影响,他们是相互独立的.
+
+引用类型的赋值
+
+把等号右边的对象存储的内容(指向具体数据的地址)复制一份给左边的对象
+注意点:修改了其中的某一个对象,对另外一个对象有影响,他们共享内存中的同一块数据
+ &lt;script&gt;
+    var str1 = &quot;string1&quot;;
+var str2 = str1;        //值类型的赋值
+console.log(str1 == str2);  //true
+str1 = &quot;修改&quot;;
+console.log(str1 == str2);  //false
+console.log(str1);      //修改
+console.log(str2);      //string1
+
+var obj1 = {
+    name:&quot;张三&quot;
+}
+
+var obj2 = obj1;   //引用类型的赋值
+console.log(obj1 == obj2);      //true
+obj1.name = &quot;李四&quot;;
+console.log(obj1.name);   //李四
+console.log(obj2.name);   //李四
+
+//赋值操作之后，如果重新使用字面量的方式来设置对象，那么会切断和赋值对象之间的联系
+obj1 = {
+    age:20,
+    name:&quot;老王&quot;
+}
+
+console.log(obj1.name);     //老王
+console.log(obj2.name);     //李四
+
+&lt;/script&gt;  
+</code></pre><h4 id="八-值类型和引用类型在函数中的使用"><a href="#八-值类型和引用类型在函数中的使用" class="headerlink" title="八:值类型和引用类型在函数中的使用"></a>八:值类型和引用类型在函数中的使用</h4><pre><code>01 函数的参数:
+形式参数(形参):在函数声明的时候,写在()中的变量,形参在函数内部使用,
+在函数内部作为局部变量使用,形参用来占位
+实际参数(实参):在函数调用的时候,写在()中的变量(对象)
+02 函数的调用:
+内部会把实参赋值给形参
+实参可能是值类型的也可能是引用类型的
+03 值类型的数据作为函数的参数
+在函数内部修改了形参的值(a),对函数外部的实参不会产生影响,他们是相互独立的.
+04 引用类型的数据作为函数的参数
+在函数内部修改了形参的值(paremObj),对函数外部的实参会产生影响,他们共享内存中的同一块数据
+
+&lt;script&gt;
+var num = 10;
+function func(a) {
+    console.log(a); //10
+    a = 20;
+    console.log(a); //20
+}
+func(num);
+console.log(num);   //10
+//console.log(a);
+
+var obj = {
+    name:&quot;张三&quot;
+}
+
+function foo(paramObj) {
+    console.log(paramObj.name);   //张三
+    paramObj.name = &quot;李老汉&quot;;
+    console.log(paramObj.name); //李老汉
+
+    paramObj = {
+        name:&quot;老王&quot;
+    }
+    console.log(paramObj.name); //老王
+}
+foo(obj);
+console.log(obj.name);    // 李老汉
+  &lt;/script&gt;
+</code></pre><h4 id="九-对象的动态特性"><a href="#九-对象的动态特性" class="headerlink" title="九:对象的动态特性"></a>九:对象的动态特性</h4><pre><code>01  js中的对象具有动态特性
+js支持在对象定义之后,动态的添加|删除|修改|查询
+对象的成员:对象的属性和方法
+对象:键值对的几何(key--value).属性和方法的集合
+        属性:定义在对象内部的变量
+        方法:定义在对象内部的函数
+特性的说明:带来了方便(更灵活),但是在使用的时候容易出错(出现覆盖的问题)
+02 对象的访问方式:
+    1 点语法
+    2 []语法  key必须是字符串的类型,如果不是字符串类型那么就当做一个变量来处理
+03 动态的操作
+添加:如果当前的属性不存在,那么就是添加
+修改:如果当前访问的属性已经存在,那么在设置的时候就是修改
+删除:使用关键字delete 语法:delete 对象.属性
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;,
+    age : 20,
+    log:&quot;log&quot;
+};
+
+var o = {};
+
+//需求：复制obj对象中的属性给o对象
+for(var k in obj)
+{
+   o[k] = obj[k];
+}
+console.log(o);
+&lt;/script&gt;
+&lt;script&gt;
+//01 创建空的对象
+var obj ={};
+
+//02 动态的添加成员（属性|方法）
+obj.name = &quot;张三&quot;;
+obj.age = 20;
+obj.showName  = function () {
+    console.log(this.name);//张三
+}
+console.log(obj.name);张三
+obj.showName();
+
+//03 修改成员
+obj.name = &quot;李四&quot;;
+obj.showName  = function () {
+    console.log(this.name + &quot; 姓名&quot;);//李四  &quot;姓名&quot;
+}
+obj.showName();
+console.log(obj);
+
+delete obj.age;
+console.log(obj.age);   //undefiend
+console.log(&quot;___________________&quot;);
+
+var test = {};
+console.log(test);
+
+//设置属性（添加属性） 属性名称：backgroundColor
+test[&quot;background Color&quot;] = &quot;red&quot;;
+console.log(test);
+
+obj[&quot;showAge&quot;] = function () {
+    console.log(this.age,&quot;____&quot;);
+}
+obj[&quot;showAge&quot;]();
+&lt;/script&gt;
+
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;,
+    age:20,
+    showName:function () {
+        console.log(this.name);
+    }
+}
+
+var name = &quot;name&quot;;
+console.log(obj.name);  //张三
+console.log(obj[name],&quot;+++++&quot;); // 张三
+//console.log(obj[age]);   //报错.[key]必须是字符串类型的，如果不是字符串类型那么就当做一个变量来处理
+
+console.log(window.name);  //name
+console.log(obj);
+
+&lt;/script&gt;
+</code></pre><h4 id="十-in关键字"><a href="#十-in关键字" class="headerlink" title="十:in关键字"></a>十:in关键字</h4><pre><code>01 遍历(迭代) 对象 for...in
+02 判断对象中是否存在指定的属性  语法:&quot;属性&quot; in 对象
+返回值:布尔类型的值,如果有那么就返回true
+注意点:
+01 属性必须是字符串
+02 在使用in操作符处理数组的时候需要注意: key是索引
+数组[1,2,3,4,5,6] 的对象形式:{0:1,1:2,2:3,3:4,4:5,5:6};
+
+&lt;script&gt;
+var dog = {
+    name:&quot;旺财&quot;,
+    color:&quot;绿色&quot;
+}
+
+//判断|检查
+console.log(&quot;name&quot; in dog);
+console.log(&quot;age&quot; in dog);
+console.log(&quot;&quot; in dog);           //false
+&lt;/script&gt;
+
+&lt;script&gt;
+var arr = [1,2,3,4,5,6];
+console.log(&quot;1&quot; in arr);    //true
+console.log(&quot;1&quot; in arr);   //true
+
+console.log(&quot;5&quot; in arr);       //true
+console.log(&quot;6&quot; in arr);        //false  //判断arr中是否有6这个索引
+&lt;/script&gt;
+</code></pre><h3 id="十一-delete的作用"><a href="#十一-delete的作用" class="headerlink" title="十一:delete的作用"></a>十一:delete的作用</h3><pre><code>01 删除对象的属性
+02 可以删除没有使用var声明的变量
+delete关键字的使用注意
+01 有返回值 布尔类型的值（true|false） 删除成功那么就是true
+02 删除对象中不存在的属性，返回值是true还是false  (true)
+03 删除对象的原型对象中的属性，能否删除成功(不能删除)，返回值[delete obj.hi == 删除对象中不存在的属性]
+04 delete关键字无法删除使用var声明的全局的变量，但是却可以删除直接定义在window上面的属性
+
+&lt;script&gt;
+Object.prototype.hi = &quot;hi&quot;;
+
+var obj = {name:&quot;巴拉巴拉小魔仙&quot;};
+console.log(delete obj.name);
+
+var demo = &quot;demoTest&quot;;
+console.log(delete demo);
+
+console.log(delete obj.age);
+console.log(obj.hi);
+
+//    console.log(delete Object.prototype.hi);  //true
+console.log(delete obj.hi);  //true
+alert(obj.hi);
+console.log(obj.hi);
+
+console.log(window.demo);   //全局变量和函数默认会成为window对象的属性和方法
+
+window.showInfo = &quot;不可描述的信息&quot;;
+console.log(showInfo);
+delete window.showInfo;
+console.log(showInfo);   //报错
+
+&lt;script&gt;
+var dog = {
+    name:&quot;招财&quot;,
+    age:14
+}
+
+console.log(dog.name);
+//删除对象的属性
+delete dog.name;
+console.log(dog.name);
+
+//没有使用var关键字声明的变量,那么该变量默认会成为一个全局的变量(变成window的属性)
+var a = &quot;testa&quot;;
+b = &quot;testb&quot;;
+console.log(a);
+console.log(b);
+
+function func() {
+    var num1 = 10;
+    num2 = 20;
+}
+
+func();
+//console.log(num1);  //
+console.log(num2);
+
+//使用delete删除属性
+console.log(num2,&quot;____&quot;);
+delete num2;
+//console.log(num2);
+
+console.log(a);
+delete a;
+console.log(a);
+
+&lt;/script&gt;
+
+
+&lt;/script&gt;
+</code></pre><h3 id="十二-循环和分支"><a href="#十二-循环和分支" class="headerlink" title="十二:循环和分支"></a>十二:循环和分支</h3><pre><code>01 顺序的执行结构
+02 循环结构
+for循环
+while
+do...while   至少会执行一次循环体
+for..in
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--while (条件)--&gt;
+&lt;!--{--&gt;
+    &lt;!--//执行的代码--&gt;
+&lt;!--}--&gt;
+
+&lt;!--do{--&gt;
+    &lt;!--//执行的代码--&gt;
+&lt;!--}while(条件)--&gt;
+&lt;!----&gt;
+&lt;!--&lt;/script&gt;--&gt;
+
+03 分支结构
+if...else..
+switch...case
+
+&lt;script&gt;
+switch (12)
+{
+    case 1:
+        console.log(1);
+        break;
+    case 2:
+        console.log(2);
+        break;
+    default:
+        console.log(&quot;其他的数据&quot;);
+}
+&lt;/script&gt;
+
+04 break continue
+break :退出循环，执行该循环后面的代码
+continue：退出循环(结束当前的循环)，继续执行下一次的循环
+
+&lt;script&gt;
+for (var i = 0; i &lt;10; i++) {
+    if (i == 5)
+    {
+        //break;
+        continue;
+    }
+
+    console.log(&quot;i = &quot; + i);
+
+}
+
+&lt;/script&gt;
+</code></pre><h3 id="十三-调试工具的使用-断点"><a href="#十三-调试工具的使用-断点" class="headerlink" title="十三:调试工具的使用(断点)"></a>十三:调试工具的使用(断点)</h3><pre><code>调试工具
+01 打开控制台
+windows : F12 MAC OSX  option + command + j
+
+02 控制台的详细介绍
+03 断点（普通断点 + 条件断点）
+04 网络通信的模型
+客户端（浏览器|app） --- 服务器端(电脑)
+客户端需要数据      ______请求__________&gt;服务器端  （01 请求）
+客户端              _____数据__________服务器端     (02 响应)
+请求：请求头（对客户端以及请求本身的描述信息） + 请求体（具体的参数）  GET
+响应：响应头（对服务器端以及响应本身的描述信息） + 响应体（具体的数据）
+
+GMT 格林尼治时间
+北京时间  +     08
+
+&lt;div id=&quot;demo&quot;&gt;测试的div&lt;/div&gt;
+&lt;script&gt;
+var a = &quot;testA&quot;;
+
+var b = &quot;testB&quot;;
+function func01() {
+    console.log(a);
+    console.log(b);
+    var c = &quot;testC&quot;;
+    console.log(c);
+}
+
+function func02() {
+    console.log(&quot;func02&quot;);
+}
+console.log(b);
+func01();
+func02();
+
+//console.log(c);
+
+a = &quot;testAAAAASA&quot;;
+console.log(a);
+
+for (var i = 0; i &lt; 10000; i++) {
+   console.log(i);
+
+}
+
+&lt;/script&gt;
+</code></pre><h3 id="十四-异常处理"><a href="#十四-异常处理" class="headerlink" title="十四:异常处理"></a>十四:异常处理</h3><pre><code>异常处理(try...catch)
+如果我们的代码发生了异常，那么该行代码后面的代码将无法得到执行
+但是有的时候，我们需要保证在任何情况下某些代码都能够正常得到执行，这个时候就可以使用异常捕获结构
+异常捕获结构（try...catch）
+01 把可能出错的代码放在try{}代码块中
+
+手动的抛出异常 throw关键字
+异常信息：字符串 | 对象（）
+
+完整的异常捕获结构
+try{}catch(e){}finally{}
+&lt;script&gt;
+try
+{
+    //01 存放的是可能出错的代码
+    //console.log(c);
+}
+catch(e)
+{
+    //02 出错之后会执行这部分代码
+    console.log(e);
+}
+finally
+{
+    //03 不管是否出错都会执行的代码
+    console.log(&quot;无论如何都会执行的代码&quot;);
+
+    //有什么用？ 前端中一般不会使用
+    //Node.js 服务器端  最后的扫尾和资源释放的工作
+}
+&lt;/script&gt;
+&lt;script&gt;
+try
+{
+    //可能出错的代码
+    var a = &quot;testA&quot;;
+    console.log(a);
+    //console.log(c);
+
+    //throw &quot;这里出现了隐秘的错误，请检查！&quot;;
+    throw {
+        errorMsg:&quot;错误信息&quot;,
+        errorCode:&quot;100201&quot;
+    }
+}
+catch (e)
+{
+    //出现了异常之后，会执行这个代码块中的任务（应对异常的解决方法）
+    console.log(e);
+}
+
+function func() {
+  console.log(&quot;func&quot;);
+}
+
+func();
+&lt;/script&gt;
+</code></pre><h3 id="十五-DOM操作"><a href="#十五-DOM操作" class="headerlink" title="十五: DOM操作"></a>十五: DOM操作</h3><pre><code>DOM:文档对象模型 核心对象：document
+增加|删除|修改|查询
+查询：getElementById|className |tagName
+删除：remove...
+修改: 得到标签之后直接设置
+增加:createEle...
+
+需求：创建一个div标签，设置标签的内容为：我让掉下眼泪的，不止昨夜的酒，设置样式
+样式：
+    高度：100px
+    宽度：300px
+    背景颜色:red
+    边框： 1px solid #432
+把标签添加到当前的页面中
+&lt;script&gt;
+//01 创建标签
+var div = document.createElement(&quot;div&quot;);
+//02 设置内容和样式
+div.innerText = &quot;我让掉下眼泪的，不止昨夜的酒&quot;;
+div.style.height = &quot;100px&quot;;
+div.style.width = &quot;300px&quot;;
+div.style.backgroundColor = &quot;red&quot;;
+div.style.border = &quot;1px solid #555&quot;;
+//03 添加到body
+document.body.appendChild(div);
+//04 删除标签
+document.body.removeChild(div);
+
+&lt;/script&gt;
+</code></pre><h3 id="十六-函数和对象的创建"><a href="#十六-函数和对象的创建" class="headerlink" title="十六:函数和对象的创建"></a>十六:函数和对象的创建</h3><pre><code>函数的创建
+01 函数声明 function 函数名（参数1，参数2）{函数体}
+02 函数表达式 var func =  function [函数名]（参数1，参数2）{函数体}
+03 使用构造函数创建（Function）
+
+对象的创建
+01 字面量的方式
+02 构造函数（Object） + new
+&lt;script&gt;
+//01 函数声明
+function func(a,b) {
+    console.log(a + b);
+}
+func(1,2);
+
+//02 函数表达式
+var foo = function () {
+    console.log(&quot;foo&quot;);
+}
+
+foo();
+
+//03 构造函数创建
+var funcName = new Function(&quot;console.log(123)&quot;);
+funcName();
+
+&lt;/script&gt;
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;
+}
+
+var obj2 = new Object();  //{}
+obj2.name = &quot;李四&quot;;
+console.log(obj2);
+
+
+&lt;/script&gt;
+</code></pre><h3 id="十七-面向过程和面向对象的概念"><a href="#十七-面向过程和面向对象的概念" class="headerlink" title="十七:面向过程和面向对象的概念"></a>十七:面向过程和面向对象的概念</h3><pre><code>面向过程
+关注的是解决问题需要的一个接着一个的过程
+
+面向对象
+关注的是解决问题需要的对象
+
+面向对象编程主要重点是对象：内置对象（数组对象|日期对象|函数对象） 自定义
+
+面向对象和面向过程都是一种解决编程问题的思想（方法）
+
+例子：
+    面向过程的洗衣服方式：
+     01 收集脏衣服
+     02 找个盆（桶）
+     03 接水
+     04 放洗衣液（洗衣粉）
+     05 搅匀
+     06 先泡几分钟（15）
+     07 摩擦摩擦
+     08 再清水冲洗一遍
+     09 把衣服拧干
+     10 晾衣服
+
+    面向对象洗衣服
+        01 收集脏衣服
+        02 找个合适的洗衣机|男朋友|女朋友
+        03 设置洗衣服和烘干的程序
+
+面向对象和面向过程关系 其实是对面向过程的一种封装（？） 减少冗余的代码 + 复用性更好
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/04/23/自己构建博客/">
+                    first
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/04/23/面向对象day2/">
+                    first
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一-JavaScript是由哪几部分组成"><span class="toc-number">1.</span> <span class="toc-text">## 一:JavaScript是由哪几部分组成: ##</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二-js中的数据类型-基本数据类型-复杂数据类型"><span class="toc-number">2.</span> <span class="toc-text">#二:js中的数据类型:基本数据类型 | 复杂数据类型#</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三-赋值"><span class="toc-number">3.</span> <span class="toc-text">三:赋值(=)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四-关系运算符"><span class="toc-number">4.</span> <span class="toc-text">四:关系运算符:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五-逻辑运算符"><span class="toc-number">5.</span> <span class="toc-text">五:逻辑运算符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六-在js中数据的存储有两种方式-值-引用"><span class="toc-number">6.</span> <span class="toc-text">六:在js中数据的存储有两种方式:值|引用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七-赋值（-）"><span class="toc-number">7.</span> <span class="toc-text">七:赋值（=）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#八-值类型和引用类型在函数中的使用"><span class="toc-number">8.</span> <span class="toc-text">八:值类型和引用类型在函数中的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#九-对象的动态特性"><span class="toc-number">9.</span> <span class="toc-text">九:对象的动态特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#十-in关键字"><span class="toc-number">10.</span> <span class="toc-text">十:in关键字</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十一-delete的作用"><span class="toc-number"></span> <span class="toc-text">十一:delete的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十二-循环和分支"><span class="toc-number"></span> <span class="toc-text">十二:循环和分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十三-调试工具的使用-断点"><span class="toc-number"></span> <span class="toc-text">十三:调试工具的使用(断点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十四-异常处理"><span class="toc-number"></span> <span class="toc-text">十四:异常处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十五-DOM操作"><span class="toc-number"></span> <span class="toc-text">十五: DOM操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十六-函数和对象的创建"><span class="toc-number"></span> <span class="toc-text">十六:函数和对象的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十七-面向过程和面向对象的概念"><span class="toc-number"></span> <span class="toc-text">十七:面向过程和面向对象的概念</span></a>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"first　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/04/23/自己构建博客/" title="Pre: first">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/04/23/面向对象day2/" title="Next: first">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/first/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery网页的应用/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/jQuery的选择器/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/常用的不懂方法/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/新文档/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/自己构建博客/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/面向对象day1/">first</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/23/面向对象day2/">first</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="A fast, simple &amp; powerful blog framework">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="Another simple and elegant theme for Hexo  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+            
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

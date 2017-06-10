@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/first/</url>
+      <url>/2017/04/23/first/</url>
       <content type="html"></content>
       
         
@@ -12,28 +12,7 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-      <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种 特殊状态的选择。 </p>
-<h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类:"></a>选择器的分类:</h2><p>  <strong>1.基本选择器</strong></p>
-<p>  <strong>2.层级选择器</strong></p>
-<p>  <strong>3.属性选择器</strong></p>
-<p>  <strong>4.筛选选择器</strong></p>
-<p>  <strong>5.表单选择器</strong></p>
-<p>  1.基本选择器<br><img src="http://i.imgur.com/R6VNNw5.png" alt=""></p>
-<p>  2.层级选择器<br><img src="http://i.imgur.com/x6i944Z.png" alt=""></p>
-<p>  .next .nextAll等价和等级关系<br> <img src="http://i.imgur.com/iE3X4oX.png" alt=""><br> <img src="http://i.imgur.com/dVXlV3c.png" alt=""></p>
-<p>  3.属性选择器<br><img src="http://i.imgur.com/e3JWrlv.png" alt=""></p>
-<p>  4.筛选选择器<br><img src="http://i.imgur.com/tTqQCNF.png" alt=""></p>
-<p>  5.父子兄弟选择</p>
-<p>.parent();获取匹配元素的父元素;<br>.parents();获取匹配元素的祖先元素;<br>.children();获取匹配元素的子元素;<br>.siblings();获取匹配元素的兄弟元素;</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[first]]></title>
-      <url>/2017/05/23/jQuery%E7%BD%91%E9%A1%B5%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+      <url>/2017/04/23/jQuery%E7%BD%91%E9%A1%B5%E7%9A%84%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="JQUERY的网页应用"><a href="#JQUERY的网页应用" class="headerlink" title="#JQUERY的网页应用"></a>#JQUERY的网页应用</h1><p> /<em>一.设置吸顶效果</em>/</p>
 <p> /<em>1.0获取NAV距离顶部的间距</em>/</p>
 <p>/<em>1.1监听滚动，设置对应的样式</em>/</p>
@@ -123,8 +102,59 @@
     </entry>
     
     <entry>
+      <title><![CDATA[jQuery的简介,操作css与html]]></title>
+      <url>/2017/04/23/jQuery%E7%9A%84%E7%AE%80%E4%BB%8B,%E6%93%8D%E4%BD%9Ccss%E4%B8%8Ehtml/</url>
+      <content type="html"><![CDATA[<p>  主旨:write less , do more</p>
+<p>   特点:1.轻量级<br>        2.强大的处理器<br>        3.出色的Dom封装<br>        4.可靠的事件处理<br>        5.浏览器兼容性强<br>        6.链式操作方式<br>        7.隐式迭代<br><a id="more"></a><br>Window.onload 与 $(document).ready()的区别<br>Window.onload<br>执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码<br>执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉<br>$(document).ready()<br>执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码<br>执行次数:可以执行多次,第N次都不会被上一次覆盖<br>$(function(){</p>
+<p>});</p>
+<p>jQuery操作CSS:<br>  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作<br>额外补充:<br>选择一个类标签<br>      $(‘className’)<br>给一个标签添加事件<br>      $(‘className’).click(function(){</p>
+<pre><code>     });
+点击标签时候,执行匿名函数;
+</code></pre><p>  直接操作<br>    $(‘button’).click(function){<br>             $(‘div’).css(‘width’,’200px’);<br>             $(‘div’).css(‘height’,’200px’);<br>             $(‘div’).css(‘background’,’red’);</p>
+<pre><code>}
+</code></pre><p>   链式写法<br>      $(‘button’).click(<br>            function(){<br>             $(‘div’).css(‘width’,’200px’)<br>                      .css(‘height’,’200px’)<br>                      .css(‘background’,’red’)<br>           })<br>相同的对象,可以省略对象名称,直接在后面进行操作</p>
+<p>$(‘div’).css(“width”,200);<br>$(‘div’).css(“height”,200);<br>$(‘div’).css(“background”,”red”);<br>链式操作形式<br>    $(‘div’).css(‘width’,’200px’)<br>             .css(‘height’,’200px’)<br>             .css(‘background’,’red’)      </p>
+<p>键值对key:value写法<br>$(‘buttton’).click(function(){<br>    $(‘div’).css({<br>        width:200,<br>        height:200,<br>        background:’red’<br>     });<br>})<br>   添加类:<br>  addClass(class)给某个元素添加一个CSS类<br>      $(‘div’).addClass(‘myClass1’);</p>
+<p>   addClass(class1  class2 class3…)给某个元素添加多个css类,添加多个类时,类名使用空格隔开<br>        $(‘div’).addClass(‘myClass1 myClass2’)<br>注意点:添加的类名没有”点”</p>
+<pre><code>删除类
+</code></pre><p>removeClass(class)删除某个元素的一个CSS类<br>   $(‘div’).removeClass(‘myClass1’);</p>
+<p>removeClass(class1 class2 class3)删除某个元素的多个css类<br>   $(‘div’).removeClass(‘myClass1 myClass2 myClass3’)</p>
+<pre><code>切换类
+</code></pre><p>toggleClass(class)来回切换默认样式和指定样式<br>   $(‘div’).toggleClass(‘myClass1’);<br>同样也可以在多个类之前进行切换<br>    $(‘div’).toggleClass(‘myClass1 myClass2’)</p>
+<p>1.jQuery的CSS的获取与修改宽高<br>   不带值为获取,带值为修改.<br>   width()<br>   width(value)<br>   height()<br>   height(value)</p>
+<p>2.获取元素偏移<br> offset() 获取某个元素相对于视口的偏移位置<br> offset().left;<br> offset().top;</p>
+<p>  position()获取某个原色相对于父元素的偏移位置<br>  position().left<br>  position().top</p>
+<p>3.使用jQuery可以给一个标签内部添加以及获取标签</p>
+<p>  没有值代表获取,有值代表添加标签<br> html();<br> html(value);<br> 获取标签当中的内容<br> text();<br> text(value);</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%8D%E6%87%82%E6%96%B9%E6%B3%95/</url>
+      <url>/2017/04/23/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种 特殊状态的选择。 </p>
+<h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类:"></a>选择器的分类:</h2><p>  <strong>1.基本选择器</strong></p>
+<p>  <strong>2.层级选择器</strong></p>
+<p>  <strong>3.属性选择器</strong></p>
+<p>  <strong>4.筛选选择器</strong></p>
+<p>  <strong>5.表单选择器</strong></p>
+<p>  1.基本选择器<br><img src="http://i.imgur.com/R6VNNw5.png" alt=""></p>
+<p>  2.层级选择器<br><img src="http://i.imgur.com/x6i944Z.png" alt=""></p>
+<p>  .next .nextAll等价和等级关系<br> <img src="http://i.imgur.com/iE3X4oX.png" alt=""><br> <img src="http://i.imgur.com/dVXlV3c.png" alt=""></p>
+<p>  3.属性选择器<br><img src="http://i.imgur.com/e3JWrlv.png" alt=""></p>
+<p>  4.筛选选择器<br><img src="http://i.imgur.com/tTqQCNF.png" alt=""></p>
+<p>  5.父子兄弟选择</p>
+<p>.parent();获取匹配元素的父元素;<br>.parents();获取匹配元素的祖先元素;<br>.children();获取匹配元素的子元素;<br>.siblings();获取匹配元素的兄弟元素;</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[first]]></title>
+      <url>/2017/04/23/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%8D%E6%87%82%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
 <p>empty() 方法从被选元素移除所有内容，包括所有文本和子节点。</p>
 <p>trim() 函数返回去掉开头和结尾空格后的字符串</p>
@@ -137,7 +167,16 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/%E8%87%AA%E5%B7%B1%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+      <url>/2017/04/23/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<p>使用一个变量来记录$,以后在jQuery使用变量$</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[first]]></title>
+      <url>/2017/04/23/%E8%87%AA%E5%B7%B1%E6%9E%84%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
       <content type="html"><![CDATA[<p><a href="http://martin-liu.github.io/#!/article/4zh" target="_blank" rel="external">http://martin-liu.github.io/#!/article/4zh</a></p>
 <p>知网的自己构建网站</p>
 ]]></content>
@@ -147,16 +186,7 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
-      <content type="html"><![CDATA[<p>使用一个变量来记录$,以后在jQuery使用变量$</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[first]]></title>
-      <url>/2017/05/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day1/</url>
+      <url>/2017/04/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day1/</url>
       <content type="html"><![CDATA[<h4 id="一-JavaScript是由哪几部分组成"><a href="#一-JavaScript是由哪几部分组成" class="headerlink" title="## 一:JavaScript是由哪几部分组成: ##"></a>## 一:JavaScript是由哪几部分组成: ##</h4><p>01 BOM<br>    Browser Object Mode 浏览器对象模型</p>
 <p>02 DOM<br>    Document Object Mode 文档(HTML文档)对象模型</p>
 <p>03 ECMAScript<br>       规定了js的语法核心,关键字,类型,语言,结构</p>
@@ -819,7 +849,7 @@ console.log(obj2);
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/05/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day2/</url>
+      <url>/2017/04/23/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day2/</url>
       <content type="html"><![CDATA[<h3 id="一-面向对象的相关概念"><a href="#一-面向对象的相关概念" class="headerlink" title="一:面向对象的相关概念"></a>一:面向对象的相关概念</h3><pre><code>01 对象是什么?
 什么都是对象.对象是具体的事物
 思考:电脑(分类) 人 桌子 狗 猫 老师 同学  这些都不是对象,只是一种类别.
@@ -1656,36 +1686,6 @@ console.log(abc.isPrototypeOf(dog1));    //false
 
 &lt;/script&gt;
 </code></pre>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[jQuery的简介,操作css与html]]></title>
-      <url>/2017/04/23/jQuery%E7%9A%84%E7%AE%80%E4%BB%8B,%E6%93%8D%E4%BD%9Ccss%E4%B8%8Ehtml/</url>
-      <content type="html"><![CDATA[<p>  主旨:write less , do more</p>
-<p>   特点:1.轻量级<br>        2.强大的处理器<br>        3.出色的Dom封装<br>        4.可靠的事件处理<br>        5.浏览器兼容性强<br>        6.链式操作方式<br>        7.隐式迭代<br><a id="more"></a><br>Window.onload 与 $(document).ready()的区别<br>Window.onload<br>执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码<br>执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉<br>$(document).ready()<br>执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码<br>执行次数:可以执行多次,第N次都不会被上一次覆盖<br>$(function(){</p>
-<p>});</p>
-<p>jQuery操作CSS:<br>  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作<br>额外补充:<br>选择一个类标签<br>      $(‘className’)<br>给一个标签添加事件<br>      $(‘className’).click(function(){</p>
-<pre><code>     });
-点击标签时候,执行匿名函数;
-</code></pre><p>  直接操作<br>    $(‘button’).click(function){<br>             $(‘div’).css(‘width’,’200px’);<br>             $(‘div’).css(‘height’,’200px’);<br>             $(‘div’).css(‘background’,’red’);</p>
-<pre><code>}
-</code></pre><p>   链式写法<br>      $(‘button’).click(<br>            function(){<br>             $(‘div’).css(‘width’,’200px’)<br>                      .css(‘height’,’200px’)<br>                      .css(‘background’,’red’)<br>           })<br>相同的对象,可以省略对象名称,直接在后面进行操作</p>
-<p>$(‘div’).css(“width”,200);<br>$(‘div’).css(“height”,200);<br>$(‘div’).css(“background”,”red”);<br>链式操作形式<br>    $(‘div’).css(‘width’,’200px’)<br>             .css(‘height’,’200px’)<br>             .css(‘background’,’red’)      </p>
-<p>键值对key:value写法<br>$(‘buttton’).click(function(){<br>    $(‘div’).css({<br>        width:200,<br>        height:200,<br>        background:’red’<br>     });<br>})<br>   添加类:<br>  addClass(class)给某个元素添加一个CSS类<br>      $(‘div’).addClass(‘myClass1’);</p>
-<p>   addClass(class1  class2 class3…)给某个元素添加多个css类,添加多个类时,类名使用空格隔开<br>        $(‘div’).addClass(‘myClass1 myClass2’)<br>注意点:添加的类名没有”点”</p>
-<pre><code>删除类
-</code></pre><p>removeClass(class)删除某个元素的一个CSS类<br>   $(‘div’).removeClass(‘myClass1’);</p>
-<p>removeClass(class1 class2 class3)删除某个元素的多个css类<br>   $(‘div’).removeClass(‘myClass1 myClass2 myClass3’)</p>
-<pre><code>切换类
-</code></pre><p>toggleClass(class)来回切换默认样式和指定样式<br>   $(‘div’).toggleClass(‘myClass1’);<br>同样也可以在多个类之前进行切换<br>    $(‘div’).toggleClass(‘myClass1 myClass2’)</p>
-<p>1.jQuery的CSS的获取与修改宽高<br>   不带值为获取,带值为修改.<br>   width()<br>   width(value)<br>   height()<br>   height(value)</p>
-<p>2.获取元素偏移<br> offset() 获取某个元素相对于视口的偏移位置<br> offset().left;<br> offset().top;</p>
-<p>  position()获取某个原色相对于父元素的偏移位置<br>  position().left<br>  position().top</p>
-<p>3.使用jQuery可以给一个标签内部添加以及获取标签</p>
-<p>  没有值代表获取,有值代表添加标签<br> html();<br> html(value);<br> 获取标签当中的内容<br> text();<br> text(value);</p>
-]]></content>
       
         
     </entry>
