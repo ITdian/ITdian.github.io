@@ -12,6 +12,36 @@
     
     <entry>
       <title><![CDATA[first]]></title>
+      <url>/2017/04/23/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+      <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种 特殊状态的选择。 </p>
+<h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类:"></a>选择器的分类:</h2><p>  <strong>1.基本选择器</strong></p>
+<p>  <strong>2.层级选择器</strong></p>
+<p>  <strong>3.属性选择器</strong></p>
+<p>  <strong>4.筛选选择器</strong></p>
+<p>  <strong>5.表单选择器</strong></p>
+<p>  1.基本选择器<br><img src="http://i.imgur.com/R6VNNw5.png" alt=""></p>
+<p>  2.层级选择器<br><img src="http://i.imgur.com/x6i944Z.png" alt=""></p>
+<p>  .next .nextAll等价和等级关系<br> <img src="http://i.imgur.com/iE3X4oX.png" alt=""><br> <img src="http://i.imgur.com/dVXlV3c.png" alt=""></p>
+<p>  3.属性选择器<br><img src="http://i.imgur.com/e3JWrlv.png" alt=""></p>
+<p>  4.筛选选择器<br><img src="http://i.imgur.com/tTqQCNF.png" alt=""></p>
+<p>  5.父子兄弟选择</p>
+<p>.parent();获取匹配元素的父元素;<br>.parents();获取匹配元素的祖先元素;<br>.children();获取匹配元素的子元素;<br>.siblings();获取匹配元素的兄弟元素;</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[first]]></title>
+      <url>/2017/04/23/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
+      <content type="html"><![CDATA[<p>使用一个变量来记录$,以后在jQuery使用变量$</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[first]]></title>
       <url>/2017/04/23/jQuery%E7%BD%91%E9%A1%B5%E7%9A%84%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<h1 id="JQUERY的网页应用"><a href="#JQUERY的网页应用" class="headerlink" title="#JQUERY的网页应用"></a>#JQUERY的网页应用</h1><p> /<em>一.设置吸顶效果</em>/</p>
 <p> /<em>1.0获取NAV距离顶部的间距</em>/</p>
@@ -133,42 +163,12 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>/2017/04/23/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
-      <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种 特殊状态的选择。 </p>
-<h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类:"></a>选择器的分类:</h2><p>  <strong>1.基本选择器</strong></p>
-<p>  <strong>2.层级选择器</strong></p>
-<p>  <strong>3.属性选择器</strong></p>
-<p>  <strong>4.筛选选择器</strong></p>
-<p>  <strong>5.表单选择器</strong></p>
-<p>  1.基本选择器<br><img src="http://i.imgur.com/R6VNNw5.png" alt=""></p>
-<p>  2.层级选择器<br><img src="http://i.imgur.com/x6i944Z.png" alt=""></p>
-<p>  .next .nextAll等价和等级关系<br> <img src="http://i.imgur.com/iE3X4oX.png" alt=""><br> <img src="http://i.imgur.com/dVXlV3c.png" alt=""></p>
-<p>  3.属性选择器<br><img src="http://i.imgur.com/e3JWrlv.png" alt=""></p>
-<p>  4.筛选选择器<br><img src="http://i.imgur.com/tTqQCNF.png" alt=""></p>
-<p>  5.父子兄弟选择</p>
-<p>.parent();获取匹配元素的父元素;<br>.parents();获取匹配元素的祖先元素;<br>.children();获取匹配元素的子元素;<br>.siblings();获取匹配元素的兄弟元素;</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[first]]></title>
       <url>/2017/04/23/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%8D%E6%87%82%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
 <p>empty() 方法从被选元素移除所有内容，包括所有文本和子节点。</p>
 <p>trim() 函数返回去掉开头和结尾空格后的字符串</p>
 <p>prepend() 方法在被选元素的开头（仍位于内部）插入指定内容</p>
 <p>data() 方法向被选元素附加数据，或者从被选元素获取数据。</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[first]]></title>
-      <url>/2017/04/23/%E6%96%B0%E6%96%87%E6%A1%A3/</url>
-      <content type="html"><![CDATA[<p>使用一个变量来记录$,以后在jQuery使用变量$</p>
 ]]></content>
       
         
