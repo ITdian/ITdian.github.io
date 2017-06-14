@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="##Bootstrap编码规范 ###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样. ###HTML:语法用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。嵌套元素应当缩进一次（即两个空格）。对于属性的定义，确保全部使用双引号，绝不要使用单引号。不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明">
+<meta name="keywords" content="前端框架_Bootstrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap实践理解">
+<meta property="og:url" content="http://yoursite.com/2015/08/20/Bootstrap3的学习md/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="##Bootstrap编码规范 ###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样. ###HTML:语法用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。嵌套元素应当缩进一次（即两个空格）。对于属性的定义，确保全部使用双引号，绝不要使用单引号。不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明">
+<meta property="og:updated_time" content="2017-06-14T05:41:01.616Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap实践理解">
+<meta name="twitter:description" content="##Bootstrap编码规范 ###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样. ###HTML:语法用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。嵌套元素应当缩进一次（即两个空格）。对于属性的定义，确保全部使用双引号，绝不要使用单引号。不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Bootstrap实践理解 | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS特效/">JS特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端工具/">前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Angular/">前端框架_Angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Bootstrap/">前端框架_Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Zepto/">前端框架_Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-bootstrap/">前端框架_bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-swiper/">前端框架_swiper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端软件/">前端软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端-php/">后端_php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构建工具/">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制系统/">版本控制系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Bootstrap3的学习md" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/20/Bootstrap3的学习md/" class="article-date">
+      <time datetime="2015-08-20T14:06:10.000Z" itemprop="datePublished">2015-08-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bootstrap实践理解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端框架-Bootstrap/">前端框架_Bootstrap</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>##Bootstrap编码规范</p>
+<p>###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样.</p>
+<p>###HTML:语法<br>用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。<br>嵌套元素应当缩进一次（即两个空格）。<br>对于属性的定义，确保全部使用双引号，绝不要使用单引号。<br>不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明确说明这是可选的。<br>不要省略可选的结束标签（closing tag）（例如， 或 ）。<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于markdown不支持显示HTML的DOM元素,所以,每个DOM元素前面的&lt;号我都加了一个空格让代码显示出来</div></pre></td></tr></table></figure>
+<pre>
+< !DOCTYPE html>
+< html>
+  < head>
+    < title>Page title
+  < /head>
+  < body>
+    < img src="images/company-logo.png" alt="Company">
+    < h1 class="hello-world">Hello, world!
+  < /body>
+< /html>
+</pre>
+
+<p>###HTML5 doctype<br>为每个 HTML 页面的第一行添加标准模式（standard mode）的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
+<pre>
+< !DOCTYPE html>
+< html>
+  < head>
+  < /head>
+< /html>
+</pre>
+更多请查文档:
+[http://codeguide.bootcss.com/](http://codeguide.bootcss.com/ "Bootstrap编码规范")
+
+##禁止响应式布局
+Bootstrap 会自动帮你针对不同的屏幕尺寸调整你的页面，使其在各个尺寸的屏幕上表现良好。下面我们列出了如何禁用这一特性，就像这个非响应式布局实例页面一样。
+
+禁止响应式布局有如下几步：
+1. 移除 此 CSS 文档中提到的设置浏览器视口（viewport）的标签：<meta>。
+2. 通过为 .container 类设置一个 width 值从而覆盖框架的默认 width 设置，例如 width: 970px !important; 。请确保这些设置全部放在默认的 Bootstrap CSS 文件的后面。注意，如果你把它放到媒体查询中，也可以略去 !important 。
+3. 如果使用了导航条，需要移除所有导航条的折叠和展开行为。
+4. 对于栅格布局，额外增加 .col-xs-* 类或替换掉 .col-md-* 和 .col-lg-*。 不要担心，针对超小屏幕设备的栅格系统能够在所有分辨率的环境下展开。
+
+
+针对 IE8 仍然需要额外引入 Respond.js 文件（由于仍然利用了浏览器对媒体查询（media query）的支持，因此还需要做处理）。这样就禁用了 Bootstrap 对移动设备的响应式支持。
+
+
+##标题嵌套
+当标题嵌套时 (< h1> - < h6>)，你的文档的主标题应该是 < h1> 标签。随后的标题逻辑上就应该使用 < h2> - < h6> ，这样，屏幕阅读器就可以构造出页面的内容列表了。
+
+
+
+#全局 CSS 样式
+##移动设备优先
+在 Bootstrap 2 中，框架中的某些关键部分增加了对移动设备友好的样式。而在 Bootstrap 3 中，重写了整个框架，使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
+
+为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+<pre>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+</pre>
+
+<p>在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable=no 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
+<pre>
+< meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</pre>
+
+
+<p>##布局容器<br>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。我们提供了两个作此用处的类。注意，由于 padding 等属性的原因，这两种 容器类不能互相嵌套。</p>
+<p>.container 类用于固定宽度并支持响应式布局的容器。</p>
+<pre>
+< div class="container">
+  ...
+< /div>
+</pre>
+.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
+<pre>
+< div class="container-fluid">
+  ...
+< /div>
+</pre>
+
+<p>##栅格系统</p>
+<p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
+<p>简介</p>
+<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。下面就介绍一下 Bootstrap 栅格系统的工作原理：</p>
+<ul>
+<li>“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。</li>
+<li>通过“行（row）”在水平方向创建一组“列（column）”。</li>
+<li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li>
+<li>类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。</li>
+<li>通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。</li>
+<li>负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</li>
+<li>栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。</li>
+<li>如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</li>
+<li>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-</em> 不存在， 也影响大屏幕设备。<br>通过研究后面的实例，可以将这些原理应用到你的代码中。</li>
+</ul>
+<p>##媒体查询<br>在栅格系统中，我们在 Less 文件中使用以下媒体查询（media query）来创建关键的分界点阈值。</p>
+<ul>
+<li>/<em> 超小屏幕（手机，小于 768px） </em>/</li>
+<li>/<em> 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） </em>/</li>
+<li></li>
+<li>/<em> 小屏幕（平板，大于等于 768px） </em>/</li>
+<li>@media (min-width: @screen-sm-min) { … }</li>
+<li></li>
+<li>/<em> 中等屏幕（桌面显示器，大于等于 992px） </em>/</li>
+<li>@media (min-width: @screen-md-min) { … }</li>
+<li></li>
+<li>/<em> 大屏幕（大桌面显示器，大于等于 1200px） </em>/</li>
+<li>@media (min-width: @screen-lg-min) { … }</li>
+<li></li>
+</ul>
+<p>我们偶尔也会在媒体查询代码中包含 max-width 从而将 CSS 的影响限制在更小范围的屏幕大小之内。</p>
+<ul>
+<li>@media (max-width: @screen-xs-max) { … }</li>
+<li>@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { … }</li>
+<li>@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { … }</li>
+<li>@media (min-width: @screen-lg-min) { … }</li>
+</ul>
+<p>#组件</p>
+<p>##导航<br>Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。</p>
+<p>##模态框 modal.js</p>
+<p>模态框经过了优化，更加灵活，以弹出对话框的形式出现，具有最小和最实用的功能集。</p>
+<p>不支持同时打开多个模态框<br>千万不要在一个模态框上重叠另一个模态框。要想同时支持多个模态框，需要自己写额外的代码来实现。</p>
+<p>模态框的 HTML 代码放置的位置<br>务必将模态框的 HTML 代码放在文档的最高层级内（也就是说，尽量作为 body 标签的直接子元素），以避免其他组件影响模态框的展现和/或功能。</p>
+<p>对于移动设备的附加说明<br>这里提供了在移动设备上使用模态框有一些附加说明。请参考浏览器支持章节。</p>
+<p>Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap modals. To achieve the same effect, use some custom JavaScript:</p>
+<p>$(‘#myModal’).on(‘shown.bs.modal’, function () {<br>  $(‘#myInput’).focus()<br>})</p>
+<p>##Carousel (轮播图)</p>
+<p>#定制<br>为使我们上线的代码更加的轻量/简洁:可以根据需求定制属于自己的bootstrap</p>
+<p>定制并下载 Bootstrap<br>通过自定义 Bootstrap 组件、Less 变量和 jQuery 插件，定制一份属于你自己的 Bootstrap 版本吧。</p>
+<p>以上的版本基于3.0的学习<br>详细地址:<a href="http://http://v3.bootcss.com/" title="Bootstrap3中文文档" target="_blank" rel="external">http://http://v3.bootcss.com/</a></p>
+</head>
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/08/28/Bootstrap项目实战/">
+                    项目实战
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/08/18/bootstrap/">
+                    Bootstrap的笔记
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Bootstrap实践理解　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/08/28/Bootstrap项目实战/" title="上一篇: 项目实战">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/08/18/bootstrap/" title="下一篇: Bootstrap的笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/ngRoute和ui-route/">Angular</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/php基本认识/">php基本认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/wabAPP/">webApp项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/gulp/">gulp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/工作当中的开发流程/">开发流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Zepto/">Zepto</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/swiper/">Swiper</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/Less/">Less</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Git/">Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/28/Bootstrap项目实战/">项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/Bootstrap3的学习md/">Bootstrap实践理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/bootstrap/">Bootstrap的笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/15/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/常用的不懂方法/">常用数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/19/面向对象day2/">面向对象2</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/面向对象day1/">面向对象3</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/JS满天星/">JS满天星特效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/前端软件整理/">前端软件整理</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

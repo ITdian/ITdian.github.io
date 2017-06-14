@@ -3,6 +3,181 @@
   
     
     <entry>
+      <title><![CDATA[Angular]]></title>
+      <url>/2017/03/25/ngRoute%E5%92%8Cui-route/</url>
+      <content type="html"><![CDATA[<p>##angular 中的ngRoute 和ui-route</p>
+<p>原生的angular不支持路由的嵌套,而且一个HTML页面中一般只有一个ng-view;</p>
+<p>需求:如果一个界面需要多个视图模板,这个ngRoute做不了,所以引出了ui-route</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端框架_Angular </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[php基本认识]]></title>
+      <url>/2017/02/15/php%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%86/</url>
+      <content type="html"><![CDATA[<p>#php基本语法</p>
+<p>##定义变量<br>$number = 10;<br><a id="more"></a></p>
+<p>##数据类型<br>$nValue = 10;</p>
+<p>$sValue  =’string’;</p>
+<p>$bValue = true;</p>
+<p>##打印<br>echo “打印”;</p>
+<p>##数组<br>$arr  = array(1,2,3,4);</p>
+<p>##字典(json)<br>$dict = arra(“name”=&gt;”bb”,”age”=&gt;18);</p>
+<p>##if语法</p>
+<pre>
+$number = 19;
+if($number>=18){
+    echo "成年人";
+}else{
+    echo "未成年人";
+}
+</pre>
+
+<p>##switch语法</p>
+<pre>
+$score = 90;
+switch ($score){
+    case 60:
+        echo "及格";
+        break;
+    case 90:
+        echo "优秀";
+        break;
+    default:
+        echo "少年还需要努力!"    
+}
+</pre>
+
+<p>##三目运算符</p>
+<p>$age = 18;</p>
+<p>$res = $age&gt;=18?”成年人”:”未成年人”;</p>
+<p>##输出数组<br>$arr  = array(1,2,3,4);<br>prinf_r($arr);</p>
+<p>##while语法<br>$index  = 0;<br>while ($index &lt; $conut($arr)){<br>        echo $arr[$index];<br>        echo “<br>“;<br>        $index++;<br>}</p>
+<p>##for语法<br>for($index &lt; 0;$index &lt;conut($arr);$index ++){<br>        echo $arr[$index];<br>        echo “<br>“;<br>}</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 后端_php </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[webApp项目]]></title>
+      <url>/2017/02/15/wabAPP/</url>
+      <content type="html"><![CDATA[<p>##webAPP项目的步骤<br>全局安装gulp   npm install gulp -g (只需要执行一次，如果已经执行过了，就不需要再去执行。Gulp -v 有版本号，代表已经执行过了)<br><a id="more"></a></p>
+<p>创建一个webAPP项目的目录</p>
+<p>一:进入(webAPP)使用git bush here</p>
+<p>1.使用npm init命令初始化一个项目命名为web-app(注:命名时候这里不能使用大写,所以用-代替)<br>{这里也可以直接用npm init -f就会直接生成不用一步步的enter}</p>
+<p>2.创建成功会生成一个package.json文件,记录当前项目当中依赖其他插件,可以按ctrl+c退出.</p>
+<p>3.创建src目录, —&gt;进入创建js/style/view/images文件夹   </p>
+<p> 4.把gulpfile拷贝到项目的根目录下,即是跟package.json同一级目录下.</p>
+<p>5.下载gulp所需要的插件: </p>
+<pre>
+npm install gulp gulp-less gulp-cssmin gulp-uglify gulp-concat gulp-connect gulp-imagemin open --save-dev 
+</pre>
+--save-dev :把所需要的插件写到
+ package.json中 
+
+可以加上淘宝镜像地址:
+<pre>--registry=https://registry.npm.taobao.org</pre>
+
+<p>6.在根目录下执行gulp命令,注意没修改一次文件夹都要退出再进行gulp一次.</p>
+<p>7.热更新的时候,只要按下保存ctrl+s,相对应网页的界面也会做出相对应的修改.</p>
+<p>8.在引入css和js的时候,首先要明白一点,我们运行的HTML界面是build里面的,所以全部的东西引入都是以它为主,src里面的内容不用运行,所以它的路径错误也不会报错也导致文件无法运行.</p>
+<p>9.运行在移动端要设置视口;<br>快捷键:meta:vp</p>
+<pre>
+< meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
+</pre>
+
+
+<p>10.设置页面的字体大小</p>
+<pre>
+< script>
+    var font = window.screen.width / 10 + 'px';
+    document.getElementsByTagName('html')[0].style.fontSize = font;
+< /script>
+</pre>
+
+
+
+<p>11.做手机网页时，是如何进行适配？ Rem与像素之间的关系。<br> .1 必须得要设置视口。</p>
+<p> .2 选择rem为单位进行开发。 px在手机里面不是以像素为单位，以点坐标为单位.</p>
+<p> .3.默认情况，在页面当中， 是根据html字体的大小进行缩放。 1rem = 100px/10.0  选择一个缩放比。</p>
+<p> .4 在做手机网页时， 我们一般都会先设置html的字体。1rem = 10px<br>  rem 它是以html页面字体大小做为参考。</p>
+<p>12.css的公用样式</p>
+<p>normalize.less:html的基本样式</p>
+<p>variable.less font从px转化成rem单位的.</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> WebApp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gulp]]></title>
+      <url>/2016/12/25/gulp/</url>
+      <content type="html"><![CDATA[<p>Gulp是一个工具。用于项目构建。<br>Gulp简介：<br>多个开发者共同开发一个项目，每位开发者负责不同的模块，这就会造成一个完整的项目实际上是由许多的“代码版段”组成的；</p>
+<p>使用less、sass等一些预处理程序，降低CSS的维护成本，最终需要将这些预处理程序进行解析；合并css、javascript，压缩html、css、javascript、images可以加速网页打开速度，提升性能；<br><a id="more"></a><br>这一系列的任务完全靠手动完成几乎是不可能的，借助构建工具可以轻松实现。<br>所谓构建工具是指通过简单配置就可以帮我们实现合并、压缩、校验、预处理等一系列任务的软件工具。<br>常见的构建工具包括：Grunt、Gulp、F.I.S（百度出品）、webpack</p>
+<p>Gulp是基于Nodejs开发的一个构建工具，借助gulp插件可以实现不同的构建任务，以其简洁的配置和卓越的性能成为目前主流的构建工具。</p>
+<p>安装：<br>1.先要全局安装<br>$ npm install -g gulp –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>2.再本地安装。<br>切换到项目目录。<br>$ npm install gulp –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a></p>
+<p>###1.全局安装gulp   npm install gulp -g (只需要执行一次，如果已经执行过了，就不需要再去执行。Gulp -v 有版本号，代表已经执行过了)</p>
+<p>###2.创建项目目录 （webApp）</p>
+<p>###3.npm init -f  创建一个package.json 记录当前项目当中依赖其它插件</p>
+<p>###4.创建src目录–&gt;进入src创建js/style/view文件夹</p>
+<p>###5.把gulpfile拷贝到项目根目录当中</p>
+<p>###6.下载gulp所需要的插件<br>      npm install gulp gulp-less gulp-cssmin gulp-uglify gulp-concat gulp-connect gulp-imagemin open –save-dev </p>
+<p>###7.执行gulp</p>
+<p>###8.手机屏幕适配</p>
+<pre>
+<
+meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+>
+</pre>
+###9.设置页面的字体大小
+<pre>
+< script>
+    var font = window.screen.width / 10 + 'px';
+    document.getElementsByTagName('html')[0].style.fontSize = font;
+< /script>
+</pre>
+
+<p>###10.做手机网页时，是如何进行适配？ Rem与像素之间的关系。</p>
+<p>  .1 必须得要设置视口。</p>
+<p>  .2 选择rem为单位进行开发。 px在手机里面不是以像素为单位，以点坐标为单位。</p>
+<p>  .3.默认情况，在页面当中， 是根据html字体的大小进行缩放。 1rem = 100px/10.0  选择一个缩放比。</p>
+<p>  .4 在做手机网页时， 我们一般都会先设置html的字体。1rem = 10px,rem 它是以html页面字体大小做为参考。</p>
+<p>##学习gulp就是学习它的方法和它的插件。<br>Gulp工作原理：<br><img src="http://i.imgur.com/I2Uq9Gs.png" alt=""></p>
+<p>Gulp是指挥别的插件做任务的运行器。它是一个管理者。<br>这样做的目的是为了方便扩展。 小霸王 插卡。<br>学习gulp就是学习gulp的插件。</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 构建工具 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[jQuery选择器]]></title>
       <url>/2016/06/25/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
       <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种特殊状态的选择。 </p>
@@ -20,6 +195,376 @@
 <p>.parent();获取匹配元素的父元素;<br>.parents();获取匹配元素的祖先元素;<br>.children();获取匹配元素的子元素;<br>.siblings();获取匹配元素的兄弟元素;</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[开发流程]]></title>
+      <url>/2016/05/15/%E5%B7%A5%E4%BD%9C%E5%BD%93%E4%B8%AD%E7%9A%84%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<p>###工作当中的开发流程<br><img src="http://i.imgur.com/mHPkxxd.png" alt=""><br><a id="more"></a><br><img src="http://i.imgur.com/yZZbwHx.png" alt=""></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Zepto]]></title>
+      <url>/2016/03/15/Zepto/</url>
+      <content type="html"><![CDATA[<p>###Zepto.js</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-e7880615d282a4d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>随着移动端的愈加火爆，目前很多HTML5的框架都在支持移动方向，比如：Vue.js，zepto.js，React Native等等。<br><a id="more"></a><br>Zepto 是一个轻量级的针对现代高级浏览器的 JavaScript 库， 它与jquery 有着类似的api。 如果你会用 jquery，那么你也会用 zepto。</p>
+<p>Zepto的设计目的是提供 jQuery 的类似的API，但并不是100%覆盖 jQuery 。Zepto设计的目的是有一个5-10k的通用库、下载并快速执行、有一个熟悉通用的API，所以你能把你主要的精力放到应用开发上。</p>
+<p><strong>思考：jQuery和Zepto.js的区别在哪里？</strong></p>
+<p>（1）jQuery更多是在PC端被应用，因此，考虑了很多低级浏览器的的兼容性问题；而Zepto.js则是直接抛弃了低级浏览器的适配问题，显得很轻盈；</p>
+<p>（2）Zepto.js在移动端被运用的更加广泛；</p>
+<p>（3）jQuery的底层是通过DOM来实现效果的， zepto.js 是用css3 来实现的；</p>
+<p>（4）Zepto.js可以说是阉割版本的jQuery。 <img src="http://upload-images.jianshu.io/upload_images/1268909-e4941bbfdc3461af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.1   浏览器兼容</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Safari 6+ </div><div class="line">Chrome 30+ </div><div class="line">Firefox 24+ </div><div class="line">iOS 5+ Safari </div><div class="line">Android 2.3+ Browser </div><div class="line">Internet Explorer 10+</div></pre></td></tr></table></figure>
+<p><strong>1.2  Zepto初体验.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style&gt;</div><div class="line">            .box&#123;</div><div class="line">                width: 200px;</div><div class="line">                height: 200px;</div><div class="line">                background-color: #ccc;</div><div class="line">                margin: 20px;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">       &lt;button&gt;点我&lt;/button&gt;</div><div class="line">       &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;!--&lt;script src=&quot;js/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;--&gt;</div><div class="line">    &lt;script src=&quot;js/zepto.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function () &#123;</div><div class="line">            $(&apos;button&apos;).click(function () &#123;</div><div class="line">                $(&apos;.box&apos;).css(&apos;background-color&apos;, &apos;red&apos;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-fc685569c04e5f11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-d49d1aed43382e4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.3  Zepto官网</strong></p>
+<p>英文版：http:\/\/zeptojs.com\/</p>
+<p>中文版：http:\/\/www.css88.com\/doc\/zeptojs_api\/</p>
+<p><strong>1.4  Zepto设计模块</strong></p>
+<p>zepto 为了保持足够的轻量和效率，只保留了默认的最基本的功能，其他的功能，如果有需要，只要再次引入就可以了；</p>
+<p>注意：jQuery的底层是通过DOM来实现效果的， zepto 是用css3 来实现的。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-ce235da18fc89367.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.5   案例实现：Zepto选择器.html</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang=&quot;en&quot;&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">        &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">        &lt;title&gt;&lt;/title&gt;</div><div class="line">        &lt;style&gt;</div><div class="line">            div&#123;</div><div class="line">                width: 200px;</div><div class="line">                height: 200px;</div><div class="line">                background-color: red;</div><div class="line">                margin: 10px;</div><div class="line">            &#125;</div><div class="line">        &lt;/style&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">        &lt;button&gt;改变第二个颜色&lt;/button&gt;</div><div class="line">        &lt;div&gt;&lt;/div&gt;</div><div class="line">        &lt;div&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;!--&lt;script src=&quot;js/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt;--&gt;</div><div class="line">    &lt;script src=&quot;js/zepto.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script src=&quot;js/selector.js&quot;&gt;&lt;/script&gt;</div><div class="line">    &lt;script&gt;</div><div class="line">        $(function () &#123;</div><div class="line">            $(&apos;button&apos;).click(function (event) &#123;</div><div class="line">                 $(&apos;div:eq(1)&apos;).css(&apos;background-color&apos;, &apos;blue&apos;);</div><div class="line">                // $(&apos;div&apos;).eq(1).css(&apos;background-color&apos;, &apos;blue&apos;);</div><div class="line">            &#125;);</div><div class="line">        &#125;);</div><div class="line">    &lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>1.6   tap 和 click 的区别</strong></p>
+<p>tap 只作用在移动端，PC端是无效的;</p>
+<p>click 在pc端和移动端都是ok的;</p>
+<p>但是我们在移动端要用tap，因为 tap 比 click 快200-300ms。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 禁止触发默认的手势</div><div class="line">* &#123; touch-action: none; &#125;</div></pre></td></tr></table></figure>
+<p><strong>1.7  zepto 和  jquery</strong></p>
+<p>zepto默认只具有基本的模块，其他功能模块需要单独引用，引用的模块，必须放在zepto的后面，fx.js 和fx_methods.js 他们之间必须是fx_methods.js在fx.js的后面；其他的包之间顺序无所谓；</p>
+<p>jQuery默认是一个文件中，包含所有的功模块；</p>
+<p>zepto的底层是通过css3 实现的，jQuery是操作的DOM,所以有些css3的效果，是jquery做不到的；</p>
+<p>zepto比jQuery多了更多的移动端的 事件的支持，比如说tap， swipe……</p>
+<p>zepto的兼容性比jQuery差，因为zepto更多的是注重移动端和效率，jQuery注重的是兼容性。</p>
+<p>注意：zepto上面的动画，不要加太多， 因为动画很耗性能，加多了会很卡，特别是一些webview开发；</p>
+<p><img src="/assets/place.png" alt=""></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端框架_Zepto </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Swiper]]></title>
+      <url>/2016/03/15/swiper/</url>
+      <content type="html"><![CDATA[<h3 id="一、swiper"><a href="#一、swiper" class="headerlink" title="一、swiper"></a>一、swiper</h3><p><strong>1.1  简介</strong></p>
+<p>swiper是一款免费以及轻量级的移动设备触控滑块的js框架，主要是为iOS设计，同时，在Android、WP系统和其他PC浏览器上也有着良好的体验。<br><a id="more"></a></p>
+<p><strong>1.2  特点</strong></p>
+<p>轻量级，简洁高效，可定制性非常高；</p>
+<p>横跨各种设备，兼容IOS、Android、WP、PC端设备；</p>
+<p>提供多种版本支持（可自由选择jQuery\/zepto版或原生js）。</p>
+<blockquote>
+<p>注意:</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-405029e74adf38ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>swiper从3.0开始不再全面支持PC端。因此，如需要在PC上兼容更多浏览器，可以选择swiper 2.x(支持IE7)。</p>
+</blockquote>
+<p><strong>1.3  如何使用？</strong></p>
+<p>// 引入文件</p>
+<p>  <link rel="stylesheet" href="“css/swiper.min.css"">
+  <script src="“js/swiper.min.js""></script></p>
+<p>// HTML结构</p>
+<pre>
+< div class="swiper-container">
+  < div class="swiper-wrapper">
+      < div class="swiper-slide">Slide 1
+      < div class="swiper-slide">Slide 2
+      < div class="swiper-slide">Slide 3
+   < /div>
+< /div>
+</pre>
+
+<p>//Js文件调用</p>
+<p>var swiper = new Swiper(‘.swiper-container’);           </p>
+<p><strong>1.4  高级效果和参数</strong></p>
+<p>html部分:</p>
+<pre>
+
+ < div class="swiper-container">
+      < div class="swiper-wrapper">
+           < div class="swiper-slide">Slide 1
+           < div class="swiper-slide">Slide 2
+           < div class="swiper-slide">Slide 3
+      < /div>
+
+      < !-- 如果需要分页器 -->
+      < div class="swiper-pagination">
+
+      < !-- 如果需要导航按钮 -->
+      < div class="swiper-button-prev">
+      < div class="swiper-button-next">
+
+      < !-- 如果需要滚动条 -->
+      < div class="swiper-scrollbar">
+
+</pre>
+
+<p>JS部分:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var mySwiper = new Swiper (&apos;.swiper-container&apos;, &#123;</div><div class="line">         // 如果需要分页器</div><div class="line">         pagination: &apos;.swiper-pagination&apos;,</div><div class="line"></div><div class="line">         // 如果需要前进后退按钮</div><div class="line">         nextButton: &apos;.swiper-button-next&apos;,</div><div class="line">         prevButton: &apos;.swiper-button-prev&apos;,</div><div class="line"></div><div class="line">         // 如果需要滚动条</div><div class="line">         scrollbar: &apos;.swiper-scrollbar&apos;,</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>其他常用参数:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;pre&gt;</div><div class="line">loop: true,         //循环开关</div><div class="line">autoplay: 3000,         //自动播放间隔时间（单位：毫秒）默认不自动播放</div><div class="line">direction: &apos;vertical&apos;,   //切换方向   水平(horizontal)或垂直(vertical)</div><div class="line">speed:300,           //切换速度（单位：毫秒）</div><div class="line">keyboardControl:true,          //键盘控制开关</div><div class="line">paginationType:‘bullets’,     //分页器外观   bullets 、  fraction 、  progress</div><div class="line">effect: &apos;fade&apos;,       //切换效果  fade、cube、coverflow、flip</div><div class="line">……</div><div class="line">&lt;/pre&gt;</div></pre></td></tr></table></figure>
+<p><strong>1.5  官方文档</strong></p>
+<p><a href="http://www.swiper.com.cn/" target="_blank" rel="external">http:\/\/www.swiper.com.cn\/</a></p>
+<p><strong>1.6  swiper animate</strong></p>
+<p>使用:   引入文件(比之前多了animate.css 和swiper.animate.js)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=“css/swiper.min.css&quot;&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=“css/animate.min.css&quot;&gt;</div><div class="line">&lt;script src=“js/swiper.min.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=“js/swiper.animate.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>HTML结构: 在需要运动的元素上面增加类名 ani, 然后添加swiper animate 参数。</p>
+<p>swiper-animate-effect：切换效果，例如 fadeInUp</p>
+<p>swiper-animate-duration：动画持续时间（单位秒），例如 0.5s</p>
+<p>swiper-animate-delay: 延迟时间（单位秒）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;pre&gt;</div><div class="line">&lt; div class=&quot;swiper-container&quot;&gt;</div><div class="line">   &lt; div class=&quot;swiper-wrapper&quot;&gt;</div><div class="line">     &lt; div class=&quot;swiper-slide&quot;&gt;</div><div class="line">         &lt; p class=&quot;ani&quot; </div><div class="line">            swiper-animate-effect=&quot;fadeInUp&quot; </div><div class="line">            swiper-animate-duration=&quot;0.5s&quot; </div><div class="line">            swiper-animate-delay=&quot;0.3s&quot;&gt;</div><div class="line">            Slider 1</div><div class="line">         &lt; /p&gt;</div><div class="line">      &lt; /div&gt;</div><div class="line">    &lt; /div&gt;</div><div class="line"> &lt; /div&gt;</div><div class="line">&lt;/pre&gt;</div></pre></td></tr></table></figure>
+<p>JS文件调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">var mySwiper = new Swiper (&apos;.swiper-container&apos;, &#123;</div><div class="line">    onInit: function(swiper)&#123; //Swiper2.x的初始化是onFirstInit</div><div class="line">        swiperAnimateCache(swiper); //隐藏动画元素</div><div class="line">        swiperAnimate(swiper);   //初始化完成开始动画</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    onSlideChangeEnd: function(swiper)&#123;</div><div class="line">        swiperAnimate(swiper);  //每个slide切换结束时也运行当前slide动画</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端框架_swiper </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Less]]></title>
+      <url>/2016/02/15/Less/</url>
+      <content type="html"><![CDATA[<h3 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h3><p><strong>1.1   什么是LESS?</strong></p>
+<p>Less 是一门 CSS 预处理语言，使用了类似CSS的语法，为CSS赋予了动态语言的特征。它扩展了 CSS 语言，增加了变量、Mixin(混合)、嵌套、函数和运算等特性，使 CSS 更易维护和扩展。此外，Less 可以运行在 Node 或浏览器端。</p>
+<p>一句话：用类似JS的语法去写CSS。<br><a id="more"></a></p>
+<p><strong>1.2   LESS的特点？</strong></p>
+<p>作为CSS的一种扩展，LESS CSS不仅向下兼容CSS的语法，而且连新增的特性也是使用CSS语法。这样的设置使得学习LESS非常轻松，而且你可以在任何时候回退到CSS。</p>
+<p><strong>1.3   变量</strong></p>
+<p>单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JS中定义变量</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'张三'</span>;</div><div class="line"></div><div class="line"><span class="comment">// LESS中定义变量</span></div><div class="line">@color:red;</div><div class="line">h1&#123;</div><div class="line">   <span class="attr">color</span>: @color;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>1.4   嵌套</strong></p>
+<p>在一个选择器中嵌套另一个选择器来实现继承，这样很大程度上减少了代码量，并且代码看起来更加清晰。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">div&#123;</div><div class="line">  h1&#123;</div><div class="line">    color:red;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：嵌套一般情况下，不要超过3层</p>
+</blockquote>
+<p><strong>1.5   运算</strong></p>
+<p>运算提供了加、减、乘、除操作，其他复杂的运算交给函数；通常我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。</p>
+<blockquote>
+<p>注意：运算符与值之间必须以空格分开。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@w:500px;</div><div class="line">div&#123;</div><div class="line">   h1&#123;</div><div class="line">     width: @w - 100;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1&#123;</div><div class="line">  width: @w;</div><div class="line">  border: 1px solid #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>1.6  混合(Mixins)</strong></p>
+<p>混合可以将一个定义好的class A轻松的引入到class B中，从而简单的实现class B 继承class A的所有属性。我们还可以带参数的调用，就像使用函数一样。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-47c87ce9ada2c14e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>注意：混合的使用就和js的自定义函数类似，首先 混合 必须前面是以 . +混合名称开始</p>
+<p>结构：.名称(变量){}</p>
+<p>可以有默认值，也可以没有默认值，没有的话，在调用的时候必须传参，有默认值的时候就可以不用传递参数；</p>
+<p>多个参数之间和js一样，用逗号（,） 隔开</p>
+</blockquote>
+<p><strong>1.7  函数</strong></p>
+<p>LESS中的函数 - 映射了JavaScript函数代码，如果你愿意的话，可以操纵属性值。</p>
+<p>比如：鼠标移上亮度增加20%。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-0c53243634ccae88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>需要查找的时候，直接查文档就可以了。</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">saturate(@color, 10%); // 饱和度增加 10%</div><div class="line">desaturate(@color, 10%); // 饱和度降低 10%</div><div class="line">lighten(@color, 10%); // 亮度增加 10%</div><div class="line">darken(@color, 10%); // 亮度降低 10%</div><div class="line">fadein(@color, 10%); // 透明度增加 10%</div><div class="line">fadeout(@color, 10%); // 透明度降低 10%</div><div class="line">fade(@color, 50%); // 设定透明度为 50%</div><div class="line">spin(@color, 10); // 色相值增加 10</div><div class="line">……</div></pre></td></tr></table></figure>
+<p><strong>1.8   匹配模式</strong></p>
+<p>类似js中的if else判断，只有匹配成功才能起作用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-1390d5d8494d8d94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>注意：匹配模式中,定义的模式名称都是一样的，只是参数不一样，调用的时候只需选择对应的参数就可以了。</p>
+</blockquote>
+<p><strong>1.9    如何使用LESS?</strong></p>
+<p><strong>方式一：客户端直接调用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;link rel=&quot;stylesheet/less&quot; href=&quot;less/less.less&quot;&gt;</div><div class="line">&lt;!--用于编译LESS的--&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/less.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：必须在服务器环境中才能生效，动态编译注入虚拟DOM或者内存中，类似ajax。</p>
+<p>开发中常用的服务器组合：WAPM</p>
+</blockquote>
+<p><strong>方式二：预编译（提前编译）</strong></p>
+<p>在代码编辑器中，按照LESS的语法规则写好LESS文件；</p>
+<p>使用编译工具把.less文件编译成.css文件；</p>
+<p>把编译后的css文件引入到页面即可。</p>
+<blockquote>
+<p>编译工具：Koala</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-791d357dc781af8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.10  如何在一个LESS文件中导入另一个LESS文件？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@import &quot;less.less&quot;; // 注意：less文件扩展名可选</div></pre></td></tr></table></figure>
+<p><strong>1.11   其他补充?</strong></p>
+<p>\/\/    不会被编译器编译的注释</p>
+<p>\/**\/  是可以被编译器编译的 注释</p>
+<p>~’ ’  表示的是禁止被编译</p>
+<p>&amp;     表示选择所有的父级元素</p>
+<p><strong>1.12 命名不要加空格</strong> </p>
+<p><strong>1.13  《授之于渔》</strong></p>
+<p>LESS官网：<a href="http://lesscss.org/" target="_blank" rel="external">http:\/\/lesscss.org\/</a></p>
+<p>LESS中文网 ：<a href="http://www.lesscss.cn/" target="_blank" rel="external">http:\/\/www.lesscss.cn\/</a>  和  <a href="http://www.lesscss.cn/" target="_blank" rel="external">http:\/\/www.lesscss.net\/</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端软件 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Git]]></title>
+      <url>/2016/01/15/Git/</url>
+      <content type="html"><![CDATA[<p>##git</p>
+<p>###认识shell命令<br>shell俗称为壳,区分kernel(核),是Bash中的一种命令.<br>类似DOS下的conmand和后来的cmd.exe,接收用户命令,调出相应的应用程序.<br><a id="more"></a></p>
+<p>###常见命令格式:命令[-options][参数]</p>
+<p><strong>pwd</strong>:(print working directorg)查看当前目录</p>
+<p><strong>cd</strong>:(change directory)切换目录,如cd/etc</p>
+<p><strong>ls</strong>:(list):查看当前目录下内容:如ls -al</p>
+<p><strong>mkdir</strong>:(make directory)创建目录,如  mkdir blog</p>
+<p><strong>touch</strong>:创建文件:如 touch iddex.html</p>
+<p><strong>wc</strong>:(word count)字数信息统计,如wc index.html</p>
+<p><strong>cat</strong>:查看文件全部内容 如:cat index.html</p>
+<p><strong>more/less</strong>:查看文件,  如more/etc/password</p>
+<p><strong>rm</strong>:(remove)删除文件,如rm index.html</p>
+<p><strong>rmdir</strong>:*(remove directory) 删除文件夹,只能删除空文件夹,不常用</p>
+<p><strong>mv</strong>:(move)移动文件或重命名,如 mv index.html</p>
+<p><strong>cp</strong>:(copy)复制文件, cp index.html</p>
+<p><strong>head</strong>:查看文件前几行,如head -5 index.html</p>
+<p><strong>tail</strong>:查看文件后几行 -n -f tail -5 index.html</p>
+<p><strong>tab</strong>:自动补全,连续按两次会将所有匹配内容显示出来</p>
+<p><strong>history</strong>:查看操作历史</p>
+<p><strong>ssh</strong>:远程登录,如ssh root@192.168.0.1</p>
+<p><strong>&gt;和&gt;&gt;重定向</strong>,如echo hello world!&gt;readme.md ,&gt;覆盖  &gt;&gt;追加</p>
+<p><strong>wget</strong> 下载,如wget <a href="https://nodejs.org/dist/v4.4.0/node-v4.4.0.tar.gz" target="_blank" rel="external">https://nodejs.org/dist/v4.4.0/node-v4.4.0.tar.gz</a></p>
+<p><strong>tar</strong>:解压缩,如tar zxvf node-v4.4.0.tar.gz</p>
+<p><strong>curl</strong>:网络请求,如:curl <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></p>
+<p><strong>who am i</strong>:查看当前用于</p>
+<p><strong>|</strong>:管道符</p>
+<p><strong>grep</strong>:匹配内容,一般结合管道符使用</p>
+<p>##vi编辑器<br>vi编辑器和window下的记事本差不多,不过功能比之强大,是Linux的标配:有三种模式</p>
+<p><strong>1.命名行模式</strong></p>
+<p><strong>2.输入模式</strong></p>
+<p><strong>3.末行模式</strong></p>
+<p>这三种模式用户可以进行切换<br><img src="http://i.imgur.com/43vuoNg.png" alt=""></p>
+<p>在输入模式下是不能够直接切换到末行模式,必须得先回到命令模式</p>
+<p>我们可以通过ESC键来切换到命令模式</p>
+<p>每一种编辑下面有对应的命令</p>
+<p>1.输入模式命令</p>
+<p>直接输入i或a进行输入模式,可以进行内容的编辑</p>
+<p>想要退出输入模式,则按下键盘esc键</p>
+<p>2.末行模式命令</p>
+<p>进行末行模式:shift+:</p>
+<p>w:保存当前文件</p>
+<p>w filePath/fileName:另存为</p>
+<p>wq:保存并退出</p>
+<p>e!撤销更改,返回上一次保存状态</p>
+<p>q!不保存,强制退出</p>
+<p>set nu:设置行号</p>
+<p>3.命令模式</p>
+<p>zz:(大写)保存并直接退出</p>
+<p>u:撤销操作,可以撤销多次</p>
+<p>yy:赋值当前行</p>
+<p>dd:删除当前行</p>
+<p>p:粘贴内容</p>
+<p>ctrl+f:镶嵌翻页</p>
+<p>ctrl+b:向后翻页</p>
+<p>##生成ssh公钥<br>ssh是一种网络协议,用于计算机之间的加密登录.<br>ssh知识一种协议,存在多种实现,既有商业实现,也有开源实现.本文针对的实现是openSSH,它是自由软件,应用非常广泛</p>
+<p>访问服务器的时候,服务器会把它的公钥发送给你</p>
+<p>当输入密码的时候,它会拿着密钥公钥一起加密,把加密后的密码.再发送给服务器</p>
+<p>想要解开密码.原始服务的密钥才能解开</p>
+<p>操作流程</p>
+<p>1.第一步:在本地生成一个公钥,使用命令如下:<br>ssh-keygen -t rsa<br><img src="http://i.imgur.com/RAgZs9a.png" alt=""></p>
+<p>一路回车</p>
+<p>前往对应的文件夹当中查找生成的公钥,私钥文件</p>
+<p><img src="http://i.imgur.com/8nAwVI6.png" alt=""></p>
+<p>输入的密码我们看不到,当我们输入密码完毕时,按回车时,系统会自动的把输入的密码连服务器发来的公钥一起加密.发送给服务器,发送给服务器之后,服务器使用它的私钥,先解密.再去判断密码.增加了安全性</p>
+<p>整个过程,流程图如下:<br><img src="http://i.imgur.com/32ELY33.png" alt=""></p>
+<p>免密码登录</p>
+<p>登录成功后,我们把我们本地计算机的公钥给放到远程服务器当中</p>
+<p>1.在远程服务商创建文件夹.ssh</p>
+<p>使用命令:mkdir .ssh</p>
+<p>2.进入,ssh文件夹当中</p>
+<p>使用命令:cd .ssh</p>
+<p>3.创建文件,文件命名为authorized_keys</p>
+<p>使用命令</p>
+<p>touch authorized_key</p>
+<p>4.使用vi编辑authorized_keys文件</p>
+<p>vi authorized_keys</p>
+<p>进入插入模式,把本地公钥给拷贝到该文件当中</p>
+<p>保存退出</p>
+<p>下次再进去时,已经不需要密码了</p>
+<p>##git的工作原理</p>
+<p>git管理我们文件的三种状态,分别是:</p>
+<p><strong>1.已经提交(committed)</strong></p>
+<p><strong>2.已经修改(modified)</strong></p>
+<p><strong>3.已经暂存(staged)</strong></p>
+<p>由此引入Git项目的三个工作区域的概念</p>
+<p><strong>1.Git仓库</strong></p>
+<p><strong>2.工作目录</strong></p>
+<p><strong>3.暂存区域</strong></p>
+<p>Git仓库:目录是Git用来保存项目的元数据和对象数据库的地方<br>        这是Git中最重要的部分,从其他计算机克隆仓库,拷的就是这里的数据.</p>
+<p>工作目录:是对项目的某个版本独立提取出来的内容<br>        这些从Git仓库的压缩数据库中提取出来的文件,放在磁盘上供你使用或者修改</p>
+<p>暂存区域:是一个文件,保存了下次将提交的文件列表信息,一般在Git仓库目录中,有时候也被称作’索引’(index),不过一般说法还是叫暂存区域</p>
+<p>基本的Git工作流程如下:</p>
+<p><strong>1.在工作目录中修改文件</strong></p>
+<p><strong>2.暂存文件,将文件的快照放入暂存区域</strong></p>
+<p><strong>3.提交更新,找到暂存区域的文件,将快照永久存储到Git仓库目录</strong><br><img src="http://i.imgur.com/CmUJTTl.png" alt=""></p>
+<p>#git命令的运用</p>
+<p>##配置用户</p>
+<p>###git config–global user.name”自己的名字”;</p>
+<p>###git config–global user.email”自己的邮箱地址”;</p>
+<p>###git init  初始化仓库</p>
+<p>###git status  查看文件状态</p>
+<p>###git add *或-a  添加文件到暂存区</p>
+<p>###git commit -m “备注信息”  提交文件</p>
+<p>###git log 查看历史</p>
+<p>###git reset–hard sha值  恢复到上一次的提交</p>
+<p>###创建分支:git branch 分支名称</p>
+<p>###切换分支:git checkout 分支名称</p>
+<p>###查看分支:git branch</p>
+<p>###合并分支:git merge 分支名称</p>
+<p>###<font color="red">删除分支:git branch -d 分支名称</font></p>
+<p>##git 共享仓库<br><strong>git要求共享仓库是以.git结尾的目录</strong></p>
+<p><strong>mkdir repo.git 创建以.git结尾mulv</strong></p>
+<p><strong>cd repo.git进入这个目录</strong></p>
+<p><strong>git init –bare 初始化一个共享仓库,注意选项–bare</strong></p>
+<p><strong>这样我们就建好了一个共享的仓库,但这时这个仓库是一个空的仓库</strong></p>
+<p>以上就是我们直接创建仓库的步骤,除了上面的方法之外,我们还可以通过</p>
+<p><strong>git clone –bare仓库地址的形式,将已有一个仓库导出成一个裸仓库</strong></p>
+<p><strong>向共享仓库共享内容:通过git push 仓库地址</strong></p>
+<p><strong>从共享仓库里取出内容</strong></p>
+<p><strong>git clone ./repo.git.demo</strong></p>
+<p><strong>git pull ../repo.git master</strong></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 版本控制系统 </tag>
+            
+        </tags>
         
     </entry>
     
@@ -285,7 +830,146 @@
         
         <tags>
             
-            <tag> 前端  bootstrap </tag>
+            <tag> 前端框架_bootstrap </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Bootstrap实践理解]]></title>
+      <url>/2015/08/20/Bootstrap3%E7%9A%84%E5%AD%A6%E4%B9%A0md/</url>
+      <content type="html"><![CDATA[<p>##Bootstrap编码规范</p>
+<p>###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样.</p>
+<p>###HTML:语法<br>用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。<br>嵌套元素应当缩进一次（即两个空格）。<br>对于属性的定义，确保全部使用双引号，绝不要使用单引号。<br>不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明确说明这是可选的。<br>不要省略可选的结束标签（closing tag）（例如， 或 ）。<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于markdown不支持显示HTML的DOM元素,所以,每个DOM元素前面的&lt;号我都加了一个空格让代码显示出来</div></pre></td></tr></table></figure>
+<pre>
+< !DOCTYPE html>
+< html>
+  < head>
+    < title>Page title
+  < /head>
+  < body>
+    < img src="images/company-logo.png" alt="Company">
+    < h1 class="hello-world">Hello, world!
+  < /body>
+< /html>
+</pre>
+
+<p>###HTML5 doctype<br>为每个 HTML 页面的第一行添加标准模式（standard mode）的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
+<pre>
+< !DOCTYPE html>
+< html>
+  < head>
+  < /head>
+< /html>
+</pre>
+更多请查文档:
+[http://codeguide.bootcss.com/](http://codeguide.bootcss.com/ "Bootstrap编码规范")
+
+##禁止响应式布局
+Bootstrap 会自动帮你针对不同的屏幕尺寸调整你的页面，使其在各个尺寸的屏幕上表现良好。下面我们列出了如何禁用这一特性，就像这个非响应式布局实例页面一样。
+
+禁止响应式布局有如下几步：
+1. 移除 此 CSS 文档中提到的设置浏览器视口（viewport）的标签：<meta>。
+2. 通过为 .container 类设置一个 width 值从而覆盖框架的默认 width 设置，例如 width: 970px !important; 。请确保这些设置全部放在默认的 Bootstrap CSS 文件的后面。注意，如果你把它放到媒体查询中，也可以略去 !important 。
+3. 如果使用了导航条，需要移除所有导航条的折叠和展开行为。
+4. 对于栅格布局，额外增加 .col-xs-* 类或替换掉 .col-md-* 和 .col-lg-*。 不要担心，针对超小屏幕设备的栅格系统能够在所有分辨率的环境下展开。
+
+
+针对 IE8 仍然需要额外引入 Respond.js 文件（由于仍然利用了浏览器对媒体查询（media query）的支持，因此还需要做处理）。这样就禁用了 Bootstrap 对移动设备的响应式支持。
+
+
+##标题嵌套
+当标题嵌套时 (< h1> - < h6>)，你的文档的主标题应该是 < h1> 标签。随后的标题逻辑上就应该使用 < h2> - < h6> ，这样，屏幕阅读器就可以构造出页面的内容列表了。
+
+
+
+#全局 CSS 样式
+##移动设备优先
+在 Bootstrap 2 中，框架中的某些关键部分增加了对移动设备友好的样式。而在 Bootstrap 3 中，重写了整个框架，使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
+
+为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
+<pre>
+< meta name="viewport" content="width=device-width, initial-scale=1">
+</pre>
+
+<p>在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable=no 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
+<pre>
+< meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</pre>
+
+
+<p>##布局容器<br>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。我们提供了两个作此用处的类。注意，由于 padding 等属性的原因，这两种 容器类不能互相嵌套。</p>
+<p>.container 类用于固定宽度并支持响应式布局的容器。</p>
+<pre>
+< div class="container">
+  ...
+< /div>
+</pre>
+.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
+<pre>
+< div class="container-fluid">
+  ...
+< /div>
+</pre>
+
+<p>##栅格系统</p>
+<p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
+<p>简介</p>
+<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。下面就介绍一下 Bootstrap 栅格系统的工作原理：</p>
+<ul>
+<li>“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。</li>
+<li>通过“行（row）”在水平方向创建一组“列（column）”。</li>
+<li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li>
+<li>类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。</li>
+<li>通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。</li>
+<li>负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</li>
+<li>栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。</li>
+<li>如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</li>
+<li>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-</em> 不存在， 也影响大屏幕设备。<br>通过研究后面的实例，可以将这些原理应用到你的代码中。</li>
+</ul>
+<p>##媒体查询<br>在栅格系统中，我们在 Less 文件中使用以下媒体查询（media query）来创建关键的分界点阈值。</p>
+<ul>
+<li>/<em> 超小屏幕（手机，小于 768px） </em>/</li>
+<li>/<em> 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） </em>/</li>
+<li></li>
+<li>/<em> 小屏幕（平板，大于等于 768px） </em>/</li>
+<li>@media (min-width: @screen-sm-min) { … }</li>
+<li></li>
+<li>/<em> 中等屏幕（桌面显示器，大于等于 992px） </em>/</li>
+<li>@media (min-width: @screen-md-min) { … }</li>
+<li></li>
+<li>/<em> 大屏幕（大桌面显示器，大于等于 1200px） </em>/</li>
+<li>@media (min-width: @screen-lg-min) { … }</li>
+<li></li>
+</ul>
+<p>我们偶尔也会在媒体查询代码中包含 max-width 从而将 CSS 的影响限制在更小范围的屏幕大小之内。</p>
+<ul>
+<li>@media (max-width: @screen-xs-max) { … }</li>
+<li>@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { … }</li>
+<li>@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { … }</li>
+<li>@media (min-width: @screen-lg-min) { … }</li>
+</ul>
+<p>#组件</p>
+<p>##导航<br>Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。</p>
+<p>##模态框 modal.js</p>
+<p>模态框经过了优化，更加灵活，以弹出对话框的形式出现，具有最小和最实用的功能集。</p>
+<p>不支持同时打开多个模态框<br>千万不要在一个模态框上重叠另一个模态框。要想同时支持多个模态框，需要自己写额外的代码来实现。</p>
+<p>模态框的 HTML 代码放置的位置<br>务必将模态框的 HTML 代码放在文档的最高层级内（也就是说，尽量作为 body 标签的直接子元素），以避免其他组件影响模态框的展现和/或功能。</p>
+<p>对于移动设备的附加说明<br>这里提供了在移动设备上使用模态框有一些附加说明。请参考浏览器支持章节。</p>
+<p>Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap modals. To achieve the same effect, use some custom JavaScript:</p>
+<p>$(‘#myModal’).on(‘shown.bs.modal’, function () {<br>  $(‘#myInput’).focus()<br>})</p>
+<p>##Carousel (轮播图)</p>
+<p>#定制<br>为使我们上线的代码更加的轻量/简洁:可以根据需求定制属于自己的bootstrap</p>
+<p>定制并下载 Bootstrap<br>通过自定义 Bootstrap 组件、Less 变量和 jQuery 插件，定制一份属于你自己的 Bootstrap 版本吧。</p>
+<p>以上的版本基于3.0的学习<br>详细地址:<a href="http://http://v3.bootcss.com/" title="Bootstrap3中文文档" target="_blank" rel="external">http://http://v3.bootcss.com/</a></p>
+</head>]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端框架_Bootstrap </tag>
             
         </tags>
         
@@ -427,7 +1111,7 @@
         
         <tags>
             
-            <tag> 前端  bootstrap </tag>
+            <tag> 前端框架_bootstrap </tag>
             
         </tags>
         
@@ -523,6 +1207,139 @@
 ]]></content>
       
         
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[jQuery的简介,操作css与html]]></title>
+      <url>/2015/06/15/jQuery%E7%9A%84%E7%AE%80%E4%BB%8B,%E6%93%8D%E4%BD%9Ccss%E4%B8%8Ehtml/</url>
+      <content type="html"><![CDATA[<p>  主旨:write less , do more</p>
+<pre><code>特点:1.轻量级
+ 2.强大的处理器
+ 3.出色的Dom封装
+ 4.可靠的事件处理
+ 5.浏览器兼容性强
+ 6.链式操作方式
+ 7.隐式迭代
+</code></pre><a id="more"></a>
+<pre><code>Window.onload 与 $(document).ready()的区别
+Window.onload
+执行时机:必须等待网页全部加载完毕(包括图片等),然后再执行包裹的代码
+执行次数:只能执行一次,如果第二次执行,会把第一次的执行覆盖掉
+$(document).ready()
+执行时机:只需要等待网页中的DOM结构加载完毕,就能执行包裹着的代码
+执行次数:可以执行多次,第N次都不会被上一次覆盖
+$(function(){
+
+});
+
+jQuery操作CSS:
+  通过jQuery操作CSS样式,直接设置CSS样式,增加CSS类别.类别切换/删除等操作
+额外补充:
+选择一个类标签
+  $(&apos;className&apos;)
+给一个标签添加事件
+  $(&apos;className&apos;).click(function(){
+
+     });
+点击标签时候,执行匿名函数;
+</code></pre><p> 直接操作</p>
+<pre><code>$(&apos;button&apos;).click(function){
+         $(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;);
+         $(&apos;div&apos;).css(&apos;height&apos;,&apos;200px&apos;);
+         $(&apos;div&apos;).css(&apos;background&apos;,&apos;red&apos;);
+
+
+   }
+</code></pre><p>  链式写法</p>
+<pre><code>  $(&apos;button&apos;).click(
+        function(){
+         $(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;)
+                  .css(&apos;height&apos;,&apos;200px&apos;)
+                  .css(&apos;background&apos;,&apos;red&apos;)
+       })
+相同的对象,可以省略对象名称,直接在后面进行操作
+
+$(&apos;div&apos;).css(&quot;width&quot;,200);
+$(&apos;div&apos;).css(&quot;height&quot;,200);
+$(&apos;div&apos;).css(&quot;background&quot;,&quot;red&quot;);
+链式操作形式
+$(&apos;div&apos;).css(&apos;width&apos;,&apos;200px&apos;)
+         .css(&apos;height&apos;,&apos;200px&apos;)    
+         .css(&apos;background&apos;,&apos;red&apos;)      
+
+键值对key:value写法
+$(&apos;buttton&apos;).click(function(){
+$(&apos;div&apos;).css({
+    width:200,
+    height:200,
+    background:&apos;red&apos;
+});
+)    
+       添加类:
+  addClass(class)给某个元素添加一个CSS类
+  $(&apos;div&apos;).addClass(&apos;myClass1&apos;);
+
+   addClass(class1  class2 class3...)给某个元素添加多个css类,添加多个类时,类名使用空格隔开
+    $(&apos;div&apos;).addClass(&apos;myClass1 myClass2&apos;)
+注意点:添加的类名没有&quot;点&quot;
+</code></pre><p>  删除类</p>
+<pre><code>removeClass(class)删除某个元素的一个CSS类
+   $(&apos;div&apos;).removeClass(&apos;myClass1&apos;);
+removeClass(class1 class2 class3)删除某个元素的多个css类
+   $(&apos;div&apos;).removeClass(&apos;myClass1 myClass2 myClass3&apos;)
+</code></pre><p>  切换类</p>
+<pre><code>toggleClass(class)来回切换默认样式和指定样式
+   $(&apos;div&apos;).toggleClass(&apos;myClass1&apos;);
+同样也可以在多个类之前进行切换
+$(&apos;div&apos;).toggleClass(&apos;myClass1 myClass2&apos;)
+
+
+1.jQuery的CSS的获取与修改宽高
+   不带值为获取,带值为修改.
+   width()
+   width(value)
+   height()
+   height(value)
+
+2.获取元素偏移
+ offset() 获取某个元素相对于视口的偏移位置
+ offset().left;
+ offset().top;
+
+  position()获取某个原色相对于父元素的偏移位置
+  position().left
+  position().top
+
+3.使用jQuery可以给一个标签内部添加以及获取标签
+
+  没有值代表获取,有值代表添加标签
+ html();
+ html(value);
+ 获取标签当中的内容
+ text();
+
+text(value);
+</code></pre><p>####jQuery本质上就是一个闭包</p>
+<p>####为什么要使用闭包<br>1.为了避免和别的框架冲突</p>
+<p>#####为什么使用window<br>①在闭包内部的变量在外部是不可以使用的,我们需要使用,所以我们需要把它传递出外面来。</p>
+<p>② 使用window的第一个作用是把内部的变量传递出来给外面使用<br>  第二个作用是用来压缩代码。</p>
+<p>####undefined在ie9之前是可以修改,但是我们现在不想修改<br>一：把undefined传入进来防止修改</p>
+<p>二：用来压缩代码</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> HTML </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -535,6 +1352,12 @@
 <p>data() 方法向被选元素附加数据，或者从被选元素获取数据。</p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
         
     </entry>
     
@@ -1380,6 +2203,12 @@ console.log(abc.isPrototypeOf(dog1));    //false
 </code></pre>]]></content>
       
         
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
@@ -2043,15 +2872,63 @@ console.log(obj2);
 </code></pre>]]></content>
       
         
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+        
     </entry>
     
     <entry>
       <title><![CDATA[JS满天星特效]]></title>
       <url>/2015/04/15/JS%E6%BB%A1%E5%A4%A9%E6%98%9F/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<p>这个特效代码很简单,但是效果却出奇的漂亮,用到了css3的属性,虽然有兼容性问题,不过确实又简单效果也很好主要原理有几步<br>①动态创建节点<br>②设置几个随机值,比如星星的大小,星星的位置,星星做动画的延迟时长<br>③在对应的style样式进行设置<br>代码如下<br><!-- more --><br><img src="http://i.imgur.com/YoxekGo.png" alt=""><br><img src="http://i.imgur.com/5hwt9OK.png" alt=""><br><img src="http://i.imgur.com/87laKOv.png" alt=""></p>
+      <content type="html"><![CDATA[<p>这个特效代码很简单,但是效果却出奇的漂亮,用到了css3的属性,虽然有兼容性问题,不过确实又简单效果也很好主要原理有几步<br>①动态创建节点<br>②设置几个随机值,比如星星的大小,星星的位置,星星做动画的延迟时长<br>③在对应的style样式进行设置<br>代码如下<br><a id="more"></a><br><img src="http://i.imgur.com/YoxekGo.png" alt=""><br><img src="http://i.imgur.com/5hwt9OK.png" alt=""><br><img src="http://i.imgur.com/87laKOv.png" alt=""></p>
 ]]></content>
       
+        
+        <tags>
+            
+            <tag> JS特效 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[前端软件整理]]></title>
+      <url>/2015/02/15/%E5%89%8D%E7%AB%AF%E8%BD%AF%E4%BB%B6%E6%95%B4%E7%90%86/</url>
+      <content type="html"><![CDATA[<p>###前端学习要用的软件<br>写代码软件:<br>一sublime ,二webstorm/phpstorm, 三notepad++, 四visual studio code,   五eclipse</p>
+<a id="more"></a>
+<p>写笔记软件:一有道云笔记, 二markdown, 三简书, 四gitbook</p>
+<p>切片软件:Fireworks-CS6   </p>
+<p>美工软件:PS</p>
+<p>翻墙软件:蓝灯</p>
+<p>思维导图软件:Xmind</p>
+<p>pdf阅读器:福昕PDF阅读器</p>
+<p>局域网传输软件:飞秋    飞鸽传书</p>
+<p>局域网控屏软件:红蜘蛛</p>
+<p>GIF截图软件:LICEcap</p>
+<p>前端预处理器语言图形编译工具:koala</p>
+<p>Windows Apache Mysql PHP集成安装环境:WampServer</p>
+<p>网页调试与发送网页HTTP请求的Chrome插件:postman</p>
+<p>基于 Shell 的跨平台开源 MongoDB 管理工具: Robomongo</p>
+<p>MAC上:</p>
+<p>万能解压包:Dr.Unarchiver.app</p>
+<p>操作系统Mac OS X上的集成开发工具（IDE）:Xcode.app</p>
+<p>Android集成开发工具:Android studio.app</p>
+<p>Android虚拟环境,安卓模拟器:Genymotion.app</p>
+<p>截图软件:snip.app</p>
+<p>虚拟机:orscle vm virtualbox</p>
+<p>前端学习网站:醉牛前端,w3school,知乎,博客园,CSDN,GITHUB</p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 前端工具 </tag>
+            
+        </tags>
         
     </entry>
     

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="##git ###认识shell命令shell俗称为壳,区分kernel(核),是Bash中的一种命令.类似DOS下的conmand和后来的cmd.exe,接收用户命令,调出相应的应用程序.">
+<meta name="keywords" content="版本控制系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="http://yoursite.com/2016/01/15/Git/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="##git ###认识shell命令shell俗称为壳,区分kernel(核),是Bash中的一种命令.类似DOS下的conmand和后来的cmd.exe,接收用户命令,调出相应的应用程序.">
+<meta property="og:image" content="http://i.imgur.com/43vuoNg.png">
+<meta property="og:image" content="http://i.imgur.com/RAgZs9a.png">
+<meta property="og:image" content="http://i.imgur.com/8nAwVI6.png">
+<meta property="og:image" content="http://i.imgur.com/32ELY33.png">
+<meta property="og:image" content="http://i.imgur.com/CmUJTTl.png">
+<meta property="og:updated_time" content="2017-06-14T05:52:48.324Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="##git ###认识shell命令shell俗称为壳,区分kernel(核),是Bash中的一种命令.类似DOS下的conmand和后来的cmd.exe,接收用户命令,调出相应的应用程序.">
+<meta name="twitter:image" content="http://i.imgur.com/43vuoNg.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Git | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS特效/">JS特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端工具/">前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Angular/">前端框架_Angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Bootstrap/">前端框架_Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Zepto/">前端框架_Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-bootstrap/">前端框架_bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-swiper/">前端框架_swiper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端软件/">前端软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端-php/">后端_php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构建工具/">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制系统/">版本控制系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Git" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/15/Git/" class="article-date">
+      <time datetime="2016-01-15T13:36:16.000Z" itemprop="datePublished">2016-01-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本控制系统/">版本控制系统</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>##git</p>
+<p>###认识shell命令<br>shell俗称为壳,区分kernel(核),是Bash中的一种命令.<br>类似DOS下的conmand和后来的cmd.exe,接收用户命令,调出相应的应用程序.<br><a id="more"></a></p>
+<p>###常见命令格式:命令[-options][参数]</p>
+<p><strong>pwd</strong>:(print working directorg)查看当前目录</p>
+<p><strong>cd</strong>:(change directory)切换目录,如cd/etc</p>
+<p><strong>ls</strong>:(list):查看当前目录下内容:如ls -al</p>
+<p><strong>mkdir</strong>:(make directory)创建目录,如  mkdir blog</p>
+<p><strong>touch</strong>:创建文件:如 touch iddex.html</p>
+<p><strong>wc</strong>:(word count)字数信息统计,如wc index.html</p>
+<p><strong>cat</strong>:查看文件全部内容 如:cat index.html</p>
+<p><strong>more/less</strong>:查看文件,  如more/etc/password</p>
+<p><strong>rm</strong>:(remove)删除文件,如rm index.html</p>
+<p><strong>rmdir</strong>:*(remove directory) 删除文件夹,只能删除空文件夹,不常用</p>
+<p><strong>mv</strong>:(move)移动文件或重命名,如 mv index.html</p>
+<p><strong>cp</strong>:(copy)复制文件, cp index.html</p>
+<p><strong>head</strong>:查看文件前几行,如head -5 index.html</p>
+<p><strong>tail</strong>:查看文件后几行 -n -f tail -5 index.html</p>
+<p><strong>tab</strong>:自动补全,连续按两次会将所有匹配内容显示出来</p>
+<p><strong>history</strong>:查看操作历史</p>
+<p><strong>ssh</strong>:远程登录,如ssh root@192.168.0.1</p>
+<p><strong>&gt;和&gt;&gt;重定向</strong>,如echo hello world!&gt;readme.md ,&gt;覆盖  &gt;&gt;追加</p>
+<p><strong>wget</strong> 下载,如wget <a href="https://nodejs.org/dist/v4.4.0/node-v4.4.0.tar.gz" target="_blank" rel="external">https://nodejs.org/dist/v4.4.0/node-v4.4.0.tar.gz</a></p>
+<p><strong>tar</strong>:解压缩,如tar zxvf node-v4.4.0.tar.gz</p>
+<p><strong>curl</strong>:网络请求,如:curl <a href="http://www.baidu.com" target="_blank" rel="external">http://www.baidu.com</a></p>
+<p><strong>who am i</strong>:查看当前用于</p>
+<p><strong>|</strong>:管道符</p>
+<p><strong>grep</strong>:匹配内容,一般结合管道符使用</p>
+<p>##vi编辑器<br>vi编辑器和window下的记事本差不多,不过功能比之强大,是Linux的标配:有三种模式</p>
+<p><strong>1.命名行模式</strong></p>
+<p><strong>2.输入模式</strong></p>
+<p><strong>3.末行模式</strong></p>
+<p>这三种模式用户可以进行切换<br><img src="http://i.imgur.com/43vuoNg.png" alt=""></p>
+<p>在输入模式下是不能够直接切换到末行模式,必须得先回到命令模式</p>
+<p>我们可以通过ESC键来切换到命令模式</p>
+<p>每一种编辑下面有对应的命令</p>
+<p>1.输入模式命令</p>
+<p>直接输入i或a进行输入模式,可以进行内容的编辑</p>
+<p>想要退出输入模式,则按下键盘esc键</p>
+<p>2.末行模式命令</p>
+<p>进行末行模式:shift+:</p>
+<p>w:保存当前文件</p>
+<p>w filePath/fileName:另存为</p>
+<p>wq:保存并退出</p>
+<p>e!撤销更改,返回上一次保存状态</p>
+<p>q!不保存,强制退出</p>
+<p>set nu:设置行号</p>
+<p>3.命令模式</p>
+<p>zz:(大写)保存并直接退出</p>
+<p>u:撤销操作,可以撤销多次</p>
+<p>yy:赋值当前行</p>
+<p>dd:删除当前行</p>
+<p>p:粘贴内容</p>
+<p>ctrl+f:镶嵌翻页</p>
+<p>ctrl+b:向后翻页</p>
+<p>##生成ssh公钥<br>ssh是一种网络协议,用于计算机之间的加密登录.<br>ssh知识一种协议,存在多种实现,既有商业实现,也有开源实现.本文针对的实现是openSSH,它是自由软件,应用非常广泛</p>
+<p>访问服务器的时候,服务器会把它的公钥发送给你</p>
+<p>当输入密码的时候,它会拿着密钥公钥一起加密,把加密后的密码.再发送给服务器</p>
+<p>想要解开密码.原始服务的密钥才能解开</p>
+<p>操作流程</p>
+<p>1.第一步:在本地生成一个公钥,使用命令如下:<br>ssh-keygen -t rsa<br><img src="http://i.imgur.com/RAgZs9a.png" alt=""></p>
+<p>一路回车</p>
+<p>前往对应的文件夹当中查找生成的公钥,私钥文件</p>
+<p><img src="http://i.imgur.com/8nAwVI6.png" alt=""></p>
+<p>输入的密码我们看不到,当我们输入密码完毕时,按回车时,系统会自动的把输入的密码连服务器发来的公钥一起加密.发送给服务器,发送给服务器之后,服务器使用它的私钥,先解密.再去判断密码.增加了安全性</p>
+<p>整个过程,流程图如下:<br><img src="http://i.imgur.com/32ELY33.png" alt=""></p>
+<p>免密码登录</p>
+<p>登录成功后,我们把我们本地计算机的公钥给放到远程服务器当中</p>
+<p>1.在远程服务商创建文件夹.ssh</p>
+<p>使用命令:mkdir .ssh</p>
+<p>2.进入,ssh文件夹当中</p>
+<p>使用命令:cd .ssh</p>
+<p>3.创建文件,文件命名为authorized_keys</p>
+<p>使用命令</p>
+<p>touch authorized_key</p>
+<p>4.使用vi编辑authorized_keys文件</p>
+<p>vi authorized_keys</p>
+<p>进入插入模式,把本地公钥给拷贝到该文件当中</p>
+<p>保存退出</p>
+<p>下次再进去时,已经不需要密码了</p>
+<p>##git的工作原理</p>
+<p>git管理我们文件的三种状态,分别是:</p>
+<p><strong>1.已经提交(committed)</strong></p>
+<p><strong>2.已经修改(modified)</strong></p>
+<p><strong>3.已经暂存(staged)</strong></p>
+<p>由此引入Git项目的三个工作区域的概念</p>
+<p><strong>1.Git仓库</strong></p>
+<p><strong>2.工作目录</strong></p>
+<p><strong>3.暂存区域</strong></p>
+<p>Git仓库:目录是Git用来保存项目的元数据和对象数据库的地方<br>        这是Git中最重要的部分,从其他计算机克隆仓库,拷的就是这里的数据.</p>
+<p>工作目录:是对项目的某个版本独立提取出来的内容<br>        这些从Git仓库的压缩数据库中提取出来的文件,放在磁盘上供你使用或者修改</p>
+<p>暂存区域:是一个文件,保存了下次将提交的文件列表信息,一般在Git仓库目录中,有时候也被称作’索引’(index),不过一般说法还是叫暂存区域</p>
+<p>基本的Git工作流程如下:</p>
+<p><strong>1.在工作目录中修改文件</strong></p>
+<p><strong>2.暂存文件,将文件的快照放入暂存区域</strong></p>
+<p><strong>3.提交更新,找到暂存区域的文件,将快照永久存储到Git仓库目录</strong><br><img src="http://i.imgur.com/CmUJTTl.png" alt=""></p>
+<p>#git命令的运用</p>
+<p>##配置用户</p>
+<p>###git config–global user.name”自己的名字”;</p>
+<p>###git config–global user.email”自己的邮箱地址”;</p>
+<p>###git init  初始化仓库</p>
+<p>###git status  查看文件状态</p>
+<p>###git add *或-a  添加文件到暂存区</p>
+<p>###git commit -m “备注信息”  提交文件</p>
+<p>###git log 查看历史</p>
+<p>###git reset–hard sha值  恢复到上一次的提交</p>
+<p>###创建分支:git branch 分支名称</p>
+<p>###切换分支:git checkout 分支名称</p>
+<p>###查看分支:git branch</p>
+<p>###合并分支:git merge 分支名称</p>
+<p>###<font color="red">删除分支:git branch -d 分支名称</font></p>
+<p>##git 共享仓库<br><strong>git要求共享仓库是以.git结尾的目录</strong></p>
+<p><strong>mkdir repo.git 创建以.git结尾mulv</strong></p>
+<p><strong>cd repo.git进入这个目录</strong></p>
+<p><strong>git init –bare 初始化一个共享仓库,注意选项–bare</strong></p>
+<p><strong>这样我们就建好了一个共享的仓库,但这时这个仓库是一个空的仓库</strong></p>
+<p>以上就是我们直接创建仓库的步骤,除了上面的方法之外,我们还可以通过</p>
+<p><strong>git clone –bare仓库地址的形式,将已有一个仓库导出成一个裸仓库</strong></p>
+<p><strong>向共享仓库共享内容:通过git push 仓库地址</strong></p>
+<p><strong>从共享仓库里取出内容</strong></p>
+<p><strong>git clone ./repo.git.demo</strong></p>
+<p><strong>git pull ../repo.git master</strong></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/02/15/Less/">
+                    Less
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/08/28/Bootstrap项目实战/">
+                    项目实战
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Git　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/02/15/Less/" title="上一篇: Less">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/08/28/Bootstrap项目实战/" title="下一篇: 项目实战">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/ngRoute和ui-route/">Angular</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/php基本认识/">php基本认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/wabAPP/">webApp项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/gulp/">gulp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/工作当中的开发流程/">开发流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Zepto/">Zepto</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/swiper/">Swiper</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/Less/">Less</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Git/">Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/28/Bootstrap项目实战/">项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/Bootstrap3的学习md/">Bootstrap实践理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/bootstrap/">Bootstrap的笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/15/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/常用的不懂方法/">常用数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/19/面向对象day2/">面向对象2</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/面向对象day1/">面向对象3</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/JS满天星/">JS满天星特效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/前端软件整理/">前端软件整理</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

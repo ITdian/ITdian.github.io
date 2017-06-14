@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="LESS1.1   什么是LESS? Less 是一门 CSS 预处理语言，使用了类似CSS的语法，为CSS赋予了动态语言的特征。它扩展了 CSS 语言，增加了变量、Mixin(混合)、嵌套、函数和运算等特性，使 CSS 更易维护和扩展。此外，Less 可以运行在 Node 或浏览器端。 一句话：用类似JS的语法去写CSS。">
+<meta name="keywords" content="前端软件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Less">
+<meta property="og:url" content="http://yoursite.com/2016/02/15/Less/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="LESS1.1   什么是LESS? Less 是一门 CSS 预处理语言，使用了类似CSS的语法，为CSS赋予了动态语言的特征。它扩展了 CSS 语言，增加了变量、Mixin(混合)、嵌套、函数和运算等特性，使 CSS 更易维护和扩展。此外，Less 可以运行在 Node 或浏览器端。 一句话：用类似JS的语法去写CSS。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1268909-47c87ce9ada2c14e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1268909-0c53243634ccae88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1268909-1390d5d8494d8d94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1268909-791d357dc781af8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-06-14T05:52:29.595Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Less">
+<meta name="twitter:description" content="LESS1.1   什么是LESS? Less 是一门 CSS 预处理语言，使用了类似CSS的语法，为CSS赋予了动态语言的特征。它扩展了 CSS 语言，增加了变量、Mixin(混合)、嵌套、函数和运算等特性，使 CSS 更易维护和扩展。此外，Less 可以运行在 Node 或浏览器端。 一句话：用类似JS的语法去写CSS。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1268909-47c87ce9ada2c14e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Less | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS特效/">JS特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WebApp/">WebApp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端工具/">前端工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Angular/">前端框架_Angular</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Bootstrap/">前端框架_Bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-Zepto/">前端框架_Zepto</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-bootstrap/">前端框架_bootstrap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端框架-swiper/">前端框架_swiper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端软件/">前端软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/后端-php/">后端_php</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/构建工具/">构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本控制系统/">版本控制系统</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Less" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/15/Less/" class="article-date">
+      <time datetime="2016-02-15T14:36:10.000Z" itemprop="datePublished">2016-02-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Less
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端软件/">前端软件</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h3><p><strong>1.1   什么是LESS?</strong></p>
+<p>Less 是一门 CSS 预处理语言，使用了类似CSS的语法，为CSS赋予了动态语言的特征。它扩展了 CSS 语言，增加了变量、Mixin(混合)、嵌套、函数和运算等特性，使 CSS 更易维护和扩展。此外，Less 可以运行在 Node 或浏览器端。</p>
+<p>一句话：用类似JS的语法去写CSS。<br><a id="more"></a></p>
+<p><strong>1.2   LESS的特点？</strong></p>
+<p>作为CSS的一种扩展，LESS CSS不仅向下兼容CSS的语法，而且连新增的特性也是使用CSS语法。这样的设置使得学习LESS非常轻松，而且你可以在任何时候回退到CSS。</p>
+<p><strong>1.3   变量</strong></p>
+<p>单独定义一系列通用的样式，然后在需要的时候去调用。所以在做全局样式调整的时候我们可能只需要修改几行代码就可以了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// JS中定义变量</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'张三'</span>;</div><div class="line"></div><div class="line"><span class="comment">// LESS中定义变量</span></div><div class="line">@color:red;</div><div class="line">h1&#123;</div><div class="line">   <span class="attr">color</span>: @color;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>1.4   嵌套</strong></p>
+<p>在一个选择器中嵌套另一个选择器来实现继承，这样很大程度上减少了代码量，并且代码看起来更加清晰。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">div&#123;</div><div class="line">  h1&#123;</div><div class="line">    color:red;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：嵌套一般情况下，不要超过3层</p>
+</blockquote>
+<p><strong>1.5   运算</strong></p>
+<p>运算提供了加、减、乘、除操作，其他复杂的运算交给函数；通常我们可以做属性值和颜色的运算，这样就可以实现属性值之间的复杂关系。</p>
+<blockquote>
+<p>注意：运算符与值之间必须以空格分开。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@w:500px;</div><div class="line">div&#123;</div><div class="line">   h1&#123;</div><div class="line">     width: @w - 100;</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1&#123;</div><div class="line">  width: @w;</div><div class="line">  border: 1px solid #000;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>1.6  混合(Mixins)</strong></p>
+<p>混合可以将一个定义好的class A轻松的引入到class B中，从而简单的实现class B 继承class A的所有属性。我们还可以带参数的调用，就像使用函数一样。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-47c87ce9ada2c14e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>注意：混合的使用就和js的自定义函数类似，首先 混合 必须前面是以 . +混合名称开始</p>
+<p>结构：.名称(变量){}</p>
+<p>可以有默认值，也可以没有默认值，没有的话，在调用的时候必须传参，有默认值的时候就可以不用传递参数；</p>
+<p>多个参数之间和js一样，用逗号（,） 隔开</p>
+</blockquote>
+<p><strong>1.7  函数</strong></p>
+<p>LESS中的函数 - 映射了JavaScript函数代码，如果你愿意的话，可以操纵属性值。</p>
+<p>比如：鼠标移上亮度增加20%。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-0c53243634ccae88.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>需要查找的时候，直接查文档就可以了。</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">saturate(@color, 10%); // 饱和度增加 10%</div><div class="line">desaturate(@color, 10%); // 饱和度降低 10%</div><div class="line">lighten(@color, 10%); // 亮度增加 10%</div><div class="line">darken(@color, 10%); // 亮度降低 10%</div><div class="line">fadein(@color, 10%); // 透明度增加 10%</div><div class="line">fadeout(@color, 10%); // 透明度降低 10%</div><div class="line">fade(@color, 50%); // 设定透明度为 50%</div><div class="line">spin(@color, 10); // 色相值增加 10</div><div class="line">……</div></pre></td></tr></table></figure>
+<p><strong>1.8   匹配模式</strong></p>
+<p>类似js中的if else判断，只有匹配成功才能起作用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-1390d5d8494d8d94.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>注意：匹配模式中,定义的模式名称都是一样的，只是参数不一样，调用的时候只需选择对应的参数就可以了。</p>
+</blockquote>
+<p><strong>1.9    如何使用LESS?</strong></p>
+<p><strong>方式一：客户端直接调用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;link rel=&quot;stylesheet/less&quot; href=&quot;less/less.less&quot;&gt;</div><div class="line">&lt;!--用于编译LESS的--&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/less.min.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：必须在服务器环境中才能生效，动态编译注入虚拟DOM或者内存中，类似ajax。</p>
+<p>开发中常用的服务器组合：WAPM</p>
+</blockquote>
+<p><strong>方式二：预编译（提前编译）</strong></p>
+<p>在代码编辑器中，按照LESS的语法规则写好LESS文件；</p>
+<p>使用编译工具把.less文件编译成.css文件；</p>
+<p>把编译后的css文件引入到页面即可。</p>
+<blockquote>
+<p>编译工具：Koala</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-791d357dc781af8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.10  如何在一个LESS文件中导入另一个LESS文件？</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@import &quot;less.less&quot;; // 注意：less文件扩展名可选</div></pre></td></tr></table></figure>
+<p><strong>1.11   其他补充?</strong></p>
+<p>\/\/    不会被编译器编译的注释</p>
+<p>\/**\/  是可以被编译器编译的 注释</p>
+<p>~’ ’  表示的是禁止被编译</p>
+<p>&amp;     表示选择所有的父级元素</p>
+<p><strong>1.12 命名不要加空格</strong> </p>
+<p><strong>1.13  《授之于渔》</strong></p>
+<p>LESS官网：<a href="http://lesscss.org/" target="_blank" rel="external">http:\/\/lesscss.org\/</a></p>
+<p>LESS中文网 ：<a href="http://www.lesscss.cn/" target="_blank" rel="external">http:\/\/www.lesscss.cn\/</a>  和  <a href="http://www.lesscss.cn/" target="_blank" rel="external">http:\/\/www.lesscss.net\/</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/15/swiper/">
+                    Swiper
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/15/Git/">
+                    Git
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#LESS"><span class="toc-number">1.</span> <span class="toc-text">LESS</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Less　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/03/15/swiper/" title="上一篇: Swiper">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/15/Git/" title="下一篇: Git">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/03/25/ngRoute和ui-route/">Angular</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/php基本认识/">php基本认识</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/02/15/wabAPP/">webApp项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/25/gulp/">gulp</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/15/工作当中的开发流程/">开发流程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/Zepto/">Zepto</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/swiper/">Swiper</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/15/Less/">Less</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/15/Git/">Git</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/28/Bootstrap项目实战/">项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/20/Bootstrap3的学习md/">Bootstrap实践理解</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/bootstrap/">Bootstrap的笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/15/jQuery的简介,操作css与html/">jQuery的简介,操作css与html</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/常用的不懂方法/">常用数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/19/面向对象day2/">面向对象2</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/面向对象day1/">面向对象3</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/JS满天星/">JS满天星特效</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/02/15/前端软件整理/">前端软件整理</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
