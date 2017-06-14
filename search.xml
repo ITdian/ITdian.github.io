@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[jQuery选择器]]></title>
-      <url>/2017/04/22/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
+      <url>/2016/06/25/jQuery%E7%9A%84%E9%80%89%E6%8B%A9%E5%99%A8/</url>
       <content type="html"><![CDATA[<h1 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器"></a>jQuery选择器</h1><p>jQuery 最核心的组成部分就是:选择器引擎。<br>   它完全继承了 CSS 的风格,可以对 DOM 元 素的标签名、属性名、状态等进行快速准确的选择,并且不必担心浏览器的兼容性,写法更加简洁。<br>jQuery 选择器实现了 CSS1~CSS3 的大部分规则之外,还实现了一些自定义的选择器,用于各种特殊状态的选择。 </p>
 <a id="more"></a>
 <h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类:"></a>选择器的分类:</h2><p>  <strong>1.基本选择器</strong></p>
@@ -24,776 +24,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JQUERY的网页应用]]></title>
-      <url>/2017/04/21/jQuery%E7%BD%91%E9%A1%B5%E7%9A%84%E5%BA%94%E7%94%A8/</url>
-      <content type="html"><![CDATA[<p>##JQUERY的网页应用</p>
-<p> /<em>一.设置吸顶效果</em>/</p>
-<p> /<em>1.0获取NAV距离顶部的间距</em>/</p>
-<p>/<em>1.1监听滚动，设置对应的样式</em>/</p>
-<p>/<em>1.2获取滚动的距离</em>/</p>
-<p>/<em>1.3判断比较设置样式</em>/</p>
-<p>/<em>1.31设置图片的透明度，让图片出来</em>/<br><a id="more"></a></p>
-<p>  /<em>二.设置返回顶部</em>/</p>
-<p> //2.1判断</p>
-<p>/<em>2.2点击BACK_TOP返回顶部</em>/</p>
-<p> //2.21让回到顶部</p>
-<p> /<em>三.添加LI</em>/<br>/<em>3.0使用数组来记录事项</em>/</p>
-<p> /<em>当界面加载进来的时候，就去从从存储的数据中拿出对应的数据，如果没有才去加载</em>/</p>
-<p> /<em>渲染界面</em>/</p>
-<p>/<em>3.0去掉默认行为</em>/</p>
-<p>/<em>3.1获取INPUT中内容，判断</em>/</p>
-<p>  /<em>3.2创建事项</em>/</p>
-<p>/<em>3.2设置事项的相关属性</em>/</p>
-<p>/<em>3.3添加到数组中中保存起来</em>/</p>
-<p> /<em>3.4根据数组的长度，添加节点而且吧节点显示出来</em>/</p>
-<p> /<em>3.5存储数据</em>/</p>
-<p> /*0.存储数据，第一个参数用来表示存储的数据的标示，任何值都可以，只是用这个值来取出数据</p>
-<pre><code>* 第二个参数表示要存储的数据*/
-</code></pre><p>/<em>把上一次的内容清空</em>/</p>
-<p>/<em>注意：为了让对应的CHECKBOX点击的时候，让对应的不同的事项中添加不同的LI</em>/</p>
-<p>/<em> 所以我们需要改造渲染方法</em>/</p>
-<p>  /<em>3.41根据数组中的个数。来添加节点</em>/</p>
-<p>//为了规范和严格要进行元素的判定</p>
-<p> /<em>3.42创建LI</em>/</p>
-<p>  // DATA-INDEX:用来给LI绑定索引</p>
-<p>  /<em>3.43添加LI</em>/</p>
-<p>   /<em>根据是否检查过，来确定添加到待选事件还是完成事件</em>/</p>
-<p>/<em>四.切换TAB</em>/</p>
-<p>   /<em>4.1点击LI切换TAB</em>/</p>
-<p>   /<em>4.2获取点击的索引值</em>/</p>
-<p>   /<em>4.3切换下面的DIV</em>/<br>/<em>五，点击删除按钮删除对应的LI</em>/</p>
-<p>/<em>5.1获取DEL所在的LI</em>/</p>
-<p>/<em>5.2获取LI对应的索引值</em>/</p>
-<p>/<em>5.3为了代码严格，我们可以回索引进行判断</em>/</p>
-<p> /<em>5.4删除数组中的元素</em>/</p>
-<p>/<em>5.5删除节点</em>/</p>
-<p>/<em>5.6存储数据</em>/</p>
-<p>/<em>六.点击待办事项，让对应的事项有待办变为已经完成</em>/</p>
-<p>/<em>6.1确定点击的索引</em>/</p>
-<p>/<em>6.2拿出INDEX中对应的数组中的元素</em>/</p>
-<p>/<em>6.3设置ISCHECK为选中</em>/</p>
-<p>/<em>用OBJ替换原来位置的元素</em>/</p>
-<p> /<em>6.4进行界面设置</em>/</p>
-<p> /<em>6.5存储数据</em>/</p>
-<p> /<em>七.点击详情按钮的处理</em>/</p>
-<p> /<em>设置一个值用来表示当前点击的是哪一个</em>/</p>
-<p> /<em>7.1设置让对应MASK出来</em>/</p>
-<p> /<em>7.2获取点击详情按钮的索引</em>/</p>
-<p>/<em>7.21设置CURR_INDEX的值</em>/</p>
-<p>/<em>7.3根据索引值获取数组中对应的元素</em>/</p>
-<p> /<em>7.4根据对应的事项设置我们具体的内容</em>/</p>
-<p>/<em>7.41设置标题</em>/</p>
-<p>/<em>7.42设置内容</em>/</p>
-<p>/<em>7.43设置提醒时间</em>/</p>
-<p> /<em>八.处理事件的相关点击</em>/</p>
-<p>  /<em>8.1点击内容阻止冒泡</em>/</p>
-<p>/<em>8.11阻止冒泡</em>/</p>
-<p>  /<em>8.2设置当光标移动到INPUT中设置时间的时候，让对应的时间的选择器展示出来</em>/</p>
-<p>  /<em>8.21设置本地化时间(设置中国时间)</em>/</p>
-<p>   /<em>8.22给对应的标签设置对应时间选择器</em>/</p>
-<p>/<em>九.更新数据和界面</em>/</p>
-<p>  /<em>9.1获取点击详细按钮对应的索引值</em>/</p>
-<p>   /<em>9.2根据索引值获取对应数组中的元素</em>/</p>
-<p>/<em>9.3设置元素的数据</em>/</p>
-<p> /<em>IS_NOTICE：表示有没有提醒去做对应事项</em>/</p>
-<p>/<em>9.4赋值回原来的位置</em>/</p>
-<p> /<em>9.5存储数据</em>/</p>
-<p>/<em>9.6更新界面</em>/</p>
-<p>/<em>9.7让当前的MASK消失</em>/</p>
-<p> /<em>十.提醒设置</em>/</p>
-<p>/<em>10.1我们需要时时刻刻比较当前的时间和设置的时间，所以要使用定时器</em>/</p>
-<p> /<em>10.2获取每一元素的的提醒时间，和当前时间比较，需要使用遍历</em>/</p>
-<p>/<em>10.3判断当前的时间是否大于提醒时间</em>/</p>
-<p>  /<em>10.31获取每一提醒时间的毫秒数</em>/</p>
-<p>  //需要提醒，让对应铃声响起</p>
-<p>   /<em>获取的对象是JQUERY对象我们需要转化成JS对象</em>/</p>
-<p>/<em>10.4当铃声响起后，表示已经提醒过了，我们要设置提醒为<br>TRUE</em>/</p>
-<p> /<em>10.5重新赋值</em>/</p>
-<p> /<em>10.6数据变化，就要存储数据</em>/# #</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[常用方法]]></title>
-      <url>/2017/04/20/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%8D%E6%87%82%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
-<p>empty() 方法从被选元素移除所有内容，包括所有文本和子节点。</p>
-<p>trim() 函数返回去掉开头和结尾空格后的字符串</p>
-<p>prepend() 方法在被选元素的开头（仍位于内部）插入指定内容</p>
-<p>data() 方法向被选元素附加数据，或者从被选元素获取数据。</p>
-]]></content>
-      
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[面向对象1]]></title>
-      <url>/2017/04/18/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day1/</url>
-      <content type="html"><![CDATA[<h4 id="一-JavaScript是由哪几部分组成"><a href="#一-JavaScript是由哪几部分组成" class="headerlink" title="## 一:JavaScript是由哪几部分组成: ##"></a>## 一:JavaScript是由哪几部分组成: ##</h4><p>01 BOM<br>    Browser Object Mode 浏览器对象模型</p>
-<p>02 DOM<br>    Document Object Mode 文档(HTML文档)对象模型</p>
-<p>03 ECMAScript<br>       规定了js的语法核心,关键字,类型,语言,结构<br><a id="more"></a></p>
-<h4 id="二-js中的数据类型-基本数据类型-复杂数据类型"><a href="#二-js中的数据类型-基本数据类型-复杂数据类型" class="headerlink" title="#二:js中的数据类型:基本数据类型 | 复杂数据类型#"></a>#二:js中的数据类型:基本数据类型 | 复杂数据类型#</h4><p>01基本(简单)数据类型</p>
-<pre><code>   string  字符串
-number   数值(正数|小数)
-boolean  布尔类型的值  true | false
-null     空(对象)
-undefined  没有定义
-</code></pre><p>02复杂(复合)数据类型</p>
-<pre><code>Object 对象类型(js中所有的复杂数据类型都是基于object)
-  Array  数组类型
-Date     日期类型
-            x JSON  (不是数据类型--是数据结构)
-Function    函数类型
-RegRxp    正则表达式
-Number    
-Boolean
-</code></pre><p>03 如何判断数据的类型</p>
-<pre><code>typeof
-语法: typeof 数据(变量)
-结果:
-typeof 字符串 string
-typeof    数值        number
-typeof    true|false    boolean
-typeof    undefined    undefinede
-typeof 复杂数据类型    object 除了函数(function)之外
-</code></pre><p>注意点:</p>
-<pre><code>01    typrof 本身是操作符不是函数
-02 typeof 本身有返回值,这个返回值是string字符串类型的
-03 null和undefined的区别        undefined是声明了变量但是从来没有赋值
-变量的值永远不会为null,除非你手动的设置为null
-
-我们设置变量的值为null,是为了我们不用变量的时候,垃圾回收机制就会回收这个变量
-</code></pre><h4 id="三-赋值"><a href="#三-赋值" class="headerlink" title="三:赋值(=)"></a>三:赋值(=)</h4><pre><code>a=b;  把等号右边的变量(b)保存的内容复制一份给左边的变量
-等于符号(==)
-返回值:true|false
-判定:比较左右两边的值是否相等,如果相等返回的就是true.反之就是false
-全等符号(===)
-返回值:true|false
-判定:比较左右两边的值&amp;类型是否相等,如果值和类型都相等,那么结果就为true,反之就是false
-
-&lt;script&gt;
-var str1 = &quot;string1&quot;;                  //字符串类型
-var str2 = &quot;string1&quot;;
-var str3 = new String(&quot;string1&quot;);       //字符串对象
-var str4 = String(&quot;string1&quot;);
-var str5 = new Object(&quot;string1&quot;);
-
-console.log(str1 == str2);    //true
-console.log(str1 == str3);      //true
-console.log(str1 == str4);      //true
-console.log(str1 == str5);      //true
-console.log(&quot;_________________&quot;);
-console.log(str1 === str2);         //true
-console.log(str1 === str3);         //false
-console.log(&quot;_________________&quot;);
-console.log(str1 === str4);         //true
-console.log(str1 === str5);         //false
-
-console.log(str3 == str4);          //true
-console.log(str3 === str4);         //false
-
-console.log(str3 == str5);          // false
-console.log(str3 === str5);         //false 类型相同但是值（地址）不同
-&lt;/script&gt;
-</code></pre><h4 id="四-关系运算符"><a href="#四-关系运算符" class="headerlink" title="四:关系运算符:"></a>四:关系运算符:</h4><pre><code>大于(&gt;)
-小于(&lt;)
-小于等于(&lt;=)
-大于等于(&gt;=)
-不等于(!=)
-</code></pre><h4 id="五-逻辑运算符"><a href="#五-逻辑运算符" class="headerlink" title="五:逻辑运算符"></a>五:逻辑运算符</h4><pre><code>01 逻辑非(!)
-!表达式
-判定:取反操作
-返回值:布尔类型的值:true|false
-02 逻辑与(&amp;&amp;)
-表达式1 &amp;&amp; 表达式2
-返回值:其中的一个表达式
-判定:判定表达式1是否为真,如果为真,返回表达式2,否则返回表达式1
-03 逻辑或(||)
-表达式1 || 表达式2
-返回值:其中的一个表达式
-判定:判定表达式1是否为真,如果为真,返回表达式1,否则返回表达式2
-
-&lt;script&gt;
-console.log(1 || 0);              //1
-console.log(1 || 1);              //1
-console.log(1 || 2);              //1
-console.log(0 || 1);              //1
-console.log(0 || 0);               //0
-console.log(0 || 2);                //2
-console.log(2 || 1);                //2
-
-console.log(1 &amp;&amp; 1);                //1
-console.log(1 &amp;&amp; 2);                //2
-console.log(1 &amp;&amp; 0);                //0
-console.log(0 &amp;&amp; 1);                //0
-console.log(0 &amp;&amp; 2);                //0
-console.log(0 &amp;&amp; 0);                //0
-console.log(2 &amp;&amp; 1);                //1
-console.log(2 &amp;&amp; 0);                //0
-
-&lt;/script&gt;
-</code></pre><h4 id="六-在js中数据的存储有两种方式-值-引用"><a href="#六-在js中数据的存储有两种方式-值-引用" class="headerlink" title="六:在js中数据的存储有两种方式:值|引用"></a>六:在js中数据的存储有两种方式:值|引用</h4><pre><code>按照存储方式的不同,可以分成两种类型
-01 值类型
-string
-number
-boolean
-undefined
-null
-值类型的变量存储的内容是具体的数据,比如说&quot;string&quot;
-02 引用类型
-object类型的,包括Array Function Date RegExp String Number Boolean
-引用类型的对象存储的内容是引用(reference--地址),该地址指向内存中具体的数据,
-具体的数据单独存储在内存中
-&lt;script&gt;
-
-var str = &quot;string1&quot;;    //值类型
-var num = 10;           //值类型
-var boolT = true;       //值类型
-
-var car = {             //引用类型
-    type:&quot;奔驰&quot;,
-    color:&quot;黑色&quot;
-}
-
-//key - value
-var person = {          //引用类型
-    name:&quot;张三&quot;,
-    age:18,
-    car:car
-}
-
-
-console.log(person.name);     //张三
-console.log(person.car);      //Object
-(color: &quot;黑色&quot;type: &quot;奔驰&quot;__proto__: Object)
-&lt;/script&gt;
-</code></pre><h4 id="七-赋值（-）"><a href="#七-赋值（-）" class="headerlink" title="七:赋值（=）"></a>七:赋值（=）</h4><pre><code>a = b；  把等号右边的变量存储的内容复制一份给左边的变量
-
-值类型的赋值:
-
-把等号右边的变量存储的内容(具体的数据)复制一份给左边的变量
-注意点:修改了其中的一个变量,对另外一个变量没有影响,他们是相互独立的.
-
-引用类型的赋值
-
-把等号右边的对象存储的内容(指向具体数据的地址)复制一份给左边的对象
-注意点:修改了其中的某一个对象,对另外一个对象有影响,他们共享内存中的同一块数据
- &lt;script&gt;
-    var str1 = &quot;string1&quot;;
-var str2 = str1;        //值类型的赋值
-console.log(str1 == str2);  //true
-str1 = &quot;修改&quot;;
-console.log(str1 == str2);  //false
-console.log(str1);      //修改
-console.log(str2);      //string1
-
-var obj1 = {
-    name:&quot;张三&quot;
-}
-
-var obj2 = obj1;   //引用类型的赋值
-console.log(obj1 == obj2);      //true
-obj1.name = &quot;李四&quot;;
-console.log(obj1.name);   //李四
-console.log(obj2.name);   //李四
-
-//赋值操作之后，如果重新使用字面量的方式来设置对象，那么会切断和赋值对象之间的联系
-obj1 = {
-    age:20,
-    name:&quot;老王&quot;
-}
-
-console.log(obj1.name);     //老王
-console.log(obj2.name);     //李四
-
-&lt;/script&gt;  
-</code></pre><h4 id="八-值类型和引用类型在函数中的使用"><a href="#八-值类型和引用类型在函数中的使用" class="headerlink" title="八:值类型和引用类型在函数中的使用"></a>八:值类型和引用类型在函数中的使用</h4><pre><code>01 函数的参数:
-形式参数(形参):在函数声明的时候,写在()中的变量,形参在函数内部使用,
-在函数内部作为局部变量使用,形参用来占位
-实际参数(实参):在函数调用的时候,写在()中的变量(对象)
-02 函数的调用:
-内部会把实参赋值给形参
-实参可能是值类型的也可能是引用类型的
-03 值类型的数据作为函数的参数
-在函数内部修改了形参的值(a),对函数外部的实参不会产生影响,他们是相互独立的.
-04 引用类型的数据作为函数的参数
-在函数内部修改了形参的值(paremObj),对函数外部的实参会产生影响,他们共享内存中的同一块数据
-
-&lt;script&gt;
-var num = 10;
-function func(a) {
-    console.log(a); //10
-    a = 20;
-    console.log(a); //20
-}
-func(num);
-console.log(num);   //10
-//console.log(a);
-
-var obj = {
-    name:&quot;张三&quot;
-}
-
-function foo(paramObj) {
-    console.log(paramObj.name);   //张三
-    paramObj.name = &quot;李老汉&quot;;
-    console.log(paramObj.name); //李老汉
-
-    paramObj = {
-        name:&quot;老王&quot;
-    }
-    console.log(paramObj.name); //老王
-}
-foo(obj);
-console.log(obj.name);    // 李老汉
-  &lt;/script&gt;
-</code></pre><h4 id="九-对象的动态特性"><a href="#九-对象的动态特性" class="headerlink" title="九:对象的动态特性"></a>九:对象的动态特性</h4><pre><code>01  js中的对象具有动态特性
-js支持在对象定义之后,动态的添加|删除|修改|查询
-对象的成员:对象的属性和方法
-对象:键值对的几何(key--value).属性和方法的集合
-        属性:定义在对象内部的变量
-        方法:定义在对象内部的函数
-特性的说明:带来了方便(更灵活),但是在使用的时候容易出错(出现覆盖的问题)
-02 对象的访问方式:
-    1 点语法
-    2 []语法  key必须是字符串的类型,如果不是字符串类型那么就当做一个变量来处理
-03 动态的操作
-添加:如果当前的属性不存在,那么就是添加
-修改:如果当前访问的属性已经存在,那么在设置的时候就是修改
-删除:使用关键字delete 语法:delete 对象.属性
-&lt;script&gt;
-var obj = {
-    name:&quot;张三&quot;,
-    age : 20,
-    log:&quot;log&quot;
-};
-
-var o = {};
-
-//需求：复制obj对象中的属性给o对象
-for(var k in obj)
-{
-   o[k] = obj[k];
-}
-console.log(o);
-&lt;/script&gt;
-&lt;script&gt;
-//01 创建空的对象
-var obj ={};
-
-//02 动态的添加成员（属性|方法）
-obj.name = &quot;张三&quot;;
-obj.age = 20;
-obj.showName  = function () {
-    console.log(this.name);//张三
-}
-console.log(obj.name);张三
-obj.showName();
-
-//03 修改成员
-obj.name = &quot;李四&quot;;
-obj.showName  = function () {
-    console.log(this.name + &quot; 姓名&quot;);//李四  &quot;姓名&quot;
-}
-obj.showName();
-console.log(obj);
-
-delete obj.age;
-console.log(obj.age);   //undefiend
-console.log(&quot;___________________&quot;);
-
-var test = {};
-console.log(test);
-
-//设置属性（添加属性） 属性名称：backgroundColor
-test[&quot;background Color&quot;] = &quot;red&quot;;
-console.log(test);
-
-obj[&quot;showAge&quot;] = function () {
-    console.log(this.age,&quot;____&quot;);
-}
-obj[&quot;showAge&quot;]();
-&lt;/script&gt;
-
-&lt;script&gt;
-var obj = {
-    name:&quot;张三&quot;,
-    age:20,
-    showName:function () {
-        console.log(this.name);
-    }
-}
-
-var name = &quot;name&quot;;
-console.log(obj.name);  //张三
-console.log(obj[name],&quot;+++++&quot;); // 张三
-//console.log(obj[age]);   //报错.[key]必须是字符串类型的，如果不是字符串类型那么就当做一个变量来处理
-
-console.log(window.name);  //name
-console.log(obj);
-
-&lt;/script&gt;
-</code></pre><h4 id="十-in关键字"><a href="#十-in关键字" class="headerlink" title="十:in关键字"></a>十:in关键字</h4><pre><code>01 遍历(迭代) 对象 for...in
-02 判断对象中是否存在指定的属性  语法:&quot;属性&quot; in 对象
-返回值:布尔类型的值,如果有那么就返回true
-注意点:
-01 属性必须是字符串
-02 在使用in操作符处理数组的时候需要注意: key是索引
-数组[1,2,3,4,5,6] 的对象形式:{0:1,1:2,2:3,3:4,4:5,5:6};
-
-&lt;script&gt;
-var dog = {
-    name:&quot;旺财&quot;,
-    color:&quot;绿色&quot;
-}
-
-//判断|检查
-console.log(&quot;name&quot; in dog);
-console.log(&quot;age&quot; in dog);
-console.log(&quot;&quot; in dog);           //false
-&lt;/script&gt;
-
-&lt;script&gt;
-var arr = [1,2,3,4,5,6];
-console.log(&quot;1&quot; in arr);    //true
-console.log(&quot;1&quot; in arr);   //true
-
-console.log(&quot;5&quot; in arr);       //true
-console.log(&quot;6&quot; in arr);        //false  //判断arr中是否有6这个索引
-&lt;/script&gt;
-</code></pre><h3 id="十一-delete的作用"><a href="#十一-delete的作用" class="headerlink" title="十一:delete的作用"></a>十一:delete的作用</h3><pre><code>01 删除对象的属性
-02 可以删除没有使用var声明的变量
-delete关键字的使用注意
-01 有返回值 布尔类型的值（true|false） 删除成功那么就是true
-02 删除对象中不存在的属性，返回值是true还是false  (true)
-03 删除对象的原型对象中的属性，能否删除成功(不能删除)，返回值[delete obj.hi == 删除对象中不存在的属性]
-04 delete关键字无法删除使用var声明的全局的变量，但是却可以删除直接定义在window上面的属性
-
-&lt;script&gt;
-Object.prototype.hi = &quot;hi&quot;;
-
-var obj = {name:&quot;巴拉巴拉小魔仙&quot;};
-console.log(delete obj.name);
-
-var demo = &quot;demoTest&quot;;
-console.log(delete demo);
-
-console.log(delete obj.age);
-console.log(obj.hi);
-
-//    console.log(delete Object.prototype.hi);  //true
-console.log(delete obj.hi);  //true
-alert(obj.hi);
-console.log(obj.hi);
-
-console.log(window.demo);   //全局变量和函数默认会成为window对象的属性和方法
-
-window.showInfo = &quot;不可描述的信息&quot;;
-console.log(showInfo);
-delete window.showInfo;
-console.log(showInfo);   //报错
-
-&lt;script&gt;
-var dog = {
-    name:&quot;招财&quot;,
-    age:14
-}
-
-console.log(dog.name);
-//删除对象的属性
-delete dog.name;
-console.log(dog.name);
-
-//没有使用var关键字声明的变量,那么该变量默认会成为一个全局的变量(变成window的属性)
-var a = &quot;testa&quot;;
-b = &quot;testb&quot;;
-console.log(a);
-console.log(b);
-
-function func() {
-    var num1 = 10;
-    num2 = 20;
-}
-
-func();
-//console.log(num1);  //
-console.log(num2);
-
-//使用delete删除属性
-console.log(num2,&quot;____&quot;);
-delete num2;
-//console.log(num2);
-
-console.log(a);
-delete a;
-console.log(a);
-
-&lt;/script&gt;
-
-
-&lt;/script&gt;
-</code></pre><h3 id="十二-循环和分支"><a href="#十二-循环和分支" class="headerlink" title="十二:循环和分支"></a>十二:循环和分支</h3><pre><code>01 顺序的执行结构
-02 循环结构
-for循环
-while
-do...while   至少会执行一次循环体
-for..in
-&lt;!--&lt;script&gt;--&gt;
-&lt;!--while (条件)--&gt;
-&lt;!--{--&gt;
-    &lt;!--//执行的代码--&gt;
-&lt;!--}--&gt;
-
-&lt;!--do{--&gt;
-    &lt;!--//执行的代码--&gt;
-&lt;!--}while(条件)--&gt;
-&lt;!----&gt;
-&lt;!--&lt;/script&gt;--&gt;
-
-03 分支结构
-if...else..
-switch...case
-
-&lt;script&gt;
-switch (12)
-{
-    case 1:
-        console.log(1);
-        break;
-    case 2:
-        console.log(2);
-        break;
-    default:
-        console.log(&quot;其他的数据&quot;);
-}
-&lt;/script&gt;
-
-04 break continue
-break :退出循环，执行该循环后面的代码
-continue：退出循环(结束当前的循环)，继续执行下一次的循环
-
-&lt;script&gt;
-for (var i = 0; i &lt;10; i++) {
-    if (i == 5)
-    {
-        //break;
-        continue;
-    }
-
-    console.log(&quot;i = &quot; + i);
-
-}
-
-&lt;/script&gt;
-</code></pre><h3 id="十三-调试工具的使用-断点"><a href="#十三-调试工具的使用-断点" class="headerlink" title="十三:调试工具的使用(断点)"></a>十三:调试工具的使用(断点)</h3><pre><code>调试工具
-01 打开控制台
-windows : F12 MAC OSX  option + command + j
-
-02 控制台的详细介绍
-03 断点（普通断点 + 条件断点）
-04 网络通信的模型
-客户端（浏览器|app） --- 服务器端(电脑)
-客户端需要数据      ______请求__________&gt;服务器端  （01 请求）
-客户端              _____数据__________服务器端     (02 响应)
-请求：请求头（对客户端以及请求本身的描述信息） + 请求体（具体的参数）  GET
-响应：响应头（对服务器端以及响应本身的描述信息） + 响应体（具体的数据）
-
-GMT 格林尼治时间
-北京时间  +     08
-
-&lt;div id=&quot;demo&quot;&gt;测试的div&lt;/div&gt;
-&lt;script&gt;
-var a = &quot;testA&quot;;
-
-var b = &quot;testB&quot;;
-function func01() {
-    console.log(a);
-    console.log(b);
-    var c = &quot;testC&quot;;
-    console.log(c);
-}
-
-function func02() {
-    console.log(&quot;func02&quot;);
-}
-console.log(b);
-func01();
-func02();
-
-//console.log(c);
-
-a = &quot;testAAAAASA&quot;;
-console.log(a);
-
-for (var i = 0; i &lt; 10000; i++) {
-   console.log(i);
-
-}
-
-&lt;/script&gt;
-</code></pre><h3 id="十四-异常处理"><a href="#十四-异常处理" class="headerlink" title="十四:异常处理"></a>十四:异常处理</h3><pre><code>异常处理(try...catch)
-如果我们的代码发生了异常，那么该行代码后面的代码将无法得到执行
-但是有的时候，我们需要保证在任何情况下某些代码都能够正常得到执行，这个时候就可以使用异常捕获结构
-异常捕获结构（try...catch）
-01 把可能出错的代码放在try{}代码块中
-
-手动的抛出异常 throw关键字
-异常信息：字符串 | 对象（）
-
-完整的异常捕获结构
-try{}catch(e){}finally{}
-&lt;script&gt;
-try
-{
-    //01 存放的是可能出错的代码
-    //console.log(c);
-}
-catch(e)
-{
-    //02 出错之后会执行这部分代码
-    console.log(e);
-}
-finally
-{
-    //03 不管是否出错都会执行的代码
-    console.log(&quot;无论如何都会执行的代码&quot;);
-
-    //有什么用？ 前端中一般不会使用
-    //Node.js 服务器端  最后的扫尾和资源释放的工作
-}
-&lt;/script&gt;
-&lt;script&gt;
-try
-{
-    //可能出错的代码
-    var a = &quot;testA&quot;;
-    console.log(a);
-    //console.log(c);
-
-    //throw &quot;这里出现了隐秘的错误，请检查！&quot;;
-    throw {
-        errorMsg:&quot;错误信息&quot;,
-        errorCode:&quot;100201&quot;
-    }
-}
-catch (e)
-{
-    //出现了异常之后，会执行这个代码块中的任务（应对异常的解决方法）
-    console.log(e);
-}
-
-function func() {
-  console.log(&quot;func&quot;);
-}
-
-func();
-&lt;/script&gt;
-</code></pre><h3 id="十五-DOM操作"><a href="#十五-DOM操作" class="headerlink" title="十五: DOM操作"></a>十五: DOM操作</h3><pre><code>DOM:文档对象模型 核心对象：document
-增加|删除|修改|查询
-查询：getElementById|className |tagName
-删除：remove...
-修改: 得到标签之后直接设置
-增加:createEle...
-
-需求：创建一个div标签，设置标签的内容为：我让掉下眼泪的，不止昨夜的酒，设置样式
-样式：
-    高度：100px
-    宽度：300px
-    背景颜色:red
-    边框： 1px solid #432
-把标签添加到当前的页面中
-&lt;script&gt;
-//01 创建标签
-var div = document.createElement(&quot;div&quot;);
-//02 设置内容和样式
-div.innerText = &quot;我让掉下眼泪的，不止昨夜的酒&quot;;
-div.style.height = &quot;100px&quot;;
-div.style.width = &quot;300px&quot;;
-div.style.backgroundColor = &quot;red&quot;;
-div.style.border = &quot;1px solid #555&quot;;
-//03 添加到body
-document.body.appendChild(div);
-//04 删除标签
-document.body.removeChild(div);
-
-&lt;/script&gt;
-</code></pre><h3 id="十六-函数和对象的创建"><a href="#十六-函数和对象的创建" class="headerlink" title="十六:函数和对象的创建"></a>十六:函数和对象的创建</h3><pre><code>函数的创建
-01 函数声明 function 函数名（参数1，参数2）{函数体}
-02 函数表达式 var func =  function [函数名]（参数1，参数2）{函数体}
-03 使用构造函数创建（Function）
-
-对象的创建
-01 字面量的方式
-02 构造函数（Object） + new
-&lt;script&gt;
-//01 函数声明
-function func(a,b) {
-    console.log(a + b);
-}
-func(1,2);
-
-//02 函数表达式
-var foo = function () {
-    console.log(&quot;foo&quot;);
-}
-
-foo();
-
-//03 构造函数创建
-var funcName = new Function(&quot;console.log(123)&quot;);
-funcName();
-
-&lt;/script&gt;
-&lt;script&gt;
-var obj = {
-    name:&quot;张三&quot;
-}
-
-var obj2 = new Object();  //{}
-obj2.name = &quot;李四&quot;;
-console.log(obj2);
-
-
-&lt;/script&gt;
-</code></pre><h3 id="十七-面向过程和面向对象的概念"><a href="#十七-面向过程和面向对象的概念" class="headerlink" title="十七:面向过程和面向对象的概念"></a>十七:面向过程和面向对象的概念</h3><pre><code>面向过程
-关注的是解决问题需要的一个接着一个的过程
-
-面向对象
-关注的是解决问题需要的对象
-
-面向对象编程主要重点是对象：内置对象（数组对象|日期对象|函数对象） 自定义
-
-面向对象和面向过程都是一种解决编程问题的思想（方法）
-
-例子：
-    面向过程的洗衣服方式：
-     01 收集脏衣服
-     02 找个盆（桶）
-     03 接水
-     04 放洗衣液（洗衣粉）
-     05 搅匀
-     06 先泡几分钟（15）
-     07 摩擦摩擦
-     08 再清水冲洗一遍
-     09 把衣服拧干
-     10 晾衣服
-
-    面向对象洗衣服
-        01 收集脏衣服
-        02 找个合适的洗衣机|男朋友|女朋友
-        03 设置洗衣服和烘干的程序
-
-面向对象和面向过程关系 其实是对面向过程的一种封装（？） 减少冗余的代码 + 复用性更好
-</code></pre>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[项目实战]]></title>
-      <url>/2016/04/25/Bootstrap%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</url>
+      <url>/2015/08/28/Bootstrap%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</url>
       <content type="html"><![CDATA[<p>#项目实战</p>
 <h3 id="一-搭建-Bootstrap-页面骨架及项目目录结构"><a href="#一-搭建-Bootstrap-页面骨架及项目目录结构" class="headerlink" title="一. 搭建 Bootstrap 页面骨架及项目目录结构"></a>一. 搭建 Bootstrap 页面骨架及项目目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">├─ /weijinsuo/ ··················· 项目根目录</div><div class="line">└─┬─ /css/ ······················· 项目CSS文件</div><div class="line">├─ /font/ ······················ 使用到的字体文件</div><div class="line">├─ /img/ ······················· 使用到的图片文件</div><div class="line">├─ /js/ ························ 自己的JS脚本</div><div class="line">├─ /lib/ ······················· 第三方类库</div><div class="line">├─ /favicon.ico ················ 站点图标</div><div class="line">└─ /index.html ················· 入口文件</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -1060,134 +292,137 @@ console.log(obj2);
     </entry>
     
     <entry>
-      <title><![CDATA[Bootstrap实践理解]]></title>
-      <url>/2016/04/20/Bootstrap3%E7%9A%84%E5%AD%A6%E4%B9%A0md/</url>
-      <content type="html"><![CDATA[<p>##Bootstrap编码规范</p>
-<p>###黄金定律:不管有多少人共同参加同一项目,一定要确保每一行代码都像是一个人写的一样.</p>
-<p>###HTML:语法<br>用两个空格来代替制表符（tab） – 这是唯一能保证在所有环境下获得一致展现的方法。<br>嵌套元素应当缩进一次（即两个空格）。<br>对于属性的定义，确保全部使用双引号，绝不要使用单引号。<br>不要在自闭合（self-closing）元素的尾部添加斜线 – HTML5 规范中明确说明这是可选的。<br>不要省略可选的结束标签（closing tag）（例如， 或 ）。<br><a id="more"></a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">由于markdown不支持显示HTML的DOM元素,所以,每个DOM元素前面的&lt;号我都加了一个空格让代码显示出来</div></pre></td></tr></table></figure>
-<pre>
-< !DOCTYPE html>
-< html>
-  < head>
-    < title>Page title
-  < /head>
-  < body>
-    < img src="images/company-logo.png" alt="Company">
-    < h1 class="hello-world">Hello, world!
-  < /body>
-< /html>
-</pre>
-
-<p>###HTML5 doctype<br>为每个 HTML 页面的第一行添加标准模式（standard mode）的声明，这样能够确保在每个浏览器中拥有一致的展现。</p>
-<pre>
-< !DOCTYPE html>
-< html>
-  < head>
-  < /head>
-< /html>
-</pre>
-更多请查文档:
-[http://codeguide.bootcss.com/](http://codeguide.bootcss.com/ "Bootstrap编码规范")
-
-##禁止响应式布局
-Bootstrap 会自动帮你针对不同的屏幕尺寸调整你的页面，使其在各个尺寸的屏幕上表现良好。下面我们列出了如何禁用这一特性，就像这个非响应式布局实例页面一样。
-
-禁止响应式布局有如下几步：
-1. 移除 此 CSS 文档中提到的设置浏览器视口（viewport）的标签：<meta>。
-2. 通过为 .container 类设置一个 width 值从而覆盖框架的默认 width 设置，例如 width: 970px !important; 。请确保这些设置全部放在默认的 Bootstrap CSS 文件的后面。注意，如果你把它放到媒体查询中，也可以略去 !important 。
-3. 如果使用了导航条，需要移除所有导航条的折叠和展开行为。
-4. 对于栅格布局，额外增加 .col-xs-* 类或替换掉 .col-md-* 和 .col-lg-*。 不要担心，针对超小屏幕设备的栅格系统能够在所有分辨率的环境下展开。
-
-
-针对 IE8 仍然需要额外引入 Respond.js 文件（由于仍然利用了浏览器对媒体查询（media query）的支持，因此还需要做处理）。这样就禁用了 Bootstrap 对移动设备的响应式支持。
-
-
-##标题嵌套
-当标题嵌套时 (< h1> - < h6>)，你的文档的主标题应该是 < h1> 标签。随后的标题逻辑上就应该使用 < h2> - < h6> ，这样，屏幕阅读器就可以构造出页面的内容列表了。
-
-
-
-#全局 CSS 样式
-##移动设备优先
-在 Bootstrap 2 中，框架中的某些关键部分增加了对移动设备友好的样式。而在 Bootstrap 3 中，重写了整个框架，使其一开始就是对移动设备友好的。这次不是简单的增加一些可选的针对移动设备的样式，而是直接融合进了框架的内核中。也就是说，Bootstrap 是移动设备优先的。针对移动设备的样式融合进了框架的每个角落，而不是增加一个额外的文件。
-
-为了确保适当的绘制和触屏缩放，需要在 <head> 之中添加 viewport 元数据标签。
-<pre>
-< meta name="viewport" content="width=device-width, initial-scale=1">
-</pre>
-
-<p>在移动设备浏览器上，通过为视口（viewport）设置 meta 属性为 user-scalable=no 可以禁用其缩放（zooming）功能。这样禁用缩放功能后，用户只能滚动屏幕，就能让你的网站看上去更像原生应用的感觉。注意，这种方式我们并不推荐所有网站使用，还是要看你自己的情况而定！</p>
-<pre>
-< meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</pre>
-
-
-<p>##布局容器<br>Bootstrap 需要为页面内容和栅格系统包裹一个 .container 容器。我们提供了两个作此用处的类。注意，由于 padding 等属性的原因，这两种 容器类不能互相嵌套。</p>
-<p>.container 类用于固定宽度并支持响应式布局的容器。</p>
-<pre>
-< div class="container">
-  ...
-< /div>
-</pre>
-.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
-<pre>
-< div class="container-fluid">
-  ...
-< /div>
-</pre>
-
-<p>##栅格系统</p>
-<p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
-<p>简介</p>
-<p>栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局，你的内容就可以放入这些创建好的布局中。下面就介绍一下 Bootstrap 栅格系统的工作原理：</p>
+      <title><![CDATA[Bootstrap的笔记]]></title>
+      <url>/2015/08/18/bootstrap/</url>
+      <content type="html"><![CDATA[<p>##Bootstrap的笔记</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-abc2a99ad3326d8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.1   什么是bootstrap?</strong></p>
+<p>bootstrap是当下最流行的前端框架（界面工具集);</p>
+<p>特点是灵活简介、代码优雅、美观大方；</p>
+<p>目的在于让web开发更加迅速、敏捷；</p>
+<p>由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。<br><a id="more"></a></p>
+<p><strong>1.2    什么是框架？</strong></p>
+<p>库 lib library 框架 Framework；</p>
+<p>写的更少做的更多 提供一套较为便捷的操作方式；</p>
+<p>将一套功能体系封装到一个单独的文件中的东西；</p>
+<p>Bootstrap提供一套前端需要的界面工具集合。</p>
+<p><strong>1.3    为什么使用Bootstarp？</strong></p>
+<p>生态圈火，不断地更新迭代；</p>
+<p>提供一套美观大方地界面组件；</p>
+<p>提供一套优雅的 HTML+CSS 编码规范；</p>
+<p>让我们的 Web 开发更简单，更快捷。</p>
+<blockquote>
+<p>注意:</p>
+<ol>
+<li><p>使用 Bootstrap 并不代表不用写 CSS 样式，而是不用写绝大多数大家都会用到的样式</p>
+</li>
+<li><p>Bootstrap 不是 BootStrap！这是一个词，不是合成词，其含义为：n. 引导指令,引导程序</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>1.4    如何使用bootstrap?</strong></p>
+<p>下载Bootstrap</p>
+<p><a href="https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v3.3.6\/bootstrap-3.3.6-dist.zip</a>         <a href="https://github.com/twbs/bootstrap/releases/download/v4.0.0-alpha.2/bootstrap-4.0.0-alpha.2-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v4.0.0-alpha.2\/bootstrap-4.0.0-alpha.2-dist.zip</a></p>
+<p><strong>1.5  Bootstrap文档</strong></p>
+<p><a href="http://getbootstrap.com/" target="_blank" rel="external">官方文档</a></p>
+<p><a href="http://v3.bootcss.com/" target="_blank" rel="external">中文文档</a></p>
+<p><strong>1.6   Bootstrap初始化模板</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang="en"&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">      &lt;meta charset="UTF-8"&gt;</div><div class="line">      &lt;title&gt;页面标题&lt;/title&gt;</div><div class="line">      &lt;!-- 引入Bootstrap核心样式文件（必须） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</div><div class="line">      &lt;!-- 引入Bootstrap默认主题样式（可选） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.theme.min.css"&gt;</div><div class="line">      &lt;!-- 你自己的样式或其他文件 --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="example.css"&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">      &lt;!-- 你的HTML结构...... --&gt;</div><div class="line">      &lt;!-- 以下代码，如果不使用JS插件则不需要 --&gt;</div><div class="line">      &lt;!-- 由于Bootstrap的JS插件依赖jQuery，so 引入jQuery --&gt;</div><div class="line">      &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 引入所有的Bootstrap的JS插件 --&gt;</div><div class="line">      &lt;script src="bootstrap.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 你自己的脚本文件 --&gt;</div><div class="line">      &lt;script src="example.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>1.7   Bootstrap相关知识点</strong></p>
+<p>（1）Compatible：此属性为文档兼容模式声明，表示如果在IE浏览器下则使用最新的标准渲染当前文档;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div></pre></td></tr></table></figure>
+<p>（2）视口： 此属性为移动端页面视口设置，当前值表示在移动端页面的宽度为设备的宽度，并且不缩放（缩放级别为1）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div></pre></td></tr></table></figure>
+<p>（3）第三方依赖:</p>
 <ul>
-<li>“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。</li>
-<li>通过“行（row）”在水平方向创建一组“列（column）”。</li>
-<li>你的内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。</li>
-<li>类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。</li>
-<li>通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。</li>
-<li>负值的 margin就是下面的示例为什么是向外突出的原因。在栅格列中的内容排成一行。</li>
-<li>栅格系统中的列是通过指定1到12的值来表示其跨越的范围。例如，三个等宽的列可以使用三个 .col-xs-4 来创建。</li>
-<li>如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。</li>
-<li>栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-md-<em> 栅格类适用于与屏幕宽度大于或等于分界点大小的设备 ， 并且针对小屏幕设备覆盖栅格类。 因此，在元素上应用任何 .col-lg-</em> 不存在， 也影响大屏幕设备。<br>通过研究后面的实例，可以将这些原理应用到你的代码中。</li>
+<li><p>boostrap的js组件依赖jquery实现 (<a href="https://github.com/jquery/jquery" target="_blank" rel="external">https:\/\/github.com\/jquery\/jquery</a>)</p>
+</li>
+<li><p>当低版本浏览器不识别新标签时兼容（<a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">html5shiv</a>）</p>
+</li>
+<li><p>让低版本浏览器可以使用CSS的媒体查询 （<a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">respond</a>）</p>
+</li>
 </ul>
-<p>##媒体查询<br>在栅格系统中，我们在 Less 文件中使用以下媒体查询（media query）来创建关键的分界点阈值。</p>
+<p>（4）全局CSS样式:</p>
 <ul>
-<li>/<em> 超小屏幕（手机，小于 768px） </em>/</li>
-<li>/<em> 没有任何媒体查询相关的代码，因为这在 Bootstrap 中是默认的（还记得 Bootstrap 是移动设备优先的吗？） </em>/</li>
-<li></li>
-<li>/<em> 小屏幕（平板，大于等于 768px） </em>/</li>
-<li>@media (min-width: @screen-sm-min) { … }</li>
-<li></li>
-<li>/<em> 中等屏幕（桌面显示器，大于等于 992px） </em>/</li>
-<li>@media (min-width: @screen-md-min) { … }</li>
-<li></li>
-<li>/<em> 大屏幕（大桌面显示器，大于等于 1200px） </em>/</li>
-<li>@media (min-width: @screen-lg-min) { … }</li>
-<li></li>
+<li>修饰已有的标签，比如按钮、文本框之类的</li>
 </ul>
-<p>我们偶尔也会在媒体查询代码中包含 max-width 从而将 CSS 的影响限制在更小范围的屏幕大小之内。</p>
-<ul>
-<li>@media (max-width: @screen-xs-max) { … }</li>
-<li>@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { … }</li>
-<li>@media (min-width: @screen-md-min) and (max-width: @screen-md-max) { … }</li>
-<li>@media (min-width: @screen-lg-min) { … }</li>
-</ul>
-<p>#组件</p>
-<p>##导航<br>Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。</p>
-<p>##模态框 modal.js</p>
-<p>模态框经过了优化，更加灵活，以弹出对话框的形式出现，具有最小和最实用的功能集。</p>
-<p>不支持同时打开多个模态框<br>千万不要在一个模态框上重叠另一个模态框。要想同时支持多个模态框，需要自己写额外的代码来实现。</p>
-<p>模态框的 HTML 代码放置的位置<br>务必将模态框的 HTML 代码放在文档的最高层级内（也就是说，尽量作为 body 标签的直接子元素），以避免其他组件影响模态框的展现和/或功能。</p>
-<p>对于移动设备的附加说明<br>这里提供了在移动设备上使用模态框有一些附加说明。请参考浏览器支持章节。</p>
-<p>Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap modals. To achieve the same effect, use some custom JavaScript:</p>
-<p>$(‘#myModal’).on(‘shown.bs.modal’, function () {<br>  $(‘#myInput’).focus()<br>})</p>
-<p>##Carousel (轮播图)</p>
-<p>#定制<br>为使我们上线的代码更加的轻量/简洁:可以根据需求定制属于自己的bootstrap</p>
-<p>定制并下载 Bootstrap<br>通过自定义 Bootstrap 组件、Less 变量和 jQuery 插件，定制一份属于你自己的 Bootstrap 版本吧。</p>
-<p>以上的版本基于3.0的学习<br>详细地址:<a href="http://http://v3.bootcss.com/" title="Bootstrap3中文文档" target="_blank" rel="external">http://http://v3.bootcss.com/</a></p>
-</head>]]></content>
+<p>（5）组件:   提供一套比较常用的UI组件，比如：按钮、下拉菜单、导航等</p>
+<p>[导航](http:\/\/v3.bootcss.com\/components\/#nav)</p>
+<p>[导航条](http:\/\/v3.bootcss.com\/components\/#navbar)</p>
+<p>[面包屑导航](http:\/\/v3.bootcss.com\/components\/#breadcrumbs)</p>
+<p>[下拉菜单](http:\/\/v3.bootcss.com\/components\/#dropdowns)</p>
+<p>[按钮式下拉菜单](http:\/\/v3.bootcss.com\/components\/#btn-dropdowns)</p>
+<p>[按钮组](http:\/\/v3.bootcss.com\/components\/#btn-groups)</p>
+<p>[输入框组](http:\/\/v3.bootcss.com\/components\/#input-groups)</p>
+<p>[警告框](http:\/\/v3.bootcss.com\/components\/#alerts)</p>
+<p>[页头](http:\/\/v3.bootcss.com\/components\/#page-header)</p>
+<p>[分页](http:\/\/v3.bootcss.com\/components\/#pagination)</p>
+<p>[列表组](http:\/\/v3.bootcss.com\/components\/#list-group)</p>
+<p>[面板](http:\/\/v3.bootcss.com\/components\/#panels)</p>
+<p>[媒体对象](http:\/\/v3.bootcss.com\/components\/#media)</p>
+<p>[进度条](http:\/\/v3.bootcss.com\/components\/#progress)</p>
+<p>[Glyphicons](http:\/\/v3.bootcss.com\/components\/#glyphicons)</p>
+<p>[标签](http:\/\/v3.bootcss.com\/components\/#labels)</p>
+<p>[徽章](http:\/\/v3.bootcss.com\/components\/#badges)</p>
+<p>[缩略图](http:\/\/v3.bootcss.com\/components\/#thumbnails)</p>
+<p>[大屏幕](http:\/\/v3.bootcss.com\/components\/#jumbotron)</p>
+<p>[嵌入内容](http:\/\/v3.bootcss.com\/components\/#responsive-embed)</p>
+<p>[内嵌](http:\/\/v3.bootcss.com\/components\/#wells)</p>
+<p>（6）JavaScript插件:   开发中常用的特效继承，依赖于jQuery</p>
+<p>[模态对话框](http:\/\/v3.bootcss.com\/javascript\/#modals)</p>
+<p>[下拉菜单](http:\/\/v3.bootcss.com\/javascript\/#dropdowns)</p>
+<p>[滚动监听](http:\/\/v3.bootcss.com\/javascript\/#scrollspy)</p>
+<p>[标签页](http:\/\/v3.bootcss.com\/javascript\/#tabs)</p>
+<p>[工具提示](http:\/\/v3.bootcss.com\/javascript\/#tooltips)</p>
+<p>[弹出框](http:\/\/v3.bootcss.com\/javascript\/#popovers)</p>
+<p>[警告框](http:\/\/v3.bootcss.com\/javascript\/#alerts)</p>
+<p>[按钮](http:\/\/v3.bootcss.com\/javascript\/#buttons)</p>
+<p>[折叠面板](http:\/\/v3.bootcss.com\/javascript\/#collapse)</p>
+<p>[轮播图](http:\/\/v3.bootcss.com\/javascript\/#carousel)</p>
+<p>[吸顶效果](http:\/\/v3.bootcss.com\/javascript\/#affix)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data-spy=&quot;affix&quot;</div><div class="line"></div><div class="line">data-offset-top=&quot;什么位置出现&quot;</div><div class="line"></div><div class="line">data-offset-bottom=&quot;什么位置消失&quot;</div></pre></td></tr></table></figure>
+<pre><code>&lt;!--
+    兼容的
+    IE = edge:告诉浏览器以最新的解析器来解析代码
+--&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+</code></pre><p>快捷打出视口–&gt;mate:vp加tab键</p>
+<pre><code>  &lt;!--device-width:动态布置
+     user-scalable  是否允许缩放  不允许
+     让wap App 更加接近原生
+--&gt;
+&lt;meta name=&quot;viewport&quot;
+      content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
+&lt;!--
+    PC端-&gt;移动互联网的兴起-&gt;app
+    PC-&gt;网站(网页)-&gt;手机端(web )
+--&gt;
+
+ &lt;!--
+    Bootstrap  兼容到IE8
+    HTML5 标签  &lt;head&gt; &lt;section&gt; &lt;footer&gt;
+    CSS的属性   媒体查询
+
+    html5shiv  让IE8的解析器能够识别html5的新标签
+      respond  css3
+      JS是用于处理一些标签的或者处理一些样式的导入在前面
+    --&gt;
+&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
+&lt;!-- WARNING: Respond.js doesn&apos;t work if you view the page via file:// --&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>字体图标 矢量的字</p>
+<p>sr-only:屏幕阅读器,盲文.读出来<br>全称是 screen reader only，意为：（仅供）屏幕阅读器，这个 class 主要用于增强 accessbility（可访问性）。</p>
+<p>##站点图标<br>link:favicon来引入</p>
+<p>自定义字体图标:醉牛前端下的<br><img src="http://i.imgur.com/0YwMuum.png" alt=""></p>
+<p>###定义类名一般是<br>tab-title</p>
+<p>###定义id一般是<br>tab_title</p>
+<p>##按钮样式生成</p>
+<p><a href="http://blog.koalite.com//bbg//" target="_blank" rel="external">http://blog.koalite.com//bbg//</a></p>
+<p>##新闻中心区域</p>
+<p>涉及要点:栅(shan)格偏移<br>栅(zan)栏;</p>
+]]></content>
       
         
         <tags>
@@ -1199,8 +434,113 @@ Bootstrap 会自动帮你针对不同的屏幕尺寸调整你的页面，使其�
     </entry>
     
     <entry>
+      <title><![CDATA[JQUERY的网页应用]]></title>
+      <url>/2015/06/21/jQuery%E7%BD%91%E9%A1%B5%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>##JQUERY的网页应用</p>
+<p> /<em>一.设置吸顶效果</em>/</p>
+<p> /<em>1.0获取NAV距离顶部的间距</em>/</p>
+<p>/<em>1.1监听滚动，设置对应的样式</em>/</p>
+<p>/<em>1.2获取滚动的距离</em>/</p>
+<p>/<em>1.3判断比较设置样式</em>/</p>
+<p>/<em>1.31设置图片的透明度，让图片出来</em>/<br><a id="more"></a></p>
+<p>  /<em>二.设置返回顶部</em>/</p>
+<p> //2.1判断</p>
+<p>/<em>2.2点击BACK_TOP返回顶部</em>/</p>
+<p> //2.21让回到顶部</p>
+<p> /<em>三.添加LI</em>/<br>/<em>3.0使用数组来记录事项</em>/</p>
+<p> /<em>当界面加载进来的时候，就去从从存储的数据中拿出对应的数据，如果没有才去加载</em>/</p>
+<p> /<em>渲染界面</em>/</p>
+<p>/<em>3.0去掉默认行为</em>/</p>
+<p>/<em>3.1获取INPUT中内容，判断</em>/</p>
+<p>  /<em>3.2创建事项</em>/</p>
+<p>/<em>3.2设置事项的相关属性</em>/</p>
+<p>/<em>3.3添加到数组中中保存起来</em>/</p>
+<p> /<em>3.4根据数组的长度，添加节点而且吧节点显示出来</em>/</p>
+<p> /<em>3.5存储数据</em>/</p>
+<p> /*0.存储数据，第一个参数用来表示存储的数据的标示，任何值都可以，只是用这个值来取出数据</p>
+<pre><code>* 第二个参数表示要存储的数据*/
+</code></pre><p>/<em>把上一次的内容清空</em>/</p>
+<p>/<em>注意：为了让对应的CHECKBOX点击的时候，让对应的不同的事项中添加不同的LI</em>/</p>
+<p>/<em> 所以我们需要改造渲染方法</em>/</p>
+<p>  /<em>3.41根据数组中的个数。来添加节点</em>/</p>
+<p>//为了规范和严格要进行元素的判定</p>
+<p> /<em>3.42创建LI</em>/</p>
+<p>  // DATA-INDEX:用来给LI绑定索引</p>
+<p>  /<em>3.43添加LI</em>/</p>
+<p>   /<em>根据是否检查过，来确定添加到待选事件还是完成事件</em>/</p>
+<p>/<em>四.切换TAB</em>/</p>
+<p>   /<em>4.1点击LI切换TAB</em>/</p>
+<p>   /<em>4.2获取点击的索引值</em>/</p>
+<p>   /<em>4.3切换下面的DIV</em>/<br>/<em>五，点击删除按钮删除对应的LI</em>/</p>
+<p>/<em>5.1获取DEL所在的LI</em>/</p>
+<p>/<em>5.2获取LI对应的索引值</em>/</p>
+<p>/<em>5.3为了代码严格，我们可以回索引进行判断</em>/</p>
+<p> /<em>5.4删除数组中的元素</em>/</p>
+<p>/<em>5.5删除节点</em>/</p>
+<p>/<em>5.6存储数据</em>/</p>
+<p>/<em>六.点击待办事项，让对应的事项有待办变为已经完成</em>/</p>
+<p>/<em>6.1确定点击的索引</em>/</p>
+<p>/<em>6.2拿出INDEX中对应的数组中的元素</em>/</p>
+<p>/<em>6.3设置ISCHECK为选中</em>/</p>
+<p>/<em>用OBJ替换原来位置的元素</em>/</p>
+<p> /<em>6.4进行界面设置</em>/</p>
+<p> /<em>6.5存储数据</em>/</p>
+<p> /<em>七.点击详情按钮的处理</em>/</p>
+<p> /<em>设置一个值用来表示当前点击的是哪一个</em>/</p>
+<p> /<em>7.1设置让对应MASK出来</em>/</p>
+<p> /<em>7.2获取点击详情按钮的索引</em>/</p>
+<p>/<em>7.21设置CURR_INDEX的值</em>/</p>
+<p>/<em>7.3根据索引值获取数组中对应的元素</em>/</p>
+<p> /<em>7.4根据对应的事项设置我们具体的内容</em>/</p>
+<p>/<em>7.41设置标题</em>/</p>
+<p>/<em>7.42设置内容</em>/</p>
+<p>/<em>7.43设置提醒时间</em>/</p>
+<p> /<em>八.处理事件的相关点击</em>/</p>
+<p>  /<em>8.1点击内容阻止冒泡</em>/</p>
+<p>/<em>8.11阻止冒泡</em>/</p>
+<p>  /<em>8.2设置当光标移动到INPUT中设置时间的时候，让对应的时间的选择器展示出来</em>/</p>
+<p>  /<em>8.21设置本地化时间(设置中国时间)</em>/</p>
+<p>   /<em>8.22给对应的标签设置对应时间选择器</em>/</p>
+<p>/<em>九.更新数据和界面</em>/</p>
+<p>  /<em>9.1获取点击详细按钮对应的索引值</em>/</p>
+<p>   /<em>9.2根据索引值获取对应数组中的元素</em>/</p>
+<p>/<em>9.3设置元素的数据</em>/</p>
+<p> /<em>IS_NOTICE：表示有没有提醒去做对应事项</em>/</p>
+<p>/<em>9.4赋值回原来的位置</em>/</p>
+<p> /<em>9.5存储数据</em>/</p>
+<p>/<em>9.6更新界面</em>/</p>
+<p>/<em>9.7让当前的MASK消失</em>/</p>
+<p> /<em>十.提醒设置</em>/</p>
+<p>/<em>10.1我们需要时时刻刻比较当前的时间和设置的时间，所以要使用定时器</em>/</p>
+<p> /<em>10.2获取每一元素的的提醒时间，和当前时间比较，需要使用遍历</em>/</p>
+<p>/<em>10.3判断当前的时间是否大于提醒时间</em>/</p>
+<p>  /<em>10.31获取每一提醒时间的毫秒数</em>/</p>
+<p>  //需要提醒，让对应铃声响起</p>
+<p>   /<em>获取的对象是JQUERY对象我们需要转化成JS对象</em>/</p>
+<p>/<em>10.4当铃声响起后，表示已经提醒过了，我们要设置提醒为<br>TRUE</em>/</p>
+<p> /<em>10.5重新赋值</em>/</p>
+<p> /<em>10.6数据变化，就要存储数据</em>/# #</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[常用数组方法]]></title>
+      <url>/2015/04/20/%E5%B8%B8%E7%94%A8%E7%9A%84%E4%B8%8D%E6%87%82%E6%96%B9%E6%B3%95/</url>
+      <content type="html"><![CDATA[<p>push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。</p>
+<p>empty() 方法从被选元素移除所有内容，包括所有文本和子节点。</p>
+<p>trim() 函数返回去掉开头和结尾空格后的字符串</p>
+<p>prepend() 方法在被选元素的开头（仍位于内部）插入指定内容</p>
+<p>data() 方法向被选元素附加数据，或者从被选元素获取数据。</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[面向对象2]]></title>
-      <url>/2016/04/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day2/</url>
+      <url>/2015/04/19/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day2/</url>
       <content type="html"><![CDATA[<h3 id="一-面向对象的相关概念"><a href="#一-面向对象的相关概念" class="headerlink" title="一:面向对象的相关概念"></a>一:面向对象的相关概念</h3><pre><code>01 对象是什么?
 什么都是对象.对象是具体的事物
 思考:电脑(分类) 人 桌子 狗 猫 老师 同学  这些都不是对象,只是一种类别.
@@ -2043,144 +1383,675 @@ console.log(abc.isPrototypeOf(dog1));    //false
     </entry>
     
     <entry>
-      <title><![CDATA[Bootstrap的笔记]]></title>
-      <url>/2016/04/18/bootstrap/</url>
-      <content type="html"><![CDATA[<p>##Bootstrap的笔记</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/1268909-abc2a99ad3326d8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p><strong>1.1   什么是bootstrap?</strong></p>
-<p>bootstrap是当下最流行的前端框架（界面工具集);</p>
-<p>特点是灵活简介、代码优雅、美观大方；</p>
-<p>目的在于让web开发更加迅速、敏捷；</p>
-<p>由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。<br><a id="more"></a></p>
-<p><strong>1.2    什么是框架？</strong></p>
-<p>库 lib library 框架 Framework；</p>
-<p>写的更少做的更多 提供一套较为便捷的操作方式；</p>
-<p>将一套功能体系封装到一个单独的文件中的东西；</p>
-<p>Bootstrap提供一套前端需要的界面工具集合。</p>
-<p><strong>1.3    为什么使用Bootstarp？</strong></p>
-<p>生态圈火，不断地更新迭代；</p>
-<p>提供一套美观大方地界面组件；</p>
-<p>提供一套优雅的 HTML+CSS 编码规范；</p>
-<p>让我们的 Web 开发更简单，更快捷。</p>
-<blockquote>
-<p>注意:</p>
-<ol>
-<li><p>使用 Bootstrap 并不代表不用写 CSS 样式，而是不用写绝大多数大家都会用到的样式</p>
-</li>
-<li><p>Bootstrap 不是 BootStrap！这是一个词，不是合成词，其含义为：n. 引导指令,引导程序</p>
-</li>
-</ol>
-</blockquote>
-<p><strong>1.4    如何使用bootstrap?</strong></p>
-<p>下载Bootstrap</p>
-<p><a href="https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v3.3.6\/bootstrap-3.3.6-dist.zip</a>         <a href="https://github.com/twbs/bootstrap/releases/download/v4.0.0-alpha.2/bootstrap-4.0.0-alpha.2-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v4.0.0-alpha.2\/bootstrap-4.0.0-alpha.2-dist.zip</a></p>
-<p><strong>1.5  Bootstrap文档</strong></p>
-<p><a href="http://getbootstrap.com/" target="_blank" rel="external">官方文档</a></p>
-<p><a href="http://v3.bootcss.com/" target="_blank" rel="external">中文文档</a></p>
-<p><strong>1.6   Bootstrap初始化模板</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang="en"&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">      &lt;meta charset="UTF-8"&gt;</div><div class="line">      &lt;title&gt;页面标题&lt;/title&gt;</div><div class="line">      &lt;!-- 引入Bootstrap核心样式文件（必须） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</div><div class="line">      &lt;!-- 引入Bootstrap默认主题样式（可选） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.theme.min.css"&gt;</div><div class="line">      &lt;!-- 你自己的样式或其他文件 --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="example.css"&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">      &lt;!-- 你的HTML结构...... --&gt;</div><div class="line">      &lt;!-- 以下代码，如果不使用JS插件则不需要 --&gt;</div><div class="line">      &lt;!-- 由于Bootstrap的JS插件依赖jQuery，so 引入jQuery --&gt;</div><div class="line">      &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 引入所有的Bootstrap的JS插件 --&gt;</div><div class="line">      &lt;script src="bootstrap.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 你自己的脚本文件 --&gt;</div><div class="line">      &lt;script src="example.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
-<p><strong>1.7   Bootstrap相关知识点</strong></p>
-<p>（1）Compatible：此属性为文档兼容模式声明，表示如果在IE浏览器下则使用最新的标准渲染当前文档;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div></pre></td></tr></table></figure>
-<p>（2）视口： 此属性为移动端页面视口设置，当前值表示在移动端页面的宽度为设备的宽度，并且不缩放（缩放级别为1）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div></pre></td></tr></table></figure>
-<p>（3）第三方依赖:</p>
-<ul>
-<li><p>boostrap的js组件依赖jquery实现 (<a href="https://github.com/jquery/jquery" target="_blank" rel="external">https:\/\/github.com\/jquery\/jquery</a>)</p>
-</li>
-<li><p>当低版本浏览器不识别新标签时兼容（<a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">html5shiv</a>）</p>
-</li>
-<li><p>让低版本浏览器可以使用CSS的媒体查询 （<a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">respond</a>）</p>
-</li>
-</ul>
-<p>（4）全局CSS样式:</p>
-<ul>
-<li>修饰已有的标签，比如按钮、文本框之类的</li>
-</ul>
-<p>（5）组件:   提供一套比较常用的UI组件，比如：按钮、下拉菜单、导航等</p>
-<p>[导航](http:\/\/v3.bootcss.com\/components\/#nav)</p>
-<p>[导航条](http:\/\/v3.bootcss.com\/components\/#navbar)</p>
-<p>[面包屑导航](http:\/\/v3.bootcss.com\/components\/#breadcrumbs)</p>
-<p>[下拉菜单](http:\/\/v3.bootcss.com\/components\/#dropdowns)</p>
-<p>[按钮式下拉菜单](http:\/\/v3.bootcss.com\/components\/#btn-dropdowns)</p>
-<p>[按钮组](http:\/\/v3.bootcss.com\/components\/#btn-groups)</p>
-<p>[输入框组](http:\/\/v3.bootcss.com\/components\/#input-groups)</p>
-<p>[警告框](http:\/\/v3.bootcss.com\/components\/#alerts)</p>
-<p>[页头](http:\/\/v3.bootcss.com\/components\/#page-header)</p>
-<p>[分页](http:\/\/v3.bootcss.com\/components\/#pagination)</p>
-<p>[列表组](http:\/\/v3.bootcss.com\/components\/#list-group)</p>
-<p>[面板](http:\/\/v3.bootcss.com\/components\/#panels)</p>
-<p>[媒体对象](http:\/\/v3.bootcss.com\/components\/#media)</p>
-<p>[进度条](http:\/\/v3.bootcss.com\/components\/#progress)</p>
-<p>[Glyphicons](http:\/\/v3.bootcss.com\/components\/#glyphicons)</p>
-<p>[标签](http:\/\/v3.bootcss.com\/components\/#labels)</p>
-<p>[徽章](http:\/\/v3.bootcss.com\/components\/#badges)</p>
-<p>[缩略图](http:\/\/v3.bootcss.com\/components\/#thumbnails)</p>
-<p>[大屏幕](http:\/\/v3.bootcss.com\/components\/#jumbotron)</p>
-<p>[嵌入内容](http:\/\/v3.bootcss.com\/components\/#responsive-embed)</p>
-<p>[内嵌](http:\/\/v3.bootcss.com\/components\/#wells)</p>
-<p>（6）JavaScript插件:   开发中常用的特效继承，依赖于jQuery</p>
-<p>[模态对话框](http:\/\/v3.bootcss.com\/javascript\/#modals)</p>
-<p>[下拉菜单](http:\/\/v3.bootcss.com\/javascript\/#dropdowns)</p>
-<p>[滚动监听](http:\/\/v3.bootcss.com\/javascript\/#scrollspy)</p>
-<p>[标签页](http:\/\/v3.bootcss.com\/javascript\/#tabs)</p>
-<p>[工具提示](http:\/\/v3.bootcss.com\/javascript\/#tooltips)</p>
-<p>[弹出框](http:\/\/v3.bootcss.com\/javascript\/#popovers)</p>
-<p>[警告框](http:\/\/v3.bootcss.com\/javascript\/#alerts)</p>
-<p>[按钮](http:\/\/v3.bootcss.com\/javascript\/#buttons)</p>
-<p>[折叠面板](http:\/\/v3.bootcss.com\/javascript\/#collapse)</p>
-<p>[轮播图](http:\/\/v3.bootcss.com\/javascript\/#carousel)</p>
-<p>[吸顶效果](http:\/\/v3.bootcss.com\/javascript\/#affix)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data-spy=&quot;affix&quot;</div><div class="line"></div><div class="line">data-offset-top=&quot;什么位置出现&quot;</div><div class="line"></div><div class="line">data-offset-bottom=&quot;什么位置消失&quot;</div></pre></td></tr></table></figure>
-<pre><code>&lt;!--
-    兼容的
-    IE = edge:告诉浏览器以最新的解析器来解析代码
---&gt;
-&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-</code></pre><p>快捷打出视口–&gt;mate:vp加tab键</p>
-<pre><code>  &lt;!--device-width:动态布置
-     user-scalable  是否允许缩放  不允许
-     让wap App 更加接近原生
---&gt;
-&lt;meta name=&quot;viewport&quot;
-      content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
-&lt;!--
-    PC端-&gt;移动互联网的兴起-&gt;app
-    PC-&gt;网站(网页)-&gt;手机端(web )
---&gt;
+      <title><![CDATA[面向对象3]]></title>
+      <url>/2015/04/15/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1day1/</url>
+      <content type="html"><![CDATA[<h4 id="一-JavaScript是由哪几部分组成"><a href="#一-JavaScript是由哪几部分组成" class="headerlink" title="## 一:JavaScript是由哪几部分组成: ##"></a>## 一:JavaScript是由哪几部分组成: ##</h4><p>01 BOM<br>    Browser Object Mode 浏览器对象模型</p>
+<p>02 DOM<br>    Document Object Mode 文档(HTML文档)对象模型</p>
+<p>03 ECMAScript<br>       规定了js的语法核心,关键字,类型,语言,结构<br><a id="more"></a></p>
+<h4 id="二-js中的数据类型-基本数据类型-复杂数据类型"><a href="#二-js中的数据类型-基本数据类型-复杂数据类型" class="headerlink" title="#二:js中的数据类型:基本数据类型 | 复杂数据类型#"></a>#二:js中的数据类型:基本数据类型 | 复杂数据类型#</h4><p>01基本(简单)数据类型</p>
+<pre><code>   string  字符串
+number   数值(正数|小数)
+boolean  布尔类型的值  true | false
+null     空(对象)
+undefined  没有定义
+</code></pre><p>02复杂(复合)数据类型</p>
+<pre><code>Object 对象类型(js中所有的复杂数据类型都是基于object)
+  Array  数组类型
+Date     日期类型
+            x JSON  (不是数据类型--是数据结构)
+Function    函数类型
+RegRxp    正则表达式
+Number    
+Boolean
+</code></pre><p>03 如何判断数据的类型</p>
+<pre><code>typeof
+语法: typeof 数据(变量)
+结果:
+typeof 字符串 string
+typeof    数值        number
+typeof    true|false    boolean
+typeof    undefined    undefinede
+typeof 复杂数据类型    object 除了函数(function)之外
+</code></pre><p>注意点:</p>
+<pre><code>01    typrof 本身是操作符不是函数
+02 typeof 本身有返回值,这个返回值是string字符串类型的
+03 null和undefined的区别        undefined是声明了变量但是从来没有赋值
+变量的值永远不会为null,除非你手动的设置为null
 
- &lt;!--
-    Bootstrap  兼容到IE8
-    HTML5 标签  &lt;head&gt; &lt;section&gt; &lt;footer&gt;
-    CSS的属性   媒体查询
+我们设置变量的值为null,是为了我们不用变量的时候,垃圾回收机制就会回收这个变量
+</code></pre><h4 id="三-赋值"><a href="#三-赋值" class="headerlink" title="三:赋值(=)"></a>三:赋值(=)</h4><pre><code>a=b;  把等号右边的变量(b)保存的内容复制一份给左边的变量
+等于符号(==)
+返回值:true|false
+判定:比较左右两边的值是否相等,如果相等返回的就是true.反之就是false
+全等符号(===)
+返回值:true|false
+判定:比较左右两边的值&amp;类型是否相等,如果值和类型都相等,那么结果就为true,反之就是false
 
-    html5shiv  让IE8的解析器能够识别html5的新标签
-      respond  css3
-      JS是用于处理一些标签的或者处理一些样式的导入在前面
-    --&gt;
-&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
-&lt;!-- WARNING: Respond.js doesn&apos;t work if you view the page via file:// --&gt;
-&lt;!--[if lt IE 9]&gt;
-&lt;script src=&quot;https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>字体图标 矢量的字</p>
-<p>sr-only:屏幕阅读器,盲文.读出来<br>全称是 screen reader only，意为：（仅供）屏幕阅读器，这个 class 主要用于增强 accessbility（可访问性）。</p>
-<p>##站点图标<br>link:favicon来引入</p>
-<p>自定义字体图标:醉牛前端下的<br><img src="http://i.imgur.com/0YwMuum.png" alt=""></p>
-<p>###定义类名一般是<br>tab-title</p>
-<p>###定义id一般是<br>tab_title</p>
-<p>##按钮样式生成</p>
-<p><a href="http://blog.koalite.com//bbg//" target="_blank" rel="external">http://blog.koalite.com//bbg//</a></p>
-<p>##新闻中心区域</p>
-<p>涉及要点:栅(shan)格偏移<br>栅(zan)栏;</p>
-]]></content>
+&lt;script&gt;
+var str1 = &quot;string1&quot;;                  //字符串类型
+var str2 = &quot;string1&quot;;
+var str3 = new String(&quot;string1&quot;);       //字符串对象
+var str4 = String(&quot;string1&quot;);
+var str5 = new Object(&quot;string1&quot;);
+
+console.log(str1 == str2);    //true
+console.log(str1 == str3);      //true
+console.log(str1 == str4);      //true
+console.log(str1 == str5);      //true
+console.log(&quot;_________________&quot;);
+console.log(str1 === str2);         //true
+console.log(str1 === str3);         //false
+console.log(&quot;_________________&quot;);
+console.log(str1 === str4);         //true
+console.log(str1 === str5);         //false
+
+console.log(str3 == str4);          //true
+console.log(str3 === str4);         //false
+
+console.log(str3 == str5);          // false
+console.log(str3 === str5);         //false 类型相同但是值（地址）不同
+&lt;/script&gt;
+</code></pre><h4 id="四-关系运算符"><a href="#四-关系运算符" class="headerlink" title="四:关系运算符:"></a>四:关系运算符:</h4><pre><code>大于(&gt;)
+小于(&lt;)
+小于等于(&lt;=)
+大于等于(&gt;=)
+不等于(!=)
+</code></pre><h4 id="五-逻辑运算符"><a href="#五-逻辑运算符" class="headerlink" title="五:逻辑运算符"></a>五:逻辑运算符</h4><pre><code>01 逻辑非(!)
+!表达式
+判定:取反操作
+返回值:布尔类型的值:true|false
+02 逻辑与(&amp;&amp;)
+表达式1 &amp;&amp; 表达式2
+返回值:其中的一个表达式
+判定:判定表达式1是否为真,如果为真,返回表达式2,否则返回表达式1
+03 逻辑或(||)
+表达式1 || 表达式2
+返回值:其中的一个表达式
+判定:判定表达式1是否为真,如果为真,返回表达式1,否则返回表达式2
+
+&lt;script&gt;
+console.log(1 || 0);              //1
+console.log(1 || 1);              //1
+console.log(1 || 2);              //1
+console.log(0 || 1);              //1
+console.log(0 || 0);               //0
+console.log(0 || 2);                //2
+console.log(2 || 1);                //2
+
+console.log(1 &amp;&amp; 1);                //1
+console.log(1 &amp;&amp; 2);                //2
+console.log(1 &amp;&amp; 0);                //0
+console.log(0 &amp;&amp; 1);                //0
+console.log(0 &amp;&amp; 2);                //0
+console.log(0 &amp;&amp; 0);                //0
+console.log(2 &amp;&amp; 1);                //1
+console.log(2 &amp;&amp; 0);                //0
+
+&lt;/script&gt;
+</code></pre><h4 id="六-在js中数据的存储有两种方式-值-引用"><a href="#六-在js中数据的存储有两种方式-值-引用" class="headerlink" title="六:在js中数据的存储有两种方式:值|引用"></a>六:在js中数据的存储有两种方式:值|引用</h4><pre><code>按照存储方式的不同,可以分成两种类型
+01 值类型
+string
+number
+boolean
+undefined
+null
+值类型的变量存储的内容是具体的数据,比如说&quot;string&quot;
+02 引用类型
+object类型的,包括Array Function Date RegExp String Number Boolean
+引用类型的对象存储的内容是引用(reference--地址),该地址指向内存中具体的数据,
+具体的数据单独存储在内存中
+&lt;script&gt;
+
+var str = &quot;string1&quot;;    //值类型
+var num = 10;           //值类型
+var boolT = true;       //值类型
+
+var car = {             //引用类型
+    type:&quot;奔驰&quot;,
+    color:&quot;黑色&quot;
+}
+
+//key - value
+var person = {          //引用类型
+    name:&quot;张三&quot;,
+    age:18,
+    car:car
+}
+
+
+console.log(person.name);     //张三
+console.log(person.car);      //Object
+(color: &quot;黑色&quot;type: &quot;奔驰&quot;__proto__: Object)
+&lt;/script&gt;
+</code></pre><h4 id="七-赋值（-）"><a href="#七-赋值（-）" class="headerlink" title="七:赋值（=）"></a>七:赋值（=）</h4><pre><code>a = b；  把等号右边的变量存储的内容复制一份给左边的变量
+
+值类型的赋值:
+
+把等号右边的变量存储的内容(具体的数据)复制一份给左边的变量
+注意点:修改了其中的一个变量,对另外一个变量没有影响,他们是相互独立的.
+
+引用类型的赋值
+
+把等号右边的对象存储的内容(指向具体数据的地址)复制一份给左边的对象
+注意点:修改了其中的某一个对象,对另外一个对象有影响,他们共享内存中的同一块数据
+ &lt;script&gt;
+    var str1 = &quot;string1&quot;;
+var str2 = str1;        //值类型的赋值
+console.log(str1 == str2);  //true
+str1 = &quot;修改&quot;;
+console.log(str1 == str2);  //false
+console.log(str1);      //修改
+console.log(str2);      //string1
+
+var obj1 = {
+    name:&quot;张三&quot;
+}
+
+var obj2 = obj1;   //引用类型的赋值
+console.log(obj1 == obj2);      //true
+obj1.name = &quot;李四&quot;;
+console.log(obj1.name);   //李四
+console.log(obj2.name);   //李四
+
+//赋值操作之后，如果重新使用字面量的方式来设置对象，那么会切断和赋值对象之间的联系
+obj1 = {
+    age:20,
+    name:&quot;老王&quot;
+}
+
+console.log(obj1.name);     //老王
+console.log(obj2.name);     //李四
+
+&lt;/script&gt;  
+</code></pre><h4 id="八-值类型和引用类型在函数中的使用"><a href="#八-值类型和引用类型在函数中的使用" class="headerlink" title="八:值类型和引用类型在函数中的使用"></a>八:值类型和引用类型在函数中的使用</h4><pre><code>01 函数的参数:
+形式参数(形参):在函数声明的时候,写在()中的变量,形参在函数内部使用,
+在函数内部作为局部变量使用,形参用来占位
+实际参数(实参):在函数调用的时候,写在()中的变量(对象)
+02 函数的调用:
+内部会把实参赋值给形参
+实参可能是值类型的也可能是引用类型的
+03 值类型的数据作为函数的参数
+在函数内部修改了形参的值(a),对函数外部的实参不会产生影响,他们是相互独立的.
+04 引用类型的数据作为函数的参数
+在函数内部修改了形参的值(paremObj),对函数外部的实参会产生影响,他们共享内存中的同一块数据
+
+&lt;script&gt;
+var num = 10;
+function func(a) {
+    console.log(a); //10
+    a = 20;
+    console.log(a); //20
+}
+func(num);
+console.log(num);   //10
+//console.log(a);
+
+var obj = {
+    name:&quot;张三&quot;
+}
+
+function foo(paramObj) {
+    console.log(paramObj.name);   //张三
+    paramObj.name = &quot;李老汉&quot;;
+    console.log(paramObj.name); //李老汉
+
+    paramObj = {
+        name:&quot;老王&quot;
+    }
+    console.log(paramObj.name); //老王
+}
+foo(obj);
+console.log(obj.name);    // 李老汉
+  &lt;/script&gt;
+</code></pre><h4 id="九-对象的动态特性"><a href="#九-对象的动态特性" class="headerlink" title="九:对象的动态特性"></a>九:对象的动态特性</h4><pre><code>01  js中的对象具有动态特性
+js支持在对象定义之后,动态的添加|删除|修改|查询
+对象的成员:对象的属性和方法
+对象:键值对的几何(key--value).属性和方法的集合
+        属性:定义在对象内部的变量
+        方法:定义在对象内部的函数
+特性的说明:带来了方便(更灵活),但是在使用的时候容易出错(出现覆盖的问题)
+02 对象的访问方式:
+    1 点语法
+    2 []语法  key必须是字符串的类型,如果不是字符串类型那么就当做一个变量来处理
+03 动态的操作
+添加:如果当前的属性不存在,那么就是添加
+修改:如果当前访问的属性已经存在,那么在设置的时候就是修改
+删除:使用关键字delete 语法:delete 对象.属性
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;,
+    age : 20,
+    log:&quot;log&quot;
+};
+
+var o = {};
+
+//需求：复制obj对象中的属性给o对象
+for(var k in obj)
+{
+   o[k] = obj[k];
+}
+console.log(o);
+&lt;/script&gt;
+&lt;script&gt;
+//01 创建空的对象
+var obj ={};
+
+//02 动态的添加成员（属性|方法）
+obj.name = &quot;张三&quot;;
+obj.age = 20;
+obj.showName  = function () {
+    console.log(this.name);//张三
+}
+console.log(obj.name);张三
+obj.showName();
+
+//03 修改成员
+obj.name = &quot;李四&quot;;
+obj.showName  = function () {
+    console.log(this.name + &quot; 姓名&quot;);//李四  &quot;姓名&quot;
+}
+obj.showName();
+console.log(obj);
+
+delete obj.age;
+console.log(obj.age);   //undefiend
+console.log(&quot;___________________&quot;);
+
+var test = {};
+console.log(test);
+
+//设置属性（添加属性） 属性名称：backgroundColor
+test[&quot;background Color&quot;] = &quot;red&quot;;
+console.log(test);
+
+obj[&quot;showAge&quot;] = function () {
+    console.log(this.age,&quot;____&quot;);
+}
+obj[&quot;showAge&quot;]();
+&lt;/script&gt;
+
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;,
+    age:20,
+    showName:function () {
+        console.log(this.name);
+    }
+}
+
+var name = &quot;name&quot;;
+console.log(obj.name);  //张三
+console.log(obj[name],&quot;+++++&quot;); // 张三
+//console.log(obj[age]);   //报错.[key]必须是字符串类型的，如果不是字符串类型那么就当做一个变量来处理
+
+console.log(window.name);  //name
+console.log(obj);
+
+&lt;/script&gt;
+</code></pre><h4 id="十-in关键字"><a href="#十-in关键字" class="headerlink" title="十:in关键字"></a>十:in关键字</h4><pre><code>01 遍历(迭代) 对象 for...in
+02 判断对象中是否存在指定的属性  语法:&quot;属性&quot; in 对象
+返回值:布尔类型的值,如果有那么就返回true
+注意点:
+01 属性必须是字符串
+02 在使用in操作符处理数组的时候需要注意: key是索引
+数组[1,2,3,4,5,6] 的对象形式:{0:1,1:2,2:3,3:4,4:5,5:6};
+
+&lt;script&gt;
+var dog = {
+    name:&quot;旺财&quot;,
+    color:&quot;绿色&quot;
+}
+
+//判断|检查
+console.log(&quot;name&quot; in dog);
+console.log(&quot;age&quot; in dog);
+console.log(&quot;&quot; in dog);           //false
+&lt;/script&gt;
+
+&lt;script&gt;
+var arr = [1,2,3,4,5,6];
+console.log(&quot;1&quot; in arr);    //true
+console.log(&quot;1&quot; in arr);   //true
+
+console.log(&quot;5&quot; in arr);       //true
+console.log(&quot;6&quot; in arr);        //false  //判断arr中是否有6这个索引
+&lt;/script&gt;
+</code></pre><h3 id="十一-delete的作用"><a href="#十一-delete的作用" class="headerlink" title="十一:delete的作用"></a>十一:delete的作用</h3><pre><code>01 删除对象的属性
+02 可以删除没有使用var声明的变量
+delete关键字的使用注意
+01 有返回值 布尔类型的值（true|false） 删除成功那么就是true
+02 删除对象中不存在的属性，返回值是true还是false  (true)
+03 删除对象的原型对象中的属性，能否删除成功(不能删除)，返回值[delete obj.hi == 删除对象中不存在的属性]
+04 delete关键字无法删除使用var声明的全局的变量，但是却可以删除直接定义在window上面的属性
+
+&lt;script&gt;
+Object.prototype.hi = &quot;hi&quot;;
+
+var obj = {name:&quot;巴拉巴拉小魔仙&quot;};
+console.log(delete obj.name);
+
+var demo = &quot;demoTest&quot;;
+console.log(delete demo);
+
+console.log(delete obj.age);
+console.log(obj.hi);
+
+//    console.log(delete Object.prototype.hi);  //true
+console.log(delete obj.hi);  //true
+alert(obj.hi);
+console.log(obj.hi);
+
+console.log(window.demo);   //全局变量和函数默认会成为window对象的属性和方法
+
+window.showInfo = &quot;不可描述的信息&quot;;
+console.log(showInfo);
+delete window.showInfo;
+console.log(showInfo);   //报错
+
+&lt;script&gt;
+var dog = {
+    name:&quot;招财&quot;,
+    age:14
+}
+
+console.log(dog.name);
+//删除对象的属性
+delete dog.name;
+console.log(dog.name);
+
+//没有使用var关键字声明的变量,那么该变量默认会成为一个全局的变量(变成window的属性)
+var a = &quot;testa&quot;;
+b = &quot;testb&quot;;
+console.log(a);
+console.log(b);
+
+function func() {
+    var num1 = 10;
+    num2 = 20;
+}
+
+func();
+//console.log(num1);  //
+console.log(num2);
+
+//使用delete删除属性
+console.log(num2,&quot;____&quot;);
+delete num2;
+//console.log(num2);
+
+console.log(a);
+delete a;
+console.log(a);
+
+&lt;/script&gt;
+
+
+&lt;/script&gt;
+</code></pre><h3 id="十二-循环和分支"><a href="#十二-循环和分支" class="headerlink" title="十二:循环和分支"></a>十二:循环和分支</h3><pre><code>01 顺序的执行结构
+02 循环结构
+for循环
+while
+do...while   至少会执行一次循环体
+for..in
+&lt;!--&lt;script&gt;--&gt;
+&lt;!--while (条件)--&gt;
+&lt;!--{--&gt;
+    &lt;!--//执行的代码--&gt;
+&lt;!--}--&gt;
+
+&lt;!--do{--&gt;
+    &lt;!--//执行的代码--&gt;
+&lt;!--}while(条件)--&gt;
+&lt;!----&gt;
+&lt;!--&lt;/script&gt;--&gt;
+
+03 分支结构
+if...else..
+switch...case
+
+&lt;script&gt;
+switch (12)
+{
+    case 1:
+        console.log(1);
+        break;
+    case 2:
+        console.log(2);
+        break;
+    default:
+        console.log(&quot;其他的数据&quot;);
+}
+&lt;/script&gt;
+
+04 break continue
+break :退出循环，执行该循环后面的代码
+continue：退出循环(结束当前的循环)，继续执行下一次的循环
+
+&lt;script&gt;
+for (var i = 0; i &lt;10; i++) {
+    if (i == 5)
+    {
+        //break;
+        continue;
+    }
+
+    console.log(&quot;i = &quot; + i);
+
+}
+
+&lt;/script&gt;
+</code></pre><h3 id="十三-调试工具的使用-断点"><a href="#十三-调试工具的使用-断点" class="headerlink" title="十三:调试工具的使用(断点)"></a>十三:调试工具的使用(断点)</h3><pre><code>调试工具
+01 打开控制台
+windows : F12 MAC OSX  option + command + j
+
+02 控制台的详细介绍
+03 断点（普通断点 + 条件断点）
+04 网络通信的模型
+客户端（浏览器|app） --- 服务器端(电脑)
+客户端需要数据      ______请求__________&gt;服务器端  （01 请求）
+客户端              _____数据__________服务器端     (02 响应)
+请求：请求头（对客户端以及请求本身的描述信息） + 请求体（具体的参数）  GET
+响应：响应头（对服务器端以及响应本身的描述信息） + 响应体（具体的数据）
+
+GMT 格林尼治时间
+北京时间  +     08
+
+&lt;div id=&quot;demo&quot;&gt;测试的div&lt;/div&gt;
+&lt;script&gt;
+var a = &quot;testA&quot;;
+
+var b = &quot;testB&quot;;
+function func01() {
+    console.log(a);
+    console.log(b);
+    var c = &quot;testC&quot;;
+    console.log(c);
+}
+
+function func02() {
+    console.log(&quot;func02&quot;);
+}
+console.log(b);
+func01();
+func02();
+
+//console.log(c);
+
+a = &quot;testAAAAASA&quot;;
+console.log(a);
+
+for (var i = 0; i &lt; 10000; i++) {
+   console.log(i);
+
+}
+
+&lt;/script&gt;
+</code></pre><h3 id="十四-异常处理"><a href="#十四-异常处理" class="headerlink" title="十四:异常处理"></a>十四:异常处理</h3><pre><code>异常处理(try...catch)
+如果我们的代码发生了异常，那么该行代码后面的代码将无法得到执行
+但是有的时候，我们需要保证在任何情况下某些代码都能够正常得到执行，这个时候就可以使用异常捕获结构
+异常捕获结构（try...catch）
+01 把可能出错的代码放在try{}代码块中
+
+手动的抛出异常 throw关键字
+异常信息：字符串 | 对象（）
+
+完整的异常捕获结构
+try{}catch(e){}finally{}
+&lt;script&gt;
+try
+{
+    //01 存放的是可能出错的代码
+    //console.log(c);
+}
+catch(e)
+{
+    //02 出错之后会执行这部分代码
+    console.log(e);
+}
+finally
+{
+    //03 不管是否出错都会执行的代码
+    console.log(&quot;无论如何都会执行的代码&quot;);
+
+    //有什么用？ 前端中一般不会使用
+    //Node.js 服务器端  最后的扫尾和资源释放的工作
+}
+&lt;/script&gt;
+&lt;script&gt;
+try
+{
+    //可能出错的代码
+    var a = &quot;testA&quot;;
+    console.log(a);
+    //console.log(c);
+
+    //throw &quot;这里出现了隐秘的错误，请检查！&quot;;
+    throw {
+        errorMsg:&quot;错误信息&quot;,
+        errorCode:&quot;100201&quot;
+    }
+}
+catch (e)
+{
+    //出现了异常之后，会执行这个代码块中的任务（应对异常的解决方法）
+    console.log(e);
+}
+
+function func() {
+  console.log(&quot;func&quot;);
+}
+
+func();
+&lt;/script&gt;
+</code></pre><h3 id="十五-DOM操作"><a href="#十五-DOM操作" class="headerlink" title="十五: DOM操作"></a>十五: DOM操作</h3><pre><code>DOM:文档对象模型 核心对象：document
+增加|删除|修改|查询
+查询：getElementById|className |tagName
+删除：remove...
+修改: 得到标签之后直接设置
+增加:createEle...
+
+需求：创建一个div标签，设置标签的内容为：我让掉下眼泪的，不止昨夜的酒，设置样式
+样式：
+    高度：100px
+    宽度：300px
+    背景颜色:red
+    边框： 1px solid #432
+把标签添加到当前的页面中
+&lt;script&gt;
+//01 创建标签
+var div = document.createElement(&quot;div&quot;);
+//02 设置内容和样式
+div.innerText = &quot;我让掉下眼泪的，不止昨夜的酒&quot;;
+div.style.height = &quot;100px&quot;;
+div.style.width = &quot;300px&quot;;
+div.style.backgroundColor = &quot;red&quot;;
+div.style.border = &quot;1px solid #555&quot;;
+//03 添加到body
+document.body.appendChild(div);
+//04 删除标签
+document.body.removeChild(div);
+
+&lt;/script&gt;
+</code></pre><h3 id="十六-函数和对象的创建"><a href="#十六-函数和对象的创建" class="headerlink" title="十六:函数和对象的创建"></a>十六:函数和对象的创建</h3><pre><code>函数的创建
+01 函数声明 function 函数名（参数1，参数2）{函数体}
+02 函数表达式 var func =  function [函数名]（参数1，参数2）{函数体}
+03 使用构造函数创建（Function）
+
+对象的创建
+01 字面量的方式
+02 构造函数（Object） + new
+&lt;script&gt;
+//01 函数声明
+function func(a,b) {
+    console.log(a + b);
+}
+func(1,2);
+
+//02 函数表达式
+var foo = function () {
+    console.log(&quot;foo&quot;);
+}
+
+foo();
+
+//03 构造函数创建
+var funcName = new Function(&quot;console.log(123)&quot;);
+funcName();
+
+&lt;/script&gt;
+&lt;script&gt;
+var obj = {
+    name:&quot;张三&quot;
+}
+
+var obj2 = new Object();  //{}
+obj2.name = &quot;李四&quot;;
+console.log(obj2);
+
+
+&lt;/script&gt;
+</code></pre><h3 id="十七-面向过程和面向对象的概念"><a href="#十七-面向过程和面向对象的概念" class="headerlink" title="十七:面向过程和面向对象的概念"></a>十七:面向过程和面向对象的概念</h3><pre><code>面向过程
+关注的是解决问题需要的一个接着一个的过程
+
+面向对象
+关注的是解决问题需要的对象
+
+面向对象编程主要重点是对象：内置对象（数组对象|日期对象|函数对象） 自定义
+
+面向对象和面向过程都是一种解决编程问题的思想（方法）
+
+例子：
+    面向过程的洗衣服方式：
+     01 收集脏衣服
+     02 找个盆（桶）
+     03 接水
+     04 放洗衣液（洗衣粉）
+     05 搅匀
+     06 先泡几分钟（15）
+     07 摩擦摩擦
+     08 再清水冲洗一遍
+     09 把衣服拧干
+     10 晾衣服
+
+    面向对象洗衣服
+        01 收集脏衣服
+        02 找个合适的洗衣机|男朋友|女朋友
+        03 设置洗衣服和烘干的程序
+
+面向对象和面向过程关系 其实是对面向过程的一种封装（？） 减少冗余的代码 + 复用性更好
+</code></pre>]]></content>
       
         
-        <tags>
-            
-            <tag> 前端  bootstrap </tag>
-            
-        </tags>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[JS满天星特效]]></title>
+      <url>/2015/04/15/JS%E6%BB%A1%E5%A4%A9%E6%98%9F/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<p>这个特效代码很简单,但是效果却出奇的漂亮,用到了css3的属性,虽然有兼容性问题,不过确实又简单效果也很好主要原理有几步<br>①动态创建节点<br>②设置几个随机值,比如星星的大小,星星的位置,星星做动画的延迟时长<br>③在对应的style样式进行设置<br>代码如下<br><!-- more --><br><img src="http://i.imgur.com/YoxekGo.png" alt=""><br><img src="http://i.imgur.com/5hwt9OK.png" alt=""><br><img src="http://i.imgur.com/87laKOv.png" alt=""></p>
+]]></content>
+      
         
     </entry>
     

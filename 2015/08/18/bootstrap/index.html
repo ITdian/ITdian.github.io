@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="##Bootstrap的笔记  1.1   什么是bootstrap? bootstrap是当下最流行的前端框架（界面工具集); 特点是灵活简介、代码优雅、美观大方； 目的在于让web开发更加迅速、敏捷； 由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。">
+<meta name="keywords" content="前端  bootstrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap的笔记">
+<meta property="og:url" content="http://yoursite.com/2015/08/18/bootstrap/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="##Bootstrap的笔记  1.1   什么是bootstrap? bootstrap是当下最流行的前端框架（界面工具集); 特点是灵活简介、代码优雅、美观大方； 目的在于让web开发更加迅速、敏捷； 由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1268909-abc2a99ad3326d8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://i.imgur.com/0YwMuum.png">
+<meta property="og:updated_time" content="2017-06-13T15:27:26.913Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bootstrap的笔记">
+<meta name="twitter:description" content="##Bootstrap的笔记  1.1   什么是bootstrap? bootstrap是当下最流行的前端框架（界面工具集); 特点是灵活简介、代码优雅、美观大方； 目的在于让web开发更加迅速、敏捷； 由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/1268909-abc2a99ad3326d8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Bootstrap的笔记 | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-bootstrap/">前端  bootstrap</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-bootstrap" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/18/bootstrap/" class="article-date">
+      <time datetime="2015-08-18T14:06:10.000Z" itemprop="datePublished">2015-08-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Bootstrap的笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端-bootstrap/">前端  bootstrap</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>##Bootstrap的笔记</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1268909-abc2a99ad3326d8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><strong>1.1   什么是bootstrap?</strong></p>
+<p>bootstrap是当下最流行的前端框架（界面工具集);</p>
+<p>特点是灵活简介、代码优雅、美观大方；</p>
+<p>目的在于让web开发更加迅速、敏捷；</p>
+<p>由Twitter公司的两名前端工程师Mark Otto和Jacob Thornton在2011年发起的，并利用业余时间完成了第一个版本的开发。<br><a id="more"></a></p>
+<p><strong>1.2    什么是框架？</strong></p>
+<p>库 lib library 框架 Framework；</p>
+<p>写的更少做的更多 提供一套较为便捷的操作方式；</p>
+<p>将一套功能体系封装到一个单独的文件中的东西；</p>
+<p>Bootstrap提供一套前端需要的界面工具集合。</p>
+<p><strong>1.3    为什么使用Bootstarp？</strong></p>
+<p>生态圈火，不断地更新迭代；</p>
+<p>提供一套美观大方地界面组件；</p>
+<p>提供一套优雅的 HTML+CSS 编码规范；</p>
+<p>让我们的 Web 开发更简单，更快捷。</p>
+<blockquote>
+<p>注意:</p>
+<ol>
+<li><p>使用 Bootstrap 并不代表不用写 CSS 样式，而是不用写绝大多数大家都会用到的样式</p>
+</li>
+<li><p>Bootstrap 不是 BootStrap！这是一个词，不是合成词，其含义为：n. 引导指令,引导程序</p>
+</li>
+</ol>
+</blockquote>
+<p><strong>1.4    如何使用bootstrap?</strong></p>
+<p>下载Bootstrap</p>
+<p><a href="https://github.com/twbs/bootstrap/releases/download/v3.3.6/bootstrap-3.3.6-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v3.3.6\/bootstrap-3.3.6-dist.zip</a>         <a href="https://github.com/twbs/bootstrap/releases/download/v4.0.0-alpha.2/bootstrap-4.0.0-alpha.2-dist.zip" target="_blank" rel="external">https:\/\/github.com\/twbs\/bootstrap\/releases\/download\/v4.0.0-alpha.2\/bootstrap-4.0.0-alpha.2-dist.zip</a></p>
+<p><strong>1.5  Bootstrap文档</strong></p>
+<p><a href="http://getbootstrap.com/" target="_blank" rel="external">官方文档</a></p>
+<p><a href="http://v3.bootcss.com/" target="_blank" rel="external">中文文档</a></p>
+<p><strong>1.6   Bootstrap初始化模板</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">    &lt;html lang="en"&gt;</div><div class="line">    &lt;head&gt;</div><div class="line">      &lt;meta charset="UTF-8"&gt;</div><div class="line">      &lt;title&gt;页面标题&lt;/title&gt;</div><div class="line">      &lt;!-- 引入Bootstrap核心样式文件（必须） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;</div><div class="line">      &lt;!-- 引入Bootstrap默认主题样式（可选） --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="css/bootstrap.theme.min.css"&gt;</div><div class="line">      &lt;!-- 你自己的样式或其他文件 --&gt;</div><div class="line">      &lt;link rel="stylesheet" href="example.css"&gt;</div><div class="line">    &lt;/head&gt;</div><div class="line">    &lt;body&gt;</div><div class="line">      &lt;!-- 你的HTML结构...... --&gt;</div><div class="line">      &lt;!-- 以下代码，如果不使用JS插件则不需要 --&gt;</div><div class="line">      &lt;!-- 由于Bootstrap的JS插件依赖jQuery，so 引入jQuery --&gt;</div><div class="line">      &lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 引入所有的Bootstrap的JS插件 --&gt;</div><div class="line">      &lt;script src="bootstrap.min.js"&gt;&lt;/script&gt;</div><div class="line">      &lt;!-- 你自己的脚本文件 --&gt;</div><div class="line">      &lt;script src="example.js"&gt;&lt;/script&gt;</div><div class="line">    &lt;/body&gt;</div><div class="line">    &lt;/html&gt;</div></pre></td></tr></table></figure>
+<p><strong>1.7   Bootstrap相关知识点</strong></p>
+<p>（1）Compatible：此属性为文档兼容模式声明，表示如果在IE浏览器下则使用最新的标准渲染当前文档;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div></pre></td></tr></table></figure>
+<p>（2）视口： 此属性为移动端页面视口设置，当前值表示在移动端页面的宽度为设备的宽度，并且不缩放（缩放级别为1）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</div></pre></td></tr></table></figure>
+<p>（3）第三方依赖:</p>
+<ul>
+<li><p>boostrap的js组件依赖jquery实现 (<a href="https://github.com/jquery/jquery" target="_blank" rel="external">https:\/\/github.com\/jquery\/jquery</a>)</p>
+</li>
+<li><p>当低版本浏览器不识别新标签时兼容（<a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">html5shiv</a>）</p>
+</li>
+<li><p>让低版本浏览器可以使用CSS的媒体查询 （<a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">respond</a>）</p>
+</li>
+</ul>
+<p>（4）全局CSS样式:</p>
+<ul>
+<li>修饰已有的标签，比如按钮、文本框之类的</li>
+</ul>
+<p>（5）组件:   提供一套比较常用的UI组件，比如：按钮、下拉菜单、导航等</p>
+<p>[导航](http:\/\/v3.bootcss.com\/components\/#nav)</p>
+<p>[导航条](http:\/\/v3.bootcss.com\/components\/#navbar)</p>
+<p>[面包屑导航](http:\/\/v3.bootcss.com\/components\/#breadcrumbs)</p>
+<p>[下拉菜单](http:\/\/v3.bootcss.com\/components\/#dropdowns)</p>
+<p>[按钮式下拉菜单](http:\/\/v3.bootcss.com\/components\/#btn-dropdowns)</p>
+<p>[按钮组](http:\/\/v3.bootcss.com\/components\/#btn-groups)</p>
+<p>[输入框组](http:\/\/v3.bootcss.com\/components\/#input-groups)</p>
+<p>[警告框](http:\/\/v3.bootcss.com\/components\/#alerts)</p>
+<p>[页头](http:\/\/v3.bootcss.com\/components\/#page-header)</p>
+<p>[分页](http:\/\/v3.bootcss.com\/components\/#pagination)</p>
+<p>[列表组](http:\/\/v3.bootcss.com\/components\/#list-group)</p>
+<p>[面板](http:\/\/v3.bootcss.com\/components\/#panels)</p>
+<p>[媒体对象](http:\/\/v3.bootcss.com\/components\/#media)</p>
+<p>[进度条](http:\/\/v3.bootcss.com\/components\/#progress)</p>
+<p>[Glyphicons](http:\/\/v3.bootcss.com\/components\/#glyphicons)</p>
+<p>[标签](http:\/\/v3.bootcss.com\/components\/#labels)</p>
+<p>[徽章](http:\/\/v3.bootcss.com\/components\/#badges)</p>
+<p>[缩略图](http:\/\/v3.bootcss.com\/components\/#thumbnails)</p>
+<p>[大屏幕](http:\/\/v3.bootcss.com\/components\/#jumbotron)</p>
+<p>[嵌入内容](http:\/\/v3.bootcss.com\/components\/#responsive-embed)</p>
+<p>[内嵌](http:\/\/v3.bootcss.com\/components\/#wells)</p>
+<p>（6）JavaScript插件:   开发中常用的特效继承，依赖于jQuery</p>
+<p>[模态对话框](http:\/\/v3.bootcss.com\/javascript\/#modals)</p>
+<p>[下拉菜单](http:\/\/v3.bootcss.com\/javascript\/#dropdowns)</p>
+<p>[滚动监听](http:\/\/v3.bootcss.com\/javascript\/#scrollspy)</p>
+<p>[标签页](http:\/\/v3.bootcss.com\/javascript\/#tabs)</p>
+<p>[工具提示](http:\/\/v3.bootcss.com\/javascript\/#tooltips)</p>
+<p>[弹出框](http:\/\/v3.bootcss.com\/javascript\/#popovers)</p>
+<p>[警告框](http:\/\/v3.bootcss.com\/javascript\/#alerts)</p>
+<p>[按钮](http:\/\/v3.bootcss.com\/javascript\/#buttons)</p>
+<p>[折叠面板](http:\/\/v3.bootcss.com\/javascript\/#collapse)</p>
+<p>[轮播图](http:\/\/v3.bootcss.com\/javascript\/#carousel)</p>
+<p>[吸顶效果](http:\/\/v3.bootcss.com\/javascript\/#affix)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data-spy=&quot;affix&quot;</div><div class="line"></div><div class="line">data-offset-top=&quot;什么位置出现&quot;</div><div class="line"></div><div class="line">data-offset-bottom=&quot;什么位置消失&quot;</div></pre></td></tr></table></figure>
+<pre><code>&lt;!--
+    兼容的
+    IE = edge:告诉浏览器以最新的解析器来解析代码
+--&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+</code></pre><p>快捷打出视口–&gt;mate:vp加tab键</p>
+<pre><code>  &lt;!--device-width:动态布置
+     user-scalable  是否允许缩放  不允许
+     让wap App 更加接近原生
+--&gt;
+&lt;meta name=&quot;viewport&quot;
+      content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
+&lt;!--
+    PC端-&gt;移动互联网的兴起-&gt;app
+    PC-&gt;网站(网页)-&gt;手机端(web )
+--&gt;
+
+ &lt;!--
+    Bootstrap  兼容到IE8
+    HTML5 标签  &lt;head&gt; &lt;section&gt; &lt;footer&gt;
+    CSS的属性   媒体查询
+
+    html5shiv  让IE8的解析器能够识别html5的新标签
+      respond  css3
+      JS是用于处理一些标签的或者处理一些样式的导入在前面
+    --&gt;
+&lt;!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries --&gt;
+&lt;!-- WARNING: Respond.js doesn&apos;t work if you view the page via file:// --&gt;
+&lt;!--[if lt IE 9]&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>字体图标 矢量的字</p>
+<p>sr-only:屏幕阅读器,盲文.读出来<br>全称是 screen reader only，意为：（仅供）屏幕阅读器，这个 class 主要用于增强 accessbility（可访问性）。</p>
+<p>##站点图标<br>link:favicon来引入</p>
+<p>自定义字体图标:醉牛前端下的<br><img src="http://i.imgur.com/0YwMuum.png" alt=""></p>
+<p>###定义类名一般是<br>tab-title</p>
+<p>###定义id一般是<br>tab_title</p>
+<p>##按钮样式生成</p>
+<p><a href="http://blog.koalite.com//bbg//" target="_blank" rel="external">http://blog.koalite.com//bbg//</a></p>
+<p>##新闻中心区域</p>
+<p>涉及要点:栅(shan)格偏移<br>栅(zan)栏;</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2015/08/28/Bootstrap项目实战/">
+                    项目实战
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/06/21/jQuery网页的应用/">
+                    JQUERY的网页应用
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Bootstrap的笔记　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2015/08/28/Bootstrap项目实战/" title="上一篇: 项目实战">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/06/21/jQuery网页的应用/" title="下一篇: JQUERY的网页应用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/28/Bootstrap项目实战/">项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/bootstrap/">Bootstrap的笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/常用的不懂方法/">常用数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/19/面向对象day2/">面向对象2</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/面向对象day1/">面向对象3</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/JS满天星/">JS满天星特效</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="IT点彼岸" />
+
+
+
+<meta name="description" content="#项目实战 一. 搭建 Bootstrap 页面骨架及项目目录结构123456789├─ /weijinsuo/ ··················· 项目根目录└─┬─ /css/ ······················· 项目CSS文件├─ /font/ ······················ 使用到的字体文件├─ /img/ ······················· 使用">
+<meta name="keywords" content="前端  bootstrap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="项目实战">
+<meta property="og:url" content="http://yoursite.com/2015/08/28/Bootstrap项目实战/index.html">
+<meta property="og:site_name" content="IT点彼岸的博客">
+<meta property="og:description" content="#项目实战 一. 搭建 Bootstrap 页面骨架及项目目录结构123456789├─ /weijinsuo/ ··················· 项目根目录└─┬─ /css/ ······················· 项目CSS文件├─ /font/ ······················ 使用到的字体文件├─ /img/ ······················· 使用">
+<meta property="og:image" content="http://yoursite.com/assets/place.png">
+<meta property="og:image" content="http://yoursite.com/assets/place.png">
+<meta property="og:image" content="http://yoursite.com/assets/place.png">
+<meta property="og:image" content="http://yoursite.com/assets/Snip20170410_15.png">
+<meta property="og:updated_time" content="2017-06-13T15:27:03.319Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="项目实战">
+<meta name="twitter:description" content="#项目实战 一. 搭建 Bootstrap 页面骨架及项目目录结构123456789├─ /weijinsuo/ ··················· 项目根目录└─┬─ /css/ ······················· 项目CSS文件├─ /font/ ······················ 使用到的字体文件├─ /img/ ······················· 使用">
+<meta name="twitter:image" content="http://yoursite.com/assets/place.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>项目实战 | IT点彼岸的博客</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: true
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/time.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">IT点彼岸</a></h1>
+        </hgroup>
+
+        
+
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="undefined" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端-bootstrap/">前端  bootstrap</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://github.com/ITdian">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">IT点彼岸</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/time.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">IT点彼岸</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ITdian" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-Bootstrap项目实战" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/08/28/Bootstrap项目实战/" class="article-date">
+      <time datetime="2015-08-28T14:06:10.000Z" itemprop="datePublished">2015-08-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      项目实战
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端-bootstrap/">前端  bootstrap</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>#项目实战</p>
+<h3 id="一-搭建-Bootstrap-页面骨架及项目目录结构"><a href="#一-搭建-Bootstrap-页面骨架及项目目录结构" class="headerlink" title="一. 搭建 Bootstrap 页面骨架及项目目录结构"></a>一. 搭建 Bootstrap 页面骨架及项目目录结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">├─ /weijinsuo/ ··················· 项目根目录</div><div class="line">└─┬─ /css/ ······················· 项目CSS文件</div><div class="line">├─ /font/ ······················ 使用到的字体文件</div><div class="line">├─ /img/ ······················· 使用到的图片文件</div><div class="line">├─ /js/ ························ 自己的JS脚本</div><div class="line">├─ /lib/ ······················· 第三方类库</div><div class="line">├─ /favicon.ico ················ 站点图标</div><div class="line">└─ /index.html ················· 入口文件</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><img src="/assets/place.png" alt=""></p>
+<h3 id="二、项目编码规范约定"><a href="#二、项目编码规范约定" class="headerlink" title="二、项目编码规范约定"></a>二、项目编码规范约定</h3><h4 id="2-1-HTML约定"><a href="#2-1-HTML约定" class="headerlink" title="2.1   HTML约定"></a>2.1   HTML约定</h4><ul>
+<li><p>所有的CSS引用在HEAD中，按照第三方优先的顺序排列，我们自己的CSS肯定在最下面</p>
+</li>
+<li><p>所有JS文件都引用在Body的最下面（加载的缘由），按照依赖顺序排序</p>
+</li>
+<li><p>如果只是使用bootstrap的样式的话，就不用引用js文件</p>
+</li>
+<li><p>在head中引入必要的CSS文件，优先引用第三方的CSS，方便我们自己的样式覆盖</p>
+</li>
+<li><p>在body末尾引入必要的JS文件，优先引用第三方的JS，注意JS文件之间的依赖关系，比如bootstrap.js依赖jQuery，那就应该先引用jquery.js 然后引用bootstrap.js</p>
+</li>
+<li><p>特殊情况：如果js文件是用于处理一些css样式的，那一般在head中进行引入</p>
+</li>
+</ul>
+<h4 id="2-2-CSS约定"><a href="#2-2-CSS约定" class="headerlink" title="2.2   CSS约定"></a>2.2   CSS约定</h4><ul>
+<li><p>除了公共级别样式，其余样式全部加模块前缀</p>
+</li>
+<li><p>尽量使用 直接子代选择器， 少用间接子代 避免选错</p>
+</li>
+<li><p>CSS类名冲突 通过约定 给模块加上一个独一无二的名字</p>
+</li>
+<li><p>使用子代选择器的方式</p>
+</li>
+</ul>
+<h4 id="2-2-JS约定"><a href="#2-2-JS约定" class="headerlink" title="2.2   JS约定"></a>2.2   JS约定</h4><ul>
+<li><p>不允许使用onxxx = function(){}的方式注册事件</p>
+</li>
+<li><p>原生JS统一使用addEventListener(‘xxx’, function(){});</p>
+</li>
+</ul>
+<p><img src="/assets/place.png" alt=""></p>
+<h3 id="三、项目默认配置设定"><a href="#三、项目默认配置设定" class="headerlink" title="三、项目默认配置设定"></a>三、项目默认配置设定</h3><h4 id="3-1-HTML5文档结构"><a href="#3-1-HTML5文档结构" class="headerlink" title="3.1   HTML5文档结构"></a>3.1   HTML5文档结构</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;zh-CN&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;页面标题&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-2-Viewport设置"><a href="#3-2-Viewport设置" class="headerlink" title="3.2   Viewport设置"></a>3.2   Viewport设置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0&quot;&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>html中插入视口设置，可以通过emmet __meta:vp__ 插入</p>
+<p>此属性为移动端页面视口设置，当前值表示在移动端页面的宽度为设备的宽度，并且不缩放（缩放级别为1）</p>
+<p>960px 内容 被套在一个宽度为980px(绝大多数设备的视口默认尺寸)的容器(视口)中，将视口缩放到设备的真实尺寸中进行展示</p>
+</blockquote>
+<h4 id="3-3-浏览器兼容模式"><a href="#3-3-浏览器兼容模式" class="headerlink" title="3.3   浏览器兼容模式"></a>3.3   浏览器兼容模式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>html中插入兼容模式设置，可以通过emmet __meta:compat__ 插入</p>
+<p>此属性为文档兼容模式声明，表示如果在IE浏览器下则使用最新的标准渲染当前文档</p>
+</blockquote>
+<h4 id="3-4-favicon（站点图标）"><a href="#3-4-favicon（站点图标）" class="headerlink" title="3.4   favicon（站点图标）"></a>3.4   favicon（站点图标）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;favicon.ico&quot;&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>html中插入图标链接，可以通过emmet __link:favicon__ 插入</p>
+</blockquote>
+<h4 id="3-5-引入相应的第三方文件"><a href="#3-5-引入相应的第三方文件" class="headerlink" title="3.5   引入相应的第三方文件"></a>3.5   引入相应的第三方文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap.css&quot;&gt;</div><div class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;index.css&quot;&gt;</div><div class="line">...</div><div class="line">&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;bootstrap.js&quot;&gt;&lt;/script&gt;</div><div class="line">&lt;script src=&quot;index.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-6-设置默认字体"><a href="#3-6-设置默认字体" class="headerlink" title="3.6   设置默认字体"></a>3.6   设置默认字体</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">body&#123;</div><div class="line">font-family: &quot;Helvetica Neue&quot;,</div><div class="line">Helvetica,</div><div class="line">Microsoft Yahei,</div><div class="line">Hiragino Sans GB,</div><div class="line">WenQuanYi Micro Hei,</div><div class="line">sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="/assets/place.png" alt=""></p>
+<h3 id="四、项目结构搭建"><a href="#四、项目结构搭建" class="headerlink" title="四、项目结构搭建"></a>四、项目结构搭建</h3><h4 id="4-1-完成页面空结构搭建"><a href="#4-1-完成页面空结构搭建" class="headerlink" title="4.1   完成页面空结构搭建"></a>4.1   完成页面空结构搭建</h4><blockquote>
+<p>先划分好页面中的大容器，然后在具体看每一个容器中单独的情况</p>
+</blockquote>
+<h4 id="4-2-构建顶部通栏"><a href="#4-2-构建顶部通栏" class="headerlink" title="4.2   构建顶部通栏"></a>4.2   构建顶部通栏</h4><ul>
+<li><strong>container类</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">定义一个固定宽度且居中的版心</div><div class="line">container是具备响应式的能力</div><div class="line">四个档位 1170 970 750 100%</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>栅格系统</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Bootstrap中的栅格系统就是将一行划分为12列</div><div class="line">我们通过col-*-*的类名控制某个元素在某种屏幕的情况下展示几列</div><div class="line">col-md-6 在中等屏幕下 占1/2</div><div class="line">col-xs-12 在超小屏幕下 占全部</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>row类</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">.row&#123; marginLeft:-15px; marginRight:-15px &#125;</div><div class="line">抵消掉container中定义的padding</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>col-**</strong><em>-\</em><strong>**类</strong></li>
+</ul>
+<p>在某种屏幕尺寸下控制列的占比</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">col-xs-[列数]：在超小屏幕下展示几份</div><div class="line">col-sm-[列数]：在小屏幕下展示几份</div><div class="line">col-md-[列数]：在中等屏幕下展示几份</div><div class="line">col-lg-[列数]：在大屏幕下展示几份</div><div class="line">__xs__ : 超小屏幕 手机 (&lt;768px)</div><div class="line">__sm__ : 小屏幕 平板 (≥768px)</div><div class="line">__md__ : 中等屏幕 桌面显示器 (≥992px)</div><div class="line">__lg__ : 大屏幕 大桌面显示器 (≥1200px)</div></pre></td></tr></table></figure>
+<h4 id="4-3-字体图标"><a href="#4-3-字体图标" class="headerlink" title="4.3   字体图标"></a>4.3   字体图标</h4><blockquote>
+<p>字体实际上就是记录一个字符对应的图形</p>
+<p>在CSS中为元素设置字体，以前只能设置客户端存在的字体</p>
+<p>webfont 在线字体</p>
+<p>我自己做一套图形的字体</p>
+<p>如何定义一个web字体？</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/* 定义一个叫做“bb”字体 */</div><div class="line">@font-face &#123;</div><div class="line">font-family: &apos;bb&apos;;</div><div class="line">src: url(&apos;../font/MiFie-Web-Font.eot&apos;) format(&apos;embedded-opentype&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.svg&apos;) format(&apos;svg&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.ttf&apos;) format(&apos;truetype&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.woff&apos;) format(&apos;woff&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>字体文件格式</strong></li>
+</ul>
+<p>eot : embedded-opentype</p>
+<p>svg : svg</p>
+<p>ttf : truetype</p>
+<p>woff : woff</p>
+<ul>
+<li><p><strong>icomoon</strong></p>
+</li>
+<li><p><strong>使用方式</strong></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">@font-face &#123;</div><div class="line">font-family: &apos;bb&apos;;</div><div class="line">src: url(&apos;../font/MiFie-Web-Font.eot&apos;) format(&apos;embedded-opentype&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.svg&apos;) format(&apos;svg&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.ttf&apos;) format(&apos;truetype&apos;),</div><div class="line">url(&apos;../font/MiFie-Web-Font.woff&apos;) format(&apos;woff&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">[class^=&quot;icon-&quot;],</div><div class="line">[class*=&quot; icon-&quot;] &#123;</div><div class="line">/*注意上面选择器中间的空格*/</div><div class="line">/*我们使用的名为bb的字体就是上面的@font-face的方式声明的*/</div><div class="line">font-family: bb;</div><div class="line">font-style: normal;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.icon-mobilephone::before&#123;</div><div class="line">content: &apos;\e908&apos;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;div class=&quot;col-md-2 text-center&quot;&gt;</div><div class="line">    &lt;a class=&quot;mobile-link&quot; href=&quot;#&quot;&gt;</div><div class="line">        &lt;i class=&quot;icon-mobile&quot;&gt;&lt;/i&gt;</div><div class="line">        &lt;span&gt;IT点论坛&lt;/span&gt;</div><div class="line">        &lt;!-- 这里使用的是bootstrap中的字体图标 --&gt;</div><div class="line">        &lt;i class=&quot;glyphicon glyphicon-chevron-down&quot;&gt;&lt;/i&gt;</div><div class="line">        &lt;img src=&quot;...&quot; alt=&quot;&quot;&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>[<em>attribute</em>^=<em>value</em>]   选择器匹配属性值以指定值开头的每个元素。</p>
+<p>[<em>attribute*</em>=<em>value</em>]    选择器匹配属性值包含指定值开头的每个元素。</p>
+</blockquote>
+<h4 id="4-4-二维码图片展示"><a href="#4-4-二维码图片展示" class="headerlink" title="4.4   二维码图片展示"></a>4.4   二维码图片展示</h4><h4 id="4-5-按钮样式生成"><a href="#4-5-按钮样式生成" class="headerlink" title="4.5   按钮样式生成"></a>4.5   按钮样式生成</h4><ul>
+<li><p>http:\/\/blog.koalite.com\/bbg\/</p>
+</li>
+<li><p>可以通过界面生成一个新的按钮样式</p>
+</li>
+<li><p>具体代码</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line">.btn-bb &#123;</div><div class="line">color: #ffffff;</div><div class="line">background-color: #E92322;</div><div class="line">border-color: #DB3B43;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn-bb:hover,</div><div class="line">.btn-bb:focus,</div><div class="line">.btn-bb:active,</div><div class="line">.btn-bb.active,</div><div class="line">.open .dropdown-toggle.btn-bb &#123;</div><div class="line">color: #ffffff;</div><div class="line">background-color: #E92322;</div><div class="line">border-color: #DB3B43;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn-bb:active,</div><div class="line">.btn-bb.active,</div><div class="line">.open .dropdown-toggle.btn-bb &#123;</div><div class="line">background-image: none;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn-bb.disabled,</div><div class="line">.btn-bb[disabled],</div><div class="line">fieldset[disabled] .btn-bb,</div><div class="line">.btn-bb.disabled:hover,</div><div class="line">.btn-bb[disabled]:hover,</div><div class="line">fieldset[disabled] .btn-bb:hover,</div><div class="line">.btn-bb.disabled:focus,</div><div class="line">.btn-bb[disabled]:focus,</div><div class="line">fieldset[disabled] .btn-bb:focus,</div><div class="line">.btn-bb.disabled:active,</div><div class="line">.btn-bb[disabled]:active,</div><div class="line">fieldset[disabled] .btn-bb:active,</div><div class="line">.btn-bb.disabled.active,</div><div class="line">.btn-bb[disabled].active,</div><div class="line">fieldset[disabled] .btn-bb.active &#123;</div><div class="line">background-color: #E92322;</div><div class="line">border-color: #DB3B43;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn-bb .badge &#123;</div><div class="line">color: #E92322;</div><div class="line">background-color: #ffffff;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-6-小屏幕隐藏"><a href="#4-6-小屏幕隐藏" class="headerlink" title="4.6   小屏幕隐藏"></a>4.6   小屏幕隐藏</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;topbar hidden-xs hidden-sm&quot;&gt;&lt;/div&gt;</div><div class="line">//  或者</div><div class="line">&lt;div class=&quot;topbar visible-md visible-lg&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>__hidden-xx__ : 在某种屏幕下隐藏</p>
+<p>__visible-xx-xxx__ : 在某种屏幕尺寸下显示</p>
+<p>visible-md-xx：指的是中等屏幕可见，不是中等屏幕以上</p>
+<p>visible-md-block visible-lg-block == hidden-sm hidden-xs</p>
+</blockquote>
+<ul>
+<li>根据hidden-xxx和visible-xxx的特点，我们可以通过媒体查询的方式实习</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line">@media (max-width:768px) &#123;</div><div class="line">/*-xs*/</div><div class="line">.hidden-xs &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line">.visible-xs-block &#123;</div><div class="line">display: block;</div><div class="line">&#125;</div><div class="line">.visible-xs-inline &#123;</div><div class="line">display: inline;</div><div class="line">&#125;</div><div class="line">.visible-xs-inline-block &#123;</div><div class="line">display: inline-block;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@media (max-width:992px) &#123;</div><div class="line">/*-sm*/</div><div class="line">.hidden-sm &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line">.visible-sm-block &#123;</div><div class="line">display: block;</div><div class="line">&#125;</div><div class="line">.visible-sm-inline &#123;</div><div class="line">display: inline;</div><div class="line">&#125;</div><div class="line">.visible-sm-inline-block &#123;</div><div class="line">display: inline-block;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@media (max-width:1200px) &#123;</div><div class="line">/*-md*/</div><div class="line">.hidden-md &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line">.visible-md-block &#123;</div><div class="line">display: block;</div><div class="line">&#125;</div><div class="line">.visible-md-inline &#123;</div><div class="line">display: inline;</div><div class="line">&#125;</div><div class="line">.visible-md-inline-block &#123;</div><div class="line">display: inline-block;</div><div class="line">&#125;</div><div class="line"></div><div class="line">----------</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">@media (min-width:1200px) &#123;</div><div class="line">/*-lg*/</div><div class="line">.hidden-lg &#123;</div><div class="line">display: none;</div><div class="line">&#125;</div><div class="line">.visible-lg-block &#123;</div><div class="line">display: block;</div><div class="line">&#125;</div><div class="line">.visible-lg-inline &#123;</div><div class="line">display: inline;</div><div class="line">&#125;</div><div class="line">.visible-lg-inline-block &#123;</div><div class="line">display: inline-block;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="4-7-导航通栏"><a href="#4-7-导航通栏" class="headerlink" title="4.7   导航通栏"></a>4.7   导航通栏</h4><ul>
+<li>在使用了boostrap过后，大多数界面元素都是通过bootstrap提供好的界面组件修改得来</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default navbar-bb navbar-static-top&quot;&gt;</div><div class="line">    &lt;div class=&quot;container&quot;&gt;</div><div class="line">        &lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">            &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;</div><div class="line">                &lt;i class=&quot;icon-icon&quot;&gt;&lt;/i&gt;</div><div class="line">                &lt;i class=&quot;icon-logo&quot;&gt;&lt;/i&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;ul class=&quot;nav navbar-nav&quot;&gt;</div><div class="line">            &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;我要投资&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;我要借款&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;平台介绍&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;新手专区&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;最新动态&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;微论坛&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">        &lt;ul class=&quot;nav navbar-nav navbar-right hidden-sm&quot;&gt;</div><div class="line">            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;个人中心&lt;/a&gt;&lt;/li&gt;</div><div class="line">        &lt;/ul&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>Bootstrap扩展</li>
+</ul>
+<blockquote>
+<p>通过bootstrap文档对导航条样式的设置发现，其实本身是有一个类似于主题的概念</p>
+<p>navbar-default：默认的外观</p>
+<p>navbar-inverse：暗色背景的样式</p>
+<p>所以我们希望可以通过自定义一套完整的风格（继承navbar-default）：</p>
+<p>navbar-bb</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.navbar-bb&#123;</div><div class="line">...</div><div class="line">&#125;</div><div class="line">...具体代码参考navbar-default实现即可</div></pre></td></tr></table></figure>
+<ul>
+<li>品牌logo</li>
+</ul>
+<blockquote>
+<p>使用字体图标</p>
+</blockquote>
+<ul>
+<li>菜单行高调整</li>
+</ul>
+<blockquote>
+<p>默认样式中菜单的行高为20px，我们可以调整为自己想要的高度</p>
+<p>一般都是通过自己的样式去覆盖</p>
+</blockquote>
+<ul>
+<li>响应式菜单</li>
+</ul>
+<blockquote>
+<p>默认菜单是不具备响应式的能力的，通过观察文档发现，响应式菜单是通过一个按钮控制的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default navbar-bb navbar-static-top&quot;&gt;</div><div class="line">    &lt;div class=&quot;container&quot;&gt;</div><div class="line">        &lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">            &lt;!-- 点击该按钮会切换菜单的显示或隐藏 --&gt;</div><div class="line">            &lt;button</div><div class="line">                    id=&quot;btn&quot;</div><div class="line">                    type=&quot;button&quot;</div><div class="line">                    class=&quot;navbar-toggle collapsed&quot;</div><div class="line">                    data-toggle=&quot;collapse&quot;</div><div class="line">                    data-target=&quot;#nav_list&quot;</div><div class="line">                    aria-expanded=&quot;false&quot;</div><div class="line">            &gt;</div><div class="line">                &lt;span class=&quot;sr-only&quot;&gt;切换菜单&lt;/span&gt;</div><div class="line">                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;</div><div class="line">            &lt;/button&gt;</div><div class="line">            &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;</div><div class="line">                &lt;i class=&quot;icon-icon&quot;&gt;&lt;/i&gt;</div><div class="line">                &lt;i class=&quot;icon-logo&quot;&gt;&lt;/i&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div id=&quot;nav_list&quot; class=&quot;collapse navbar-collapse&quot;&gt;</div><div class="line">            &lt;ul class=&quot;nav navbar-nav&quot;&gt;</div><div class="line">                &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;我要投资&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;我要借款&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;平台介绍&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;新手专区&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;最新动态&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;微论坛&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">            &lt;ul class=&quot;nav navbar-nav navbar-right hidden-sm&quot;&gt;</div><div class="line">                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;个人中心&lt;/a&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure>
+<h4 id="4-8-轮播图"><a href="#4-8-轮播图" class="headerlink" title="4.8  轮播图"></a>4.8  轮播图</h4><ul>
+<li>Bootstrap JS插件使用</li>
+</ul>
+<blockquote>
+<p>对于Bootstrap的JS插件</p>
+<p>我们只需要将文档实例中的代码粘到我们自己的代码中</p>
+<p>然后作出相应的样式调整</p>
+</blockquote>
+<ul>
+<li><p>Bootstrap中轮播图插件叫作Carousel</p>
+</li>
+<li><p>基本的轮播图实现</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">&lt;!-- </div><div class="line">  以下容器就是整个轮播图组件的整体，</div><div class="line">  注意该盒子必须加上 class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot; 表示当前是一个轮播图</div><div class="line">  bootstrap.js会自动为当前元素添加图片轮播的特效</div><div class="line">--&gt;</div><div class="line">&lt;div id=&quot;轮播图的ID&quot; class=&quot;carousel slide&quot; data-ride=&quot;carousel&quot;&gt;</div><div class="line">    &lt;!-- ol标签是图片轮播的控制点 --&gt;</div><div class="line">    &lt;ol class=&quot;carousel-indicators&quot;&gt;</div><div class="line">        &lt;!--</div><div class="line">          每一个li就是一个单独的控制点</div><div class="line">            data-target属性就是指定当前控制点控制的是哪一个轮播图，其目的是如果界面上有多个轮播图，便于区分到底控制哪一个</div><div class="line">            data-slide-to属性是指当前的li元素绑定的是第几个轮播项</div><div class="line">          注意，默认必须给其中某个li加上active，展示的时候就是焦点项目</div><div class="line">        --&gt;</div><div class="line">        &lt;li data-target=&quot;#轮播图的ID&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;li data-target=&quot;#轮播图的ID&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;</div><div class="line">        &lt;!-- ...更多的 --&gt;</div><div class="line">    &lt;/ol&gt;</div><div class="line">    &lt;!--</div><div class="line">      .carousel-inner是所有轮播项的容器盒子，</div><div class="line">      注意role=&quot;listbox&quot;代表当前div是一个列表盒子，作用就是给当前div添加一个语义</div><div class="line">    --&gt;</div><div class="line">    &lt;div class=&quot;carousel-inner&quot; role=&quot;listbox&quot;&gt;</div><div class="line">        &lt;!-- 每一个.item就是单个轮播项目，注意默认要给第一个轮播项目加上active，表示为焦点 --&gt;</div><div class="line">        &lt;div class=&quot;item active&quot;&gt;</div><div class="line">            &lt;!-- 轮播项目中展示的图片 --&gt;</div><div class="line">            &lt;img src=&quot;example.jpg&quot; alt=&quot;示例图片&quot;&gt;</div><div class="line">            &lt;div class=&quot;carousel-caption&quot;&gt;</div><div class="line">                &lt;!-- 标题或说明性文字，如果不需要，直接删除当前div.carousel-caption --&gt;</div><div class="line">            &lt;/div&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div class=&quot;item&quot;&gt;</div><div class="line">            &lt;!-- ... --&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;!-- ... --&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;!-- 图片轮播上左右两个控制按钮，分别点击可以滚动到上一张和下一张 --&gt;</div><div class="line">    &lt;!-- 此处需要注意的是 该a链接的href属性必须指向需要控制的轮播图ID --&gt;</div><div class="line">    &lt;!-- 另外a链接中的data-slide=&quot;prev&quot;代表点击该链接会滚到上一张，如果设置为next的话则相反 --&gt;</div><div class="line">    &lt;a class=&quot;left carousel-control&quot; href=&quot;#轮播图的ID&quot; role=&quot;button&quot; data-slide=&quot;prev&quot;&gt;</div><div class="line">        &lt;span class=&quot;glyphicon glyphicon-chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</div><div class="line">        &lt;span class=&quot;sr-only&quot;&gt;上一张&lt;/span&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    &lt;a class=&quot;right carousel-control&quot; href=&quot;#轮播图的ID&quot; role=&quot;button&quot; data-slide=&quot;next&quot;&gt;</div><div class="line">        &lt;span class=&quot;glyphicon glyphicon-chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</div><div class="line">        &lt;span class=&quot;sr-only&quot;&gt;下一张&lt;/span&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>轮播图片超宽造成的影响</p>
+</li>
+<li><p>美工为了在不同屏幕下更好地展示将图片两边做的非常宽，但是我们大多数情况的页面宽度都无法满足这样的图片宽度</p>
+</li>
+<li><p>而且Bootstrap的样式中默认将图片的max-width设置为100%, 造成界面图片缩放</p>
+</li>
+<li><p>想在一个较小屏幕下展示一个超宽的图片，并让图片居中显示</p>
+</li>
+<li><p>两种办法：</p>
+</li>
+</ul>
+<p>换用背景图的方式，background-position: center center;</p>
+<p>使img元素绝对定位，left:50%，margin-left: -width\/2</p>
+<p>translate方式</p>
+<ul>
+<li>background-size</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">- length</div><div class="line">+ 如 background-size: 100px 100px，将背景图固定到多大尺寸</div><div class="line">- percentage</div><div class="line">+ 如 background-size: 90% 90%，以百分比的形式设置背景大小</div><div class="line">- cover</div><div class="line">+ 1.背景图片等比例缩放</div><div class="line">+ 2.让背景图相对较小边放大到目标容器大小结束</div><div class="line">* 如：一张100\*200的背景图放到一个300\*400的盒子中，最终背景图片的大小是300\*600</div><div class="line">* 因为背景图的较小边为100，将100放大到目标容器300的宽度，放大了3倍，最终结果300\*600</div><div class="line">- contain</div><div class="line">+ 1.背景图片等比例缩放</div><div class="line">+ 2.让背景图相对较大边放大到目标容器大小结束</div><div class="line">* 如：一张100\*200的背景图放到一个300\*400的盒子中，最终背景图片的大小是200\*400</div><div class="line">* 因为背景图的较大边为200，将200放大到目标容器400的高度，放大了2倍，最终结果200\*400</div></pre></td></tr></table></figure>
+<p><img src="/assets/Snip20170410_15.png" alt=""></p>
+<ul>
+<li><p>图片响应式</p>
+</li>
+<li><p>目的</p>
+</li>
+<li><p>各种终端都需要正常显示图片</p>
+</li>
+<li><p>移动端应该使用更小（体积）的图片</p>
+</li>
+<li><p>实现方式</p>
+</li>
+<li><ul>
+<li>将元素中直接设置的图片背景删除，换成两个data-属性（如：data-img-sm=”小图路径”，data-img-lg=”大图路径”）</li>
+</ul>
+</li>
+<li><p>通过JS的方式获取屏幕的宽度；</p>
+</li>
+<li><p>判断屏幕宽度是否小于一定的值（如：768px）；</p>
+</li>
+<li><p>根据判断情况决定使用具体的大图还是小图；</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">// 获取屏幕宽度</div><div class="line">var windowWidth = $(window).width();</div><div class="line">// 判断屏幕属于大还是小</div><div class="line">var isSmallScreen = windowWidth &lt; 768;</div><div class="line">// 根据大小为界面上的每一张轮播图设置背景</div><div class="line">// $(&apos;#main_ad &gt; .carousel-inner &gt; .item&apos;) // 获取到的是一个DOM数组（多个元素）</div><div class="line">$(&apos;#main_ad &gt; .carousel-inner &gt; .item&apos;).each(function(i, item) &#123;</div><div class="line">// 因为拿到是DOM对象 需要转换</div><div class="line">var $item = $(item);</div><div class="line">// var imgSrc = $item.data(isSmallScreen ? &apos;image-xs&apos; : &apos;image-lg&apos;);</div><div class="line">var imgSrc =</div><div class="line">isSmallScreen ? $item.data(&apos;image-xs&apos;) : $item.data(&apos;image-lg&apos;);</div><div class="line"></div><div class="line">// 设置背景图片</div><div class="line">$item.css(&apos;backgroundImage&apos;, &apos;url(&quot;&apos; + imgSrc + &apos;&quot;)&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>window resize事件</li>
+</ul>
+<blockquote>
+<p>由于上一步我们实现的过程是指在页面加载完成判断一次，</p>
+<p>当用户手动调整页面宽度过后没有及时发生变化，</p>
+<p>所以我们可以通过window的resize事件中重新完成以上操作来解决这个问题</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 窗口变化后执行的函数名()&#123;</div><div class="line">// 具体的操作</div><div class="line">&#125;</div><div class="line">$(window).on(&apos;resize&apos;, 窗口变化后执行的函数名);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这个事件只会在窗口尺寸发生变化后执行，但是我们需要一开始时执行一次</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">$(window).on(&apos;resize&apos;, 窗口变化后执行的函数名).trigger(&apos;resize&apos;);</div></pre></td></tr></table></figure>
+<h4 id="4-9-网站特性"><a href="#4-9-网站特性" class="headerlink" title="4.9  网站特性"></a>4.9  网站特性</h4><ul>
+<li><p>网格系统</p>
+</li>
+<li><p>该板块当屏幕为中等尺寸时分为3列，较小屏幕是分为2列</p>
+</li>
+<li><p>所以使用网格系统划分</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;col-sm-6 col-md-4&quot;&gt;</div><div class="line">    &lt;!-- ... --&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;!-- ... --&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>媒体对象样式</p>
+</li>
+<li><ul>
+<li>每一个小块的样式可以通过Bootstrap中的媒体对象样式实现</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;a href=&quot;#&quot;&gt;</div><div class="line">    &lt;div class=&quot;media&quot;&gt;</div><div class="line">        &lt;div class=&quot;media-left&quot;&gt;</div><div class="line">            &lt;i class=&quot;icon-uniE907&quot;&gt;&lt;/i&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">        &lt;div class=&quot;media-body&quot;&gt;</div><div class="line">            &lt;h4 class=&quot;media-heading&quot;&gt;支付交易保障&lt;/h4&gt;</div><div class="line">            &lt;p&gt;银联支付全称保证支付安全&lt;/p&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/a&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>响应式辅助类型</p>
+</li>
+<li><ul>
+<li>整个板块在超小屏幕下是隐藏起来的</li>
+</ul>
+</li>
+<li><p>只需要给当前板块加上hidden-xs的class</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/25/jQuery的选择器/">
+                    jQuery选择器
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2015/08/18/bootstrap/">
+                    Bootstrap的笔记
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-搭建-Bootstrap-页面骨架及项目目录结构"><span class="toc-number">1.</span> <span class="toc-text">一. 搭建 Bootstrap 页面骨架及项目目录结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、项目编码规范约定"><span class="toc-number">2.</span> <span class="toc-text">二、项目编码规范约定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-HTML约定"><span class="toc-number">2.1.</span> <span class="toc-text">2.1   HTML约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-CSS约定"><span class="toc-number">2.2.</span> <span class="toc-text">2.2   CSS约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-JS约定"><span class="toc-number">2.3.</span> <span class="toc-text">2.2   JS约定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、项目默认配置设定"><span class="toc-number">3.</span> <span class="toc-text">三、项目默认配置设定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-HTML5文档结构"><span class="toc-number">3.1.</span> <span class="toc-text">3.1   HTML5文档结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-Viewport设置"><span class="toc-number">3.2.</span> <span class="toc-text">3.2   Viewport设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-浏览器兼容模式"><span class="toc-number">3.3.</span> <span class="toc-text">3.3   浏览器兼容模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-favicon（站点图标）"><span class="toc-number">3.4.</span> <span class="toc-text">3.4   favicon（站点图标）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-引入相应的第三方文件"><span class="toc-number">3.5.</span> <span class="toc-text">3.5   引入相应的第三方文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-设置默认字体"><span class="toc-number">3.6.</span> <span class="toc-text">3.6   设置默认字体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、项目结构搭建"><span class="toc-number">4.</span> <span class="toc-text">四、项目结构搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-完成页面空结构搭建"><span class="toc-number">4.1.</span> <span class="toc-text">4.1   完成页面空结构搭建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-构建顶部通栏"><span class="toc-number">4.2.</span> <span class="toc-text">4.2   构建顶部通栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-字体图标"><span class="toc-number">4.3.</span> <span class="toc-text">4.3   字体图标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-二维码图片展示"><span class="toc-number">4.4.</span> <span class="toc-text">4.4   二维码图片展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-按钮样式生成"><span class="toc-number">4.5.</span> <span class="toc-text">4.5   按钮样式生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-小屏幕隐藏"><span class="toc-number">4.6.</span> <span class="toc-text">4.6   小屏幕隐藏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-导航通栏"><span class="toc-number">4.7.</span> <span class="toc-text">4.7   导航通栏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-8-轮播图"><span class="toc-number">4.8.</span> <span class="toc-text">4.8  轮播图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-9-网站特性"><span class="toc-number">4.9.</span> <span class="toc-text">4.9  网站特性</span></a></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"项目实战　| IT点彼岸的博客　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/25/jQuery的选择器/" title="上一篇: jQuery选择器">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2015/08/18/bootstrap/" title="下一篇: Bootstrap的笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/25/jQuery的选择器/">jQuery选择器</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/28/Bootstrap项目实战/">项目实战</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/08/18/bootstrap/">Bootstrap的笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/06/21/jQuery网页的应用/">JQUERY的网页应用</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/20/常用的不懂方法/">常用数组方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/19/面向对象day2/">面向对象2</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/面向对象day1/">面向对象3</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/04/15/JS满天星/">JS满天星特效</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2017 IT点彼岸
+            </div>
+            <div class="footer-right">
+                <a href="http://itdian.cn/" target="_blank" title="快速、简洁且高效的博客框架">IT点彼岸</a>欢迎<a href="https://github.com/" target="_blank" title="简而不减 Hexo 双栏博客主题  3.5">你的到来</a><i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+             title: "a.article-title, .article-more-link a", 
+             post: ".article-entry a[href], .copyright a[href]", 
+             tags: ".article-tag a", 
+             categories: ".article-category a, a.tag-list-link", 
+             articleNav: "#article-nav a, #post-nav-button a", 
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+             menu: ".header-menu a", 
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
